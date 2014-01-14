@@ -3,6 +3,9 @@
 --- !u!78 &1
 TagManager:
   tags:
+  - Stick_Resource
+  - String_Resource
+  - 
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
