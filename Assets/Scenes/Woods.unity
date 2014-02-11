@@ -300,11 +300,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.00902224
+      value: 1.11512041
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -12.3037682
+      value: -11.7452612
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalRotation.x
@@ -325,6 +325,10 @@ Prefab:
     - target: {fileID: 11400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
@@ -586,9 +590,10 @@ GameObject:
   - 114: {fileID: 1686140351}
   - 114: {fileID: 1686140352}
   - 114: {fileID: 1686140346}
+  - 114: {fileID: 1686140353}
   m_Layer: 0
   m_Name: First Person Controller
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -600,7 +605,7 @@ Transform:
   m_PrefabInternal: {fileID: 692697412}
   m_GameObject: {fileID: 1686140344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.87897873, y: 6.00902224, z: -12.3037682}
+  m_LocalPosition: {x: 3.87897873, y: 1.11512041, z: -11.7452612}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 991811325}
@@ -741,6 +746,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e25eda99fab9cd4db2122dc674fab4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1686140353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1686140344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e9d65146509d3342bfd201a214265ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Box_Trap: {fileID: 100000, guid: 9fffd22ef1372494abecab3f0099574d, type: 2}
+  Bow_Trap: {fileID: 100000, guid: aaff72c7339e4444ab7cd3f1c5f317bf, type: 2}
+  Trap_C: {fileID: 0}
 --- !u!1 &1809656603
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,7 +1011,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2133602905}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .468044758, y: .62096405, z: .772688866}
+  m_LocalPosition: {x: -.384791374, y: .553392529, z: .649401665}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
