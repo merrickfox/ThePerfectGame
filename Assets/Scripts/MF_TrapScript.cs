@@ -38,9 +38,9 @@ public class MF_TrapScript : MonoBehaviour {
 		percentToHut = 100 - (distanceToHut/totalDist)*100;
 		percentToRiver = 100 - (distanceToRiver/totalDist)*100;
 
-		if(Input.GetKeyDown ("c")){
+		if(Input.GetKeyDown ("c") && deployed){
 			capture = GetCapture();
-			Debug.Log(capture);
+			
 		}
 	}
 
@@ -55,7 +55,7 @@ public class MF_TrapScript : MonoBehaviour {
 			GUI.color = Color.red;
 			GUI.Label(new Rect(10, 150,200,200), "You Captured A: ");
 			GUI.color = Color.green;
-			GUI.Label(new Rect(150, 150,200,200), capture);
+			GUI.Label(new Rect(150, 150,200,200), capture + " 100 points!!");
 			GUI.color = Color.red;
 		}
 		GUI.Label(new Rect(10, 175, 400,200), "river: " + 50.0f*(percentToRiver/100.0f));
@@ -94,10 +94,14 @@ public class MF_TrapScript : MonoBehaviour {
 		float rand = Random.Range(0, totalChance);
 		Debug.Log("squirrel chance: "+squirrel_chance + " beaver chance: " + beaver_chance + " total chance: "+totalChance+" rand: "+rand);
 
-		if(rand < squirrel_chance)
+		if(rand < squirrel_chance){
+			Debug.Log("Rand:" + rand + " Caught Squirrel");
 			return "Squirrel";
-		else if(rand >= squirrel_chance)
+		}
+		else if(rand >= squirrel_chance){
+			Debug.Log("Rand:" + rand + " Caught Beaver");
 			return "Beaver";
+		}
 		else
 			return "ERROR";
 	}
