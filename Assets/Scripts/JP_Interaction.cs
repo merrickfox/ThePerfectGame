@@ -23,16 +23,12 @@ public class JP_Interaction : MonoBehaviour {
 			{
 				if(Input.GetKeyDown (KeyCode.E))
 				{
-					int loopNum = Random.Range (1, 4);
-					for(int i = 0; i < loopNum; i++)
-					{
-						hit.collider.gameObject.GetComponent<JP_Looter>().randomLoot();
-					}
 
 					hit.collider.gameObject.GetComponent<JP_Looter>().EnableLooting();
 					gameObject.GetComponent<MouseLook>().enabled = false;
 					transform.Find ("Main Camera").GetComponent<MouseLook>().enabled = false;
 					gameObject.GetComponent<FPSInputController>().enabled = false;
+					gameObject.GetComponent<CharacterMotor>().enabled = false;
 				}
 			}
 		}
@@ -45,6 +41,7 @@ public class JP_Interaction : MonoBehaviour {
 		{
 			gameObject.GetComponent<MouseLook>().enabled = true;
 			gameObject.GetComponent<FPSInputController>().enabled = true;
+			gameObject.GetComponent<CharacterMotor>().enabled = true;
 			transform.Find ("Main Camera").GetComponent<MouseLook>().enabled = true;
 		}
 	

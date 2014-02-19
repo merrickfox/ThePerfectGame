@@ -40,7 +40,7 @@ public class JP_Looter : MonoBehaviour {
 
 		if(ResourceName == "Stick Resource")
 		{
-			if(randNum >= 10)
+			if(randNum >= 0)
 			{
 				for(int j = 0; j < 4; j++)
 				{
@@ -52,7 +52,7 @@ public class JP_Looter : MonoBehaviour {
 				}
 			}
 
-			if(randNum >= 20)
+			if(randNum >= 0)
 			{
 				for(int j = 0; j < 4; j++)
 				{
@@ -63,12 +63,38 @@ public class JP_Looter : MonoBehaviour {
 					}
 				}
 			}
+
+			if(randNum >= 101)
+			{
+				for(int j = 0; j < 4; j++)
+				{
+					if(lootDictionary[j].name == "null")
+					{
+						lootDictionary[j] = itemObject.leaf_r;
+						break;
+					}
+				}
+			}
+
+			if(randNum >= 101)
+			{
+				for(int j = 0; j < 4; j++)
+				{
+					if(lootDictionary[j].name == "null")
+					{
+						lootDictionary[j] = itemObject.rock_r;
+						break;
+					}
+				}
+			}
 		}
 	}
 
 	// Use this for initialization
 	void Start () 
 	{
+		randomLoot ();
+		
 
 	}
 

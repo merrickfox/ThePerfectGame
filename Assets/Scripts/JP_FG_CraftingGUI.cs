@@ -47,16 +47,97 @@ public class JP_FG_CraftingGUI : MonoBehaviour
 		GUILayout.BeginHorizontal();
 		if(GUILayout.Button (craftingDictionary [0].icon, GUILayout.Width (50), GUILayout.Height (50)))
 		{
-
+			if(craftingDictionary[0].name != "null")
+			{
+				for(int i = 0; i < 36; i++)
+				{
+					if(JP_InventoryGUI.inventoryNameDictionary[i].name == "null")
+					{
+						JP_InventoryGUI.inventoryNameDictionary[i] = craftingDictionary[0];
+						craftingDictionary[0] = itemObject.nullItem;
+						break;
+					}
+				}
+			}
 		}
-		GUILayout.Button (craftingDictionary[1].icon, GUILayout.Width (50), GUILayout.Height (50));
-		GUILayout.Button (craftingDictionary[2].icon, GUILayout.Width (50), GUILayout.Height (50));
+		if (GUILayout.Button (craftingDictionary[1].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		{
+			if(craftingDictionary[1].name != "null")
+			{
+				for(int i = 0; i < 36; i++)
+				{
+					if(JP_InventoryGUI.inventoryNameDictionary[i].name == "null")
+					{
+						JP_InventoryGUI.inventoryNameDictionary[i] = craftingDictionary[1];
+						craftingDictionary[1] = itemObject.nullItem;
+						break;
+					}
+				}
+			}
+		}
+		if(GUILayout.Button (craftingDictionary[2].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		{
+			if(craftingDictionary[2].name != "null")
+			{
+				for(int i = 0; i < 36; i++)
+				{
+					if(JP_InventoryGUI.inventoryNameDictionary[i].name == "null")
+					{
+						JP_InventoryGUI.inventoryNameDictionary[i] = craftingDictionary[2];
+						craftingDictionary[2] = itemObject.nullItem;
+						break;
+					}
+				}
+			}
+		}
 		GUILayout.EndHorizontal();
 		
 		GUILayout.BeginHorizontal();
-		GUILayout.Button (craftingDictionary[3].icon, GUILayout.Width (50), GUILayout.Height (50));
-		GUILayout.Button (craftingDictionary[4].icon, GUILayout.Width (50), GUILayout.Height (50));
-		GUILayout.Button (craftingDictionary[5].icon, GUILayout.Width (50), GUILayout.Height (50));
+		if(GUILayout.Button (craftingDictionary[3].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		{
+			if(craftingDictionary[3].name != "null")
+			{
+				for(int i = 0; i < 36; i++)
+				{
+					if(JP_InventoryGUI.inventoryNameDictionary[i].name == "null")
+					{
+						JP_InventoryGUI.inventoryNameDictionary[i] = craftingDictionary[3];
+						craftingDictionary[3] = itemObject.nullItem;
+						break;
+					}
+				}
+			}
+		}
+		if(GUILayout.Button (craftingDictionary[4].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		{
+			if(craftingDictionary[4].name != "null")
+			{
+				for(int i = 0; i < 36; i++)
+				{
+					if(JP_InventoryGUI.inventoryNameDictionary[i].name == "null")
+					{
+						JP_InventoryGUI.inventoryNameDictionary[i] = craftingDictionary[4];
+						craftingDictionary[4] = itemObject.nullItem;
+						break;
+					}
+				}
+			}
+		}
+		if(GUILayout.Button (craftingDictionary[5].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		{
+			if(craftingDictionary[5].name != "null")
+			{
+				for(int i = 0; i < 36; i++)
+				{
+					if(JP_InventoryGUI.inventoryNameDictionary[i].name == "null")
+					{
+						JP_InventoryGUI.inventoryNameDictionary[i] = craftingDictionary[5];
+						craftingDictionary[5] = itemObject.nullItem;
+						break;
+					}
+				}
+			}
+		}
 		GUILayout.EndHorizontal();
 		
 		GUILayout.BeginHorizontal();
@@ -67,7 +148,7 @@ public class JP_FG_CraftingGUI : MonoBehaviour
 		if(GUILayout.Button (craftingDictionary[6].icon, GUILayout.Width (50), GUILayout.Height (50)))
 		{
 
-			for(int i = 0; i < 9; i++)
+			for(int i = 0; i < 36; i++)
 			{
 				if(JP_InventoryGUI.inventoryNameDictionary[i].name == "null")
 				{

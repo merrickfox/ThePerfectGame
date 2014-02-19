@@ -97,6 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60de4a62f54140348a1b0876cfc7152b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MyGUISkin: {fileID: 11400000, guid: a2d5fa19b0126c14c917ab1607888a74, type: 2}
+  squirrel: {fileID: 0}
+  beaver: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

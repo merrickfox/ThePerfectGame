@@ -2,7 +2,14 @@
 using System.Collections;
 
 public class MF_TrapScript : MonoBehaviour {
+	private Rect captureWindow;
+	public GUISkin MyGUISkin;
 
+	public Texture squirrel;
+	public Texture beaver;
+
+	bool caught;
+	float width,height;
 	int trapType;
 	int baitType;
 	bool deployed;
@@ -27,6 +34,9 @@ public class MF_TrapScript : MonoBehaviour {
 		river_poi = GameObject.Find("RiverPOI");
 		hut_poi = GameObject.Find("HutPOI");
 		capture = "Nothing yet, press wait...";
+		width = 500;
+		height = 400;
+		captureWindow = new Rect(Screen.width/2-(width/2), Screen.height/2-(height/2), width, height);
 	}
 	
 	// Update is called once per frame
@@ -38,8 +48,10 @@ public class MF_TrapScript : MonoBehaviour {
 		percentToHut = 100 - (distanceToHut/totalDist)*100;
 		percentToRiver = 100 - (distanceToRiver/totalDist)*100;
 
-		if(Input.GetKeyDown ("c") && deployed){
+		if(Input.GetKeyDown ("m") && deployed){
 			capture = GetCapture();
+			caught = true;
+			
 			
 		}
 	}
@@ -51,17 +63,13 @@ public class MF_TrapScript : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		if(deployed){
-			GUI.color = Color.red;
-			GUI.Label(new Rect(10, 150,200,200), "You Captured A: ");
-			GUI.color = Color.green;
-			GUI.Label(new Rect(150, 150,200,200), capture + " 100 points!!");
-			GUI.color = Color.red;
+	
+		
+		if(caught){
+			GUI.skin = MyGUISkin;
+			captureWindow = new Rect(captureWindow.x, captureWindow.y, width, height);
+			captureWindow = GUILayout.Window(1, captureWindow, DoMyWindow, "Capture", GUI.skin.GetStyle("window"));
 		}
-		GUI.Label(new Rect(10, 175, 400,200), "river: " + 50.0f*(percentToRiver/100.0f));
-		GUI.Label(new Rect(10, 200, 400,200), "hut: " + 50.0f*(percentToHut/100.0f));
-
-		GUI.Label(new Rect(10, 225, 400,200), "......: " + totalDist);
 	}
 
 	string GetCapture(){
@@ -105,4 +113,36 @@ public class MF_TrapScript : MonoBehaviour {
 		else
 			return "ERROR";
 	}
+
+
+	void DoMyWindow(int windowID){
+    	GUILayout.BeginVertical();
+		GUILayout.Box("Congratulations! You caught a..\n"+capture);
+		GUILayout.Space(4);
+        if(GUILayout.Button("Eat")){
+        	caught = false;
+        }
+		if(GUILayout.Button("Store In Inventory")){
+			caught = false;
+		}
+       
+        GUILayout.EndVertical();
+        GUILayout.BeginVertical();
+        GUILayout.Space(8);
+        //Sliders
+        GUILayout.BeginHorizontal();
+        GUILayout.EndHorizontal();
+        GUILayout.Space(20);
+        //Scrollbars
+		GUILayout.BeginHorizontal();
+		GUILayout.Space(8);
+		if(capture == "Squirrel")
+			GUILayout.Box(squirrel);
+		if(capture == "Beaver")
+			GUILayout.Box(beaver);
+		GUILayout.EndHorizontal();
+		GUILayout.Space(8);
+		GUILayout.EndVertical();
+        GUI.DragWindow();
+    }
 }
