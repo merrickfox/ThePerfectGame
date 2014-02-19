@@ -1,0 +1,1724 @@
+fileFormatVersion: 2
+guid: 05015691136227f458e8d0c4bf2a2de7
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: ash_tray
+    100004: body
+    100006: chassis1
+    100008: Chev_Hatch_1976
+    100010: dashboard
+    100012: diff
+    100014: door_mirror_support
+    100016: doors
+    100018: engine_mountings
+    100020: exhaust
+    100022: extras
+    100024: front_bumper
+    100026: front_grill1
+    100028: front_left_disk
+    100030: front_left_disk1
+    100032: front_left_disk_brake
+    100034: front_left_disk_brake1
+    100036: front_left_headlight
+    100038: front_left_headlight_cover
+    100040: front_left_indicator
+    100042: front_left_rimm
+    100044: front_left_tyre
+    100046: front_left_wheel_support
+    100048: front_left_wheel_support1
+    100050: front_numberplate
+    100052: front_right_headlight
+    100054: front_right_headlight_cover
+    100056: front_right_indicator
+    100058: front_right_rimm
+    100060: front_right_tyre
+    100062: front_shocks
+    100064: fuel_cap
+    100066: fuel_cap_cover
+    100068: fuel_tank
+    100070: gear_stick
+    100072: glove_compartment
+    100074: glove_compartment_handle
+    100076: hand_brake
+    100078: hood_closed
+    100080: hood_open
+    100082: indicator_lever
+    100084: interior
+    100086: interior 1
+    100088: interior 2
+    100090: left_airvent
+    100092: left_door
+    100094: left_door_handle
+    100096: left_door_inner_handle
+    100098: left_door_lever
+    100100: left_door_lever_support
+    100102: left_door_lock
+    100104: left_door_window_winder
+    100106: left_rear_seat_top
+    100108: left_seat
+    100110: left_seat 1
+    100112: left_seat_head_rest
+    100114: left_seat_top
+    100116: left_sunguard
+    100118: left_sunguard_support
+    100120: levers
+    100122: light_switch
+    100124: Mag_Rimms_left_seat
+    100126: Mag_Rimms_Mag_Rimms_pCube43
+    100128: Mag_Rimms_pCube14
+    100130: Mag_Rimms_pCube16
+    100132: Mag_Rimms_pCube17
+    100134: Mag_Rimms_pCube18
+    100136: Mag_Rimms_pCube19
+    100138: Mag_Rimms_pCube22
+    100140: Mag_Rimms_pCube23
+    100142: Mag_Rimms_pCube24
+    100144: Mag_Rimms_pCube25
+    100146: Mag_Rimms_pCube26
+    100148: Mag_Rimms_pCube28
+    100150: Mag_Rimms_pCube3
+    100152: Mag_Rimms_pCube36
+    100154: Mag_Rimms_pCube4
+    100156: Mag_Rimms_pCube43
+    100158: Mag_Rimms_pCube51
+    100160: Mag_Rimms_pCylinder29
+    100162: Mag_Rimms_pCylinder7
+    100164: Mag_Rimms_polySurface2
+    100166: Mag_Rimms_polySurface283
+    100168: Mag_Rimms_polySurface284
+    100170: Mag_Rimms_polySurface322
+    100172: Mag_Rimms_polySurface323
+    100174: Mag_Rimms_seat1
+    100176: Mag_Rimms_seat2
+    100178: Mag_Rimms_Seat_pCube16
+    100180: Mag_Rimms_Seat_pCube17
+    100182: Mag_Rimms_Seat_pCube18
+    100184: Mag_Rimms_Seat_pCube22
+    100186: Mag_Rimms_Seat_pCube23
+    100188: Mag_Rimms_Seat_pCube26
+    100190: Mag_Rimms_Seat_pCube3
+    100192: Mag_Rimms_Seat_pCube36
+    100194: Mag_Rimms_Seat_pCube43
+    100196: Mag_Rimms_Seat_pCube51
+    100198: Mag_Rimms_Seat_polySurface322
+    100200: Mag_Rimms_Seat_polySurface323
+    100202: Mag_Rimms_Smokin_Guns__detailed__pCube14
+    100204: Mag_Rimms_Smokin_Guns__detailed__pCylinder5
+    100206: Mag_Rimms_Smokin_Guns__detailed__pCylinder7
+    100208: Mag_Rimms_Speakers1_left_seat
+    100210: Mag_Rimms_Speakers1_pCube14
+    100212: Mag_Rimms_Speakers1_pCube16
+    100214: Mag_Rimms_Speakers1_pCube17
+    100216: Mag_Rimms_Speakers1_pCube18
+    100218: Mag_Rimms_Speakers1_pCube22
+    100220: Mag_Rimms_Speakers1_pCube23
+    100222: Mag_Rimms_Speakers1_pCube26
+    100224: Mag_Rimms_Speakers1_pCube3
+    100226: Mag_Rimms_Speakers1_pCube36
+    100228: Mag_Rimms_Speakers1_pCube43
+    100230: Mag_Rimms_Speakers1_pCube51
+    100232: Mag_Rimms_Speakers1_pCylinder29
+    100234: Mag_Rimms_Speakers1_pCylinder7
+    100236: Mag_Rimms_Speakers1_polySurface322
+    100238: Mag_Rimms_Speakers1_polySurface323
+    100240: Mag_Rimms_Speakers1_seat1
+    100242: Mag_Rimms_Speakers1_seat2
+    100244: Mag_Rimms_Speakers_left_seat
+    100246: Mag_Rimms_Speakers_pCube14
+    100248: Mag_Rimms_Speakers_pCube16
+    100250: Mag_Rimms_Speakers_pCube17
+    100252: Mag_Rimms_Speakers_pCube18
+    100254: Mag_Rimms_Speakers_pCube22
+    100256: Mag_Rimms_Speakers_pCube23
+    100258: Mag_Rimms_Speakers_pCube26
+    100260: Mag_Rimms_Speakers_pCube3
+    100262: Mag_Rimms_Speakers_pCube36
+    100264: Mag_Rimms_Speakers_pCube43
+    100266: Mag_Rimms_Speakers_pCube51
+    100268: Mag_Rimms_Speakers_pCylinder29
+    100270: Mag_Rimms_Speakers_pCylinder7
+    100272: Mag_Rimms_Speakers_polySurface322
+    100274: Mag_Rimms_Speakers_polySurface323
+    100276: Mag_Rimms_Speakers_seat1
+    100278: Mag_Rimms_Speakers_seat2
+    100280: Mag_Rimms_Suspension_Kit_pCube16
+    100282: Mag_Rimms_Suspension_Kit_pCube36
+    100284: main_chassis_frame
+    100286: mirror
+    100288: mirror_support
+    100290: pCube14
+    100292: pCube148
+    100294: pCube149
+    100296: pCube154
+    100298: pCube155
+    100300: pCube156
+    100302: pCube16
+    100304: pCube168
+    100306: pCube169
+    100308: pCube17
+    100310: pCube18
+    100312: pCube19
+    100314: pCube22
+    100316: pCube23
+    100318: pCube24
+    100320: pCube25
+    100322: pCube26
+    100324: pCube28
+    100326: pCube3
+    100328: pCube36
+    100330: pCube4
+    100332: pCube43
+    100334: pCube51
+    100336: pCylinder29
+    100338: pCylinder7
+    100340: pedals1
+    100342: polySurface2
+    100344: polySurface283
+    100346: polySurface284
+    100348: polySurface322
+    100350: polySurface323
+    100352: polySurface54
+    100354: propshaft
+    100356: rear_bumper
+    100358: rear_door_lock
+    100360: rear_left_break_light
+    100362: rear_left_disk
+    100364: rear_left_disk1
+    100366: rear_left_rimm
+    100368: rear_left_tyre
+    100370: rear_light_support
+    100372: rear_number_plate
+    100374: rear_right_break_light
+    100376: rear_right_rimm
+    100378: rear_right_tyre
+    100380: rear_seat
+    100382: rear_seat_bottom
+    100384: rear_seat_clamps
+    100386: rear_seat_left_top
+    100388: rear_seat_right_top
+    100390: rear_shocks
+    100392: right_airvent
+    100394: right_door
+    100396: right_door_handle
+    100398: right_door_inner_handle
+    100400: right_door_lever
+    100402: right_door_lever_suppoer
+    100404: right_door_lock
+    100406: right_door_mirror
+    100408: right_door_window_winder
+    100410: right_rear_seat_top
+    100412: right_seat
+    100414: right_seat_head_rest
+    100416: right_seat_top
+    100418: right_sunguard
+    100420: right_sunguard_support
+    100422: roof_interior
+    100424: roof_light
+    100426: roof_light_cover
+    100428: roof_light_switch
+    100430: roof_mirror_support
+    100432: saftey_belt_release
+    100434: saftey_belts
+    100436: seat1
+    100438: seat2
+    100440: Seat_pCube16
+    100442: Seat_pCube17
+    100444: Seat_pCube18
+    100446: Seat_pCube22
+    100448: Seat_pCube23
+    100450: Seat_pCube26
+    100452: Seat_pCube3
+    100454: Seat_pCube36
+    100456: Seat_pCube43
+    100458: Seat_pCube51
+    100460: Seat_polySurface322
+    100462: Seat_polySurface323
+    100464: seat_support
+    100466: Security_Building_left_seat
+    100468: Security_Building_pCube14
+    100470: Security_Building_pCube16
+    100472: Security_Building_pCube17
+    100474: Security_Building_pCube18
+    100476: Security_Building_pCube19
+    100478: Security_Building_pCube22
+    100480: Security_Building_pCube23
+    100482: Security_Building_pCube24
+    100484: Security_Building_pCube25
+    100486: Security_Building_pCube26
+    100488: Security_Building_pCube28
+    100490: Security_Building_pCube3
+    100492: Security_Building_pCube36
+    100494: Security_Building_pCube4
+    100496: Security_Building_pCube43
+    100498: Security_Building_pCube51
+    100500: Security_Building_pCylinder29
+    100502: Security_Building_pCylinder7
+    100504: Security_Building_polySurface2
+    100506: Security_Building_polySurface283
+    100508: Security_Building_polySurface284
+    100510: Security_Building_polySurface322
+    100512: Security_Building_polySurface323
+    100514: Security_Building_seat1
+    100516: Security_Building_seat2
+    100518: Security_Building_Seat_pCube16
+    100520: Security_Building_Seat_pCube17
+    100522: Security_Building_Seat_pCube18
+    100524: Security_Building_Seat_pCube22
+    100526: Security_Building_Seat_pCube23
+    100528: Security_Building_Seat_pCube26
+    100530: Security_Building_Seat_pCube3
+    100532: Security_Building_Seat_pCube36
+    100534: Security_Building_Seat_pCube43
+    100536: Security_Building_Seat_pCube51
+    100538: Security_Building_Seat_polySurface322
+    100540: Security_Building_Seat_polySurface323
+    100542: Security_Building_Smokin_Guns__detailed__pCube14
+    100544: Security_Building_Smokin_Guns__detailed__pCylinder5
+    100546: Security_Building_Smokin_Guns__detailed__pCylinder7
+    100548: Security_Building_Speakers1_left_seat
+    100550: Security_Building_Speakers1_pCube14
+    100552: Security_Building_Speakers1_pCube16
+    100554: Security_Building_Speakers1_pCube17
+    100556: Security_Building_Speakers1_pCube18
+    100558: Security_Building_Speakers1_pCube22
+    100560: Security_Building_Speakers1_pCube23
+    100562: Security_Building_Speakers1_pCube26
+    100564: Security_Building_Speakers1_pCube3
+    100566: Security_Building_Speakers1_pCube36
+    100568: Security_Building_Speakers1_pCube43
+    100570: Security_Building_Speakers1_pCube51
+    100572: Security_Building_Speakers1_pCylinder29
+    100574: Security_Building_Speakers1_pCylinder7
+    100576: Security_Building_Speakers1_polySurface322
+    100578: Security_Building_Speakers1_polySurface323
+    100580: Security_Building_Speakers1_seat1
+    100582: Security_Building_Speakers1_seat2
+    100584: Security_Building_Suspension_Kit_pCube16
+    100586: Security_Building_Suspension_Kit_pCube36
+    100588: side_skirts
+    100590: small_building_double_left_seat
+    100592: small_building_double_pCube14
+    100594: small_building_double_pCube16
+    100596: small_building_double_pCube17
+    100598: small_building_double_pCube18
+    100600: small_building_double_pCube19
+    100602: small_building_double_pCube22
+    100604: small_building_double_pCube23
+    100606: small_building_double_pCube24
+    100608: small_building_double_pCube25
+    100610: small_building_double_pCube26
+    100612: small_building_double_pCube28
+    100614: small_building_double_pCube3
+    100616: small_building_double_pCube36
+    100618: small_building_double_pCube4
+    100620: small_building_double_pCube51
+    100622: small_building_double_pCylinder29
+    100624: small_building_double_pCylinder7
+    100626: small_building_double_polySurface2
+    100628: small_building_double_polySurface283
+    100630: small_building_double_polySurface284
+    100632: small_building_double_polySurface322
+    100634: small_building_double_polySurface323
+    100636: small_building_double_seat1
+    100638: small_building_double_seat2
+    100640: small_building_double_Seat_pCube16
+    100642: small_building_double_Seat_pCube17
+    100644: small_building_double_Seat_pCube18
+    100646: small_building_double_Seat_pCube22
+    100648: small_building_double_Seat_pCube23
+    100650: small_building_double_Seat_pCube26
+    100652: small_building_double_Seat_pCube3
+    100654: small_building_double_Seat_pCube36
+    100656: small_building_double_Seat_pCube43
+    100658: small_building_double_Seat_pCube51
+    100660: small_building_double_Seat_polySurface322
+    100662: small_building_double_Seat_polySurface323
+    100664: small_building_double_Smokin_Guns__detailed__pCube14
+    100666: small_building_double_Smokin_Guns__detailed__pCylinder5
+    100668: small_building_double_Smokin_Guns__detailed__pCylinder7
+    100670: small_building_double_Speakers1_left_seat
+    100672: small_building_double_Speakers1_pCube14
+    100674: small_building_double_Speakers1_pCube16
+    100676: small_building_double_Speakers1_pCube17
+    100678: small_building_double_Speakers1_pCube18
+    100680: small_building_double_Speakers1_pCube22
+    100682: small_building_double_Speakers1_pCube23
+    100684: small_building_double_Speakers1_pCube26
+    100686: small_building_double_Speakers1_pCube3
+    100688: small_building_double_Speakers1_pCube36
+    100690: small_building_double_Speakers1_pCube43
+    100692: small_building_double_Speakers1_pCube51
+    100694: small_building_double_Speakers1_pCylinder29
+    100696: small_building_double_Speakers1_pCylinder7
+    100698: small_building_double_Speakers1_polySurface322
+    100700: small_building_double_Speakers1_polySurface323
+    100702: small_building_double_Speakers1_seat1
+    100704: small_building_double_Speakers1_seat2
+    100706: small_building_double_Suspension_Kit_pCube16
+    100708: small_building_double_Suspension_Kit_pCube36
+    100710: Smokin_Guns__detailed__pCube14
+    100712: Smokin_Guns__detailed__pCylinder5
+    100714: Smokin_Guns__detailed__pCylinder7
+    100716: Speakers1_left_seat
+    100718: Speakers1_pCube14
+    100720: Speakers1_pCube16
+    100722: Speakers1_pCube17
+    100724: Speakers1_pCube18
+    100726: Speakers1_pCube22
+    100728: Speakers1_pCube23
+    100730: Speakers1_pCube26
+    100732: Speakers1_pCube3
+    100734: Speakers1_pCube36
+    100736: Speakers1_pCube43
+    100738: Speakers1_pCube51
+    100740: Speakers1_pCylinder29
+    100742: Speakers1_pCylinder7
+    100744: Speakers1_polySurface322
+    100746: Speakers1_polySurface323
+    100748: Speakers1_seat1
+    100750: Speakers1_seat2
+    100752: Speakers_left_seat
+    100754: Speakers_left_seat1
+    100756: Speakers_pCube14
+    100758: Speakers_pCube16
+    100760: Speakers_pCube17
+    100762: Speakers_pCube18
+    100764: Speakers_pCube22
+    100766: Speakers_pCube23
+    100768: Speakers_pCube26
+    100770: Speakers_pCube3
+    100772: Speakers_pCube36
+    100774: Speakers_pCube43
+    100776: Speakers_pCube51
+    100778: Speakers_pCube52
+    100780: Speakers_pCube53
+    100782: Speakers_pCube54
+    100784: Speakers_pCube55
+    100786: Speakers_pCube56
+    100788: Speakers_pCube57
+    100790: Speakers_pCube58
+    100792: Speakers_pCube59
+    100794: Speakers_pCube60
+    100796: Speakers_pCube61
+    100798: Speakers_pCube62
+    100800: Speakers_pCylinder29
+    100802: Speakers_pCylinder30
+    100804: Speakers_pCylinder31
+    100806: Speakers_pCylinder7
+    100808: Speakers_polySurface322
+    100810: Speakers_polySurface323
+    100812: Speakers_polySurface324
+    100814: Speakers_polySurface325
+    100816: Speakers_seat1
+    100818: Speakers_seat2
+    100820: Speakers_seat3
+    100822: Speakers_seat4
+    100824: steering_column
+    100826: stock_steering
+    100828: strokeBirchBlowingLight1
+    100830: strokeBirchMedium1
+    100832: strokeBirchSimple1
+    100834: strokePalm1
+    100836: strokePineTextured1
+    100838: strokeTreeLeafy1
+    100840: Suspension_Kit_pCube16
+    100842: Suspension_Kit_pCube36
+    100844: transform114
+    100846: transform114 1
+    100848: transform114 2
+    100850: transform114 3
+    100852: transform115
+    100854: transform115 1
+    100856: transform115 2
+    100858: transform115 3
+    100860: transform123
+    100862: transform123 1
+    100864: transform123 2
+    100866: transform123 3
+    100868: transform125
+    100870: transform125 1
+    100872: transform125 2
+    100874: transform125 3
+    100876: transform147
+    100878: transform147 1
+    100880: transform147 2
+    100882: transform147 3
+    100884: transform177
+    100886: transform177 1
+    100888: transform177 10
+    100890: transform177 11
+    100892: transform177 12
+    100894: transform177 13
+    100896: transform177 14
+    100898: transform177 2
+    100900: transform177 3
+    100902: transform177 4
+    100904: transform177 5
+    100906: transform177 6
+    100908: transform177 7
+    100910: transform177 8
+    100912: transform177 9
+    100914: transform190
+    100916: transform190 1
+    100918: transform190 10
+    100920: transform190 11
+    100922: transform190 12
+    100924: transform190 13
+    100926: transform190 14
+    100928: transform190 2
+    100930: transform190 3
+    100932: transform190 4
+    100934: transform190 5
+    100936: transform190 6
+    100938: transform190 7
+    100940: transform190 8
+    100942: transform190 9
+    100944: transform191
+    100946: transform191 1
+    100948: transform191 10
+    100950: transform191 11
+    100952: transform191 12
+    100954: transform191 13
+    100956: transform191 14
+    100958: transform191 2
+    100960: transform191 3
+    100962: transform191 4
+    100964: transform191 5
+    100966: transform191 6
+    100968: transform191 7
+    100970: transform191 8
+    100972: transform191 9
+    100974: transform192
+    100976: transform192 1
+    100978: transform192 10
+    100980: transform192 11
+    100982: transform192 12
+    100984: transform192 13
+    100986: transform192 14
+    100988: transform192 2
+    100990: transform192 3
+    100992: transform192 4
+    100994: transform192 5
+    100996: transform192 6
+    100998: transform192 7
+    101000: transform192 8
+    101002: transform192 9
+    101004: transform201
+    101006: transform201 1
+    101008: transform201 10
+    101010: transform201 11
+    101012: transform201 12
+    101014: transform201 13
+    101016: transform201 14
+    101018: transform201 2
+    101020: transform201 3
+    101022: transform201 4
+    101024: transform201 5
+    101026: transform201 6
+    101028: transform201 7
+    101030: transform201 8
+    101032: transform201 9
+    101034: transform205
+    101036: transform205 1
+    101038: transform205 10
+    101040: transform205 11
+    101042: transform205 12
+    101044: transform205 13
+    101046: transform205 14
+    101048: transform205 2
+    101050: transform205 3
+    101052: transform205 4
+    101054: transform205 5
+    101056: transform205 6
+    101058: transform205 7
+    101060: transform205 8
+    101062: transform205 9
+    101064: transform208
+    101066: transform208 1
+    101068: transform208 2
+    101070: transform208 3
+    101072: transform209
+    101074: transform209 1
+    101076: transform209 2
+    101078: transform209 3
+    101080: transform259
+    101082: transform259 1
+    101084: transform259 10
+    101086: transform259 11
+    101088: transform259 12
+    101090: transform259 13
+    101092: transform259 14
+    101094: transform259 2
+    101096: transform259 3
+    101098: transform259 4
+    101100: transform259 5
+    101102: transform259 6
+    101104: transform259 7
+    101106: transform259 8
+    101108: transform259 9
+    101110: transform289
+    101112: transform289 1
+    101114: transform289 10
+    101116: transform289 11
+    101118: transform289 12
+    101120: transform289 13
+    101122: transform289 14
+    101124: transform289 2
+    101126: transform289 3
+    101128: transform289 4
+    101130: transform289 5
+    101132: transform289 6
+    101134: transform289 7
+    101136: transform289 8
+    101138: transform289 9
+    101140: transform303
+    101142: transform303 1
+    101144: transform303 10
+    101146: transform303 11
+    101148: transform303 12
+    101150: transform303 13
+    101152: transform303 14
+    101154: transform303 2
+    101156: transform303 3
+    101158: transform303 4
+    101160: transform303 5
+    101162: transform303 6
+    101164: transform303 7
+    101166: transform303 8
+    101168: transform303 9
+    101170: transform304
+    101172: transform304 1
+    101174: transform304 10
+    101176: transform304 11
+    101178: transform304 12
+    101180: transform304 13
+    101182: transform304 14
+    101184: transform304 2
+    101186: transform304 3
+    101188: transform304 4
+    101190: transform304 5
+    101192: transform304 6
+    101194: transform304 7
+    101196: transform304 8
+    101198: transform304 9
+    101200: transform323
+    101202: transform323 1
+    101204: transform323 10
+    101206: transform323 11
+    101208: transform323 12
+    101210: transform323 13
+    101212: transform323 14
+    101214: transform323 2
+    101216: transform323 3
+    101218: transform323 4
+    101220: transform323 5
+    101222: transform323 6
+    101224: transform323 7
+    101226: transform323 8
+    101228: transform323 9
+    101230: transform325
+    101232: transform325 1
+    101234: transform325 10
+    101236: transform325 11
+    101238: transform325 12
+    101240: transform325 13
+    101242: transform325 14
+    101244: transform325 2
+    101246: transform325 3
+    101248: transform325 4
+    101250: transform325 5
+    101252: transform325 6
+    101254: transform325 7
+    101256: transform325 8
+    101258: transform325 9
+    101260: transform34
+    101262: transform34 1
+    101264: transform34 2
+    101266: transform34 3
+    101268: transform378
+    101270: transform378 1
+    101272: transform378 2
+    101274: transform378 3
+    101276: transform413
+    101278: transform413 1
+    101280: transform413 10
+    101282: transform413 2
+    101284: transform413 3
+    101286: transform413 4
+    101288: transform413 5
+    101290: transform413 6
+    101292: transform413 7
+    101294: transform413 8
+    101296: transform413 9
+    101298: transform63
+    101300: transform63 1
+    101302: transform63 2
+    101304: transform63 3
+    101306: transform66
+    101308: transform66 1
+    101310: transform66 2
+    101312: transform66 3
+    101314: transform80
+    101316: transform80 1
+    101318: transform80 10
+    101320: transform80 11
+    101322: transform80 12
+    101324: transform80 13
+    101326: transform80 14
+    101328: transform80 2
+    101330: transform80 3
+    101332: transform80 4
+    101334: transform80 5
+    101336: transform80 6
+    101338: transform80 7
+    101340: transform80 8
+    101342: transform80 9
+    101344: windows
+    101346: wiper_lever
+    400000: //RootNode
+    400002: ash_tray
+    400004: body
+    400006: chassis1
+    400008: Chev_Hatch_1976
+    400010: dashboard
+    400012: diff
+    400014: door_mirror_support
+    400016: doors
+    400018: engine_mountings
+    400020: exhaust
+    400022: extras
+    400024: front_bumper
+    400026: front_grill1
+    400028: front_left_disk
+    400030: front_left_disk1
+    400032: front_left_disk_brake
+    400034: front_left_disk_brake1
+    400036: front_left_headlight
+    400038: front_left_headlight_cover
+    400040: front_left_indicator
+    400042: front_left_rimm
+    400044: front_left_tyre
+    400046: front_left_wheel_support
+    400048: front_left_wheel_support1
+    400050: front_numberplate
+    400052: front_right_headlight
+    400054: front_right_headlight_cover
+    400056: front_right_indicator
+    400058: front_right_rimm
+    400060: front_right_tyre
+    400062: front_shocks
+    400064: fuel_cap
+    400066: fuel_cap_cover
+    400068: fuel_tank
+    400070: gear_stick
+    400072: glove_compartment
+    400074: glove_compartment_handle
+    400076: hand_brake
+    400078: hood_closed
+    400080: hood_open
+    400082: indicator_lever
+    400084: interior
+    400086: interior 1
+    400088: interior 2
+    400090: left_airvent
+    400092: left_door
+    400094: left_door_handle
+    400096: left_door_inner_handle
+    400098: left_door_lever
+    400100: left_door_lever_support
+    400102: left_door_lock
+    400104: left_door_window_winder
+    400106: left_rear_seat_top
+    400108: left_seat
+    400110: left_seat 1
+    400112: left_seat_head_rest
+    400114: left_seat_top
+    400116: left_sunguard
+    400118: left_sunguard_support
+    400120: levers
+    400122: light_switch
+    400124: Mag_Rimms_left_seat
+    400126: Mag_Rimms_Mag_Rimms_pCube43
+    400128: Mag_Rimms_pCube14
+    400130: Mag_Rimms_pCube16
+    400132: Mag_Rimms_pCube17
+    400134: Mag_Rimms_pCube18
+    400136: Mag_Rimms_pCube19
+    400138: Mag_Rimms_pCube22
+    400140: Mag_Rimms_pCube23
+    400142: Mag_Rimms_pCube24
+    400144: Mag_Rimms_pCube25
+    400146: Mag_Rimms_pCube26
+    400148: Mag_Rimms_pCube28
+    400150: Mag_Rimms_pCube3
+    400152: Mag_Rimms_pCube36
+    400154: Mag_Rimms_pCube4
+    400156: Mag_Rimms_pCube43
+    400158: Mag_Rimms_pCube51
+    400160: Mag_Rimms_pCylinder29
+    400162: Mag_Rimms_pCylinder7
+    400164: Mag_Rimms_polySurface2
+    400166: Mag_Rimms_polySurface283
+    400168: Mag_Rimms_polySurface284
+    400170: Mag_Rimms_polySurface322
+    400172: Mag_Rimms_polySurface323
+    400174: Mag_Rimms_seat1
+    400176: Mag_Rimms_seat2
+    400178: Mag_Rimms_Seat_pCube16
+    400180: Mag_Rimms_Seat_pCube17
+    400182: Mag_Rimms_Seat_pCube18
+    400184: Mag_Rimms_Seat_pCube22
+    400186: Mag_Rimms_Seat_pCube23
+    400188: Mag_Rimms_Seat_pCube26
+    400190: Mag_Rimms_Seat_pCube3
+    400192: Mag_Rimms_Seat_pCube36
+    400194: Mag_Rimms_Seat_pCube43
+    400196: Mag_Rimms_Seat_pCube51
+    400198: Mag_Rimms_Seat_polySurface322
+    400200: Mag_Rimms_Seat_polySurface323
+    400202: Mag_Rimms_Smokin_Guns__detailed__pCube14
+    400204: Mag_Rimms_Smokin_Guns__detailed__pCylinder5
+    400206: Mag_Rimms_Smokin_Guns__detailed__pCylinder7
+    400208: Mag_Rimms_Speakers1_left_seat
+    400210: Mag_Rimms_Speakers1_pCube14
+    400212: Mag_Rimms_Speakers1_pCube16
+    400214: Mag_Rimms_Speakers1_pCube17
+    400216: Mag_Rimms_Speakers1_pCube18
+    400218: Mag_Rimms_Speakers1_pCube22
+    400220: Mag_Rimms_Speakers1_pCube23
+    400222: Mag_Rimms_Speakers1_pCube26
+    400224: Mag_Rimms_Speakers1_pCube3
+    400226: Mag_Rimms_Speakers1_pCube36
+    400228: Mag_Rimms_Speakers1_pCube43
+    400230: Mag_Rimms_Speakers1_pCube51
+    400232: Mag_Rimms_Speakers1_pCylinder29
+    400234: Mag_Rimms_Speakers1_pCylinder7
+    400236: Mag_Rimms_Speakers1_polySurface322
+    400238: Mag_Rimms_Speakers1_polySurface323
+    400240: Mag_Rimms_Speakers1_seat1
+    400242: Mag_Rimms_Speakers1_seat2
+    400244: Mag_Rimms_Speakers_left_seat
+    400246: Mag_Rimms_Speakers_pCube14
+    400248: Mag_Rimms_Speakers_pCube16
+    400250: Mag_Rimms_Speakers_pCube17
+    400252: Mag_Rimms_Speakers_pCube18
+    400254: Mag_Rimms_Speakers_pCube22
+    400256: Mag_Rimms_Speakers_pCube23
+    400258: Mag_Rimms_Speakers_pCube26
+    400260: Mag_Rimms_Speakers_pCube3
+    400262: Mag_Rimms_Speakers_pCube36
+    400264: Mag_Rimms_Speakers_pCube43
+    400266: Mag_Rimms_Speakers_pCube51
+    400268: Mag_Rimms_Speakers_pCylinder29
+    400270: Mag_Rimms_Speakers_pCylinder7
+    400272: Mag_Rimms_Speakers_polySurface322
+    400274: Mag_Rimms_Speakers_polySurface323
+    400276: Mag_Rimms_Speakers_seat1
+    400278: Mag_Rimms_Speakers_seat2
+    400280: Mag_Rimms_Suspension_Kit_pCube16
+    400282: Mag_Rimms_Suspension_Kit_pCube36
+    400284: main_chassis_frame
+    400286: mirror
+    400288: mirror_support
+    400290: pCube14
+    400292: pCube148
+    400294: pCube149
+    400296: pCube154
+    400298: pCube155
+    400300: pCube156
+    400302: pCube16
+    400304: pCube168
+    400306: pCube169
+    400308: pCube17
+    400310: pCube18
+    400312: pCube19
+    400314: pCube22
+    400316: pCube23
+    400318: pCube24
+    400320: pCube25
+    400322: pCube26
+    400324: pCube28
+    400326: pCube3
+    400328: pCube36
+    400330: pCube4
+    400332: pCube43
+    400334: pCube51
+    400336: pCylinder29
+    400338: pCylinder7
+    400340: pedals1
+    400342: polySurface2
+    400344: polySurface283
+    400346: polySurface284
+    400348: polySurface322
+    400350: polySurface323
+    400352: polySurface54
+    400354: propshaft
+    400356: rear_bumper
+    400358: rear_door_lock
+    400360: rear_left_break_light
+    400362: rear_left_disk
+    400364: rear_left_disk1
+    400366: rear_left_rimm
+    400368: rear_left_tyre
+    400370: rear_light_support
+    400372: rear_number_plate
+    400374: rear_right_break_light
+    400376: rear_right_rimm
+    400378: rear_right_tyre
+    400380: rear_seat
+    400382: rear_seat_bottom
+    400384: rear_seat_clamps
+    400386: rear_seat_left_top
+    400388: rear_seat_right_top
+    400390: rear_shocks
+    400392: right_airvent
+    400394: right_door
+    400396: right_door_handle
+    400398: right_door_inner_handle
+    400400: right_door_lever
+    400402: right_door_lever_suppoer
+    400404: right_door_lock
+    400406: right_door_mirror
+    400408: right_door_window_winder
+    400410: right_rear_seat_top
+    400412: right_seat
+    400414: right_seat_head_rest
+    400416: right_seat_top
+    400418: right_sunguard
+    400420: right_sunguard_support
+    400422: roof_interior
+    400424: roof_light
+    400426: roof_light_cover
+    400428: roof_light_switch
+    400430: roof_mirror_support
+    400432: saftey_belt_release
+    400434: saftey_belts
+    400436: seat1
+    400438: seat2
+    400440: Seat_pCube16
+    400442: Seat_pCube17
+    400444: Seat_pCube18
+    400446: Seat_pCube22
+    400448: Seat_pCube23
+    400450: Seat_pCube26
+    400452: Seat_pCube3
+    400454: Seat_pCube36
+    400456: Seat_pCube43
+    400458: Seat_pCube51
+    400460: Seat_polySurface322
+    400462: Seat_polySurface323
+    400464: seat_support
+    400466: Security_Building_left_seat
+    400468: Security_Building_pCube14
+    400470: Security_Building_pCube16
+    400472: Security_Building_pCube17
+    400474: Security_Building_pCube18
+    400476: Security_Building_pCube19
+    400478: Security_Building_pCube22
+    400480: Security_Building_pCube23
+    400482: Security_Building_pCube24
+    400484: Security_Building_pCube25
+    400486: Security_Building_pCube26
+    400488: Security_Building_pCube28
+    400490: Security_Building_pCube3
+    400492: Security_Building_pCube36
+    400494: Security_Building_pCube4
+    400496: Security_Building_pCube43
+    400498: Security_Building_pCube51
+    400500: Security_Building_pCylinder29
+    400502: Security_Building_pCylinder7
+    400504: Security_Building_polySurface2
+    400506: Security_Building_polySurface283
+    400508: Security_Building_polySurface284
+    400510: Security_Building_polySurface322
+    400512: Security_Building_polySurface323
+    400514: Security_Building_seat1
+    400516: Security_Building_seat2
+    400518: Security_Building_Seat_pCube16
+    400520: Security_Building_Seat_pCube17
+    400522: Security_Building_Seat_pCube18
+    400524: Security_Building_Seat_pCube22
+    400526: Security_Building_Seat_pCube23
+    400528: Security_Building_Seat_pCube26
+    400530: Security_Building_Seat_pCube3
+    400532: Security_Building_Seat_pCube36
+    400534: Security_Building_Seat_pCube43
+    400536: Security_Building_Seat_pCube51
+    400538: Security_Building_Seat_polySurface322
+    400540: Security_Building_Seat_polySurface323
+    400542: Security_Building_Smokin_Guns__detailed__pCube14
+    400544: Security_Building_Smokin_Guns__detailed__pCylinder5
+    400546: Security_Building_Smokin_Guns__detailed__pCylinder7
+    400548: Security_Building_Speakers1_left_seat
+    400550: Security_Building_Speakers1_pCube14
+    400552: Security_Building_Speakers1_pCube16
+    400554: Security_Building_Speakers1_pCube17
+    400556: Security_Building_Speakers1_pCube18
+    400558: Security_Building_Speakers1_pCube22
+    400560: Security_Building_Speakers1_pCube23
+    400562: Security_Building_Speakers1_pCube26
+    400564: Security_Building_Speakers1_pCube3
+    400566: Security_Building_Speakers1_pCube36
+    400568: Security_Building_Speakers1_pCube43
+    400570: Security_Building_Speakers1_pCube51
+    400572: Security_Building_Speakers1_pCylinder29
+    400574: Security_Building_Speakers1_pCylinder7
+    400576: Security_Building_Speakers1_polySurface322
+    400578: Security_Building_Speakers1_polySurface323
+    400580: Security_Building_Speakers1_seat1
+    400582: Security_Building_Speakers1_seat2
+    400584: Security_Building_Suspension_Kit_pCube16
+    400586: Security_Building_Suspension_Kit_pCube36
+    400588: side_skirts
+    400590: small_building_double_left_seat
+    400592: small_building_double_pCube14
+    400594: small_building_double_pCube16
+    400596: small_building_double_pCube17
+    400598: small_building_double_pCube18
+    400600: small_building_double_pCube19
+    400602: small_building_double_pCube22
+    400604: small_building_double_pCube23
+    400606: small_building_double_pCube24
+    400608: small_building_double_pCube25
+    400610: small_building_double_pCube26
+    400612: small_building_double_pCube28
+    400614: small_building_double_pCube3
+    400616: small_building_double_pCube36
+    400618: small_building_double_pCube4
+    400620: small_building_double_pCube51
+    400622: small_building_double_pCylinder29
+    400624: small_building_double_pCylinder7
+    400626: small_building_double_polySurface2
+    400628: small_building_double_polySurface283
+    400630: small_building_double_polySurface284
+    400632: small_building_double_polySurface322
+    400634: small_building_double_polySurface323
+    400636: small_building_double_seat1
+    400638: small_building_double_seat2
+    400640: small_building_double_Seat_pCube16
+    400642: small_building_double_Seat_pCube17
+    400644: small_building_double_Seat_pCube18
+    400646: small_building_double_Seat_pCube22
+    400648: small_building_double_Seat_pCube23
+    400650: small_building_double_Seat_pCube26
+    400652: small_building_double_Seat_pCube3
+    400654: small_building_double_Seat_pCube36
+    400656: small_building_double_Seat_pCube43
+    400658: small_building_double_Seat_pCube51
+    400660: small_building_double_Seat_polySurface322
+    400662: small_building_double_Seat_polySurface323
+    400664: small_building_double_Smokin_Guns__detailed__pCube14
+    400666: small_building_double_Smokin_Guns__detailed__pCylinder5
+    400668: small_building_double_Smokin_Guns__detailed__pCylinder7
+    400670: small_building_double_Speakers1_left_seat
+    400672: small_building_double_Speakers1_pCube14
+    400674: small_building_double_Speakers1_pCube16
+    400676: small_building_double_Speakers1_pCube17
+    400678: small_building_double_Speakers1_pCube18
+    400680: small_building_double_Speakers1_pCube22
+    400682: small_building_double_Speakers1_pCube23
+    400684: small_building_double_Speakers1_pCube26
+    400686: small_building_double_Speakers1_pCube3
+    400688: small_building_double_Speakers1_pCube36
+    400690: small_building_double_Speakers1_pCube43
+    400692: small_building_double_Speakers1_pCube51
+    400694: small_building_double_Speakers1_pCylinder29
+    400696: small_building_double_Speakers1_pCylinder7
+    400698: small_building_double_Speakers1_polySurface322
+    400700: small_building_double_Speakers1_polySurface323
+    400702: small_building_double_Speakers1_seat1
+    400704: small_building_double_Speakers1_seat2
+    400706: small_building_double_Suspension_Kit_pCube16
+    400708: small_building_double_Suspension_Kit_pCube36
+    400710: Smokin_Guns__detailed__pCube14
+    400712: Smokin_Guns__detailed__pCylinder5
+    400714: Smokin_Guns__detailed__pCylinder7
+    400716: Speakers1_left_seat
+    400718: Speakers1_pCube14
+    400720: Speakers1_pCube16
+    400722: Speakers1_pCube17
+    400724: Speakers1_pCube18
+    400726: Speakers1_pCube22
+    400728: Speakers1_pCube23
+    400730: Speakers1_pCube26
+    400732: Speakers1_pCube3
+    400734: Speakers1_pCube36
+    400736: Speakers1_pCube43
+    400738: Speakers1_pCube51
+    400740: Speakers1_pCylinder29
+    400742: Speakers1_pCylinder7
+    400744: Speakers1_polySurface322
+    400746: Speakers1_polySurface323
+    400748: Speakers1_seat1
+    400750: Speakers1_seat2
+    400752: Speakers_left_seat
+    400754: Speakers_left_seat1
+    400756: Speakers_pCube14
+    400758: Speakers_pCube16
+    400760: Speakers_pCube17
+    400762: Speakers_pCube18
+    400764: Speakers_pCube22
+    400766: Speakers_pCube23
+    400768: Speakers_pCube26
+    400770: Speakers_pCube3
+    400772: Speakers_pCube36
+    400774: Speakers_pCube43
+    400776: Speakers_pCube51
+    400778: Speakers_pCube52
+    400780: Speakers_pCube53
+    400782: Speakers_pCube54
+    400784: Speakers_pCube55
+    400786: Speakers_pCube56
+    400788: Speakers_pCube57
+    400790: Speakers_pCube58
+    400792: Speakers_pCube59
+    400794: Speakers_pCube60
+    400796: Speakers_pCube61
+    400798: Speakers_pCube62
+    400800: Speakers_pCylinder29
+    400802: Speakers_pCylinder30
+    400804: Speakers_pCylinder31
+    400806: Speakers_pCylinder7
+    400808: Speakers_polySurface322
+    400810: Speakers_polySurface323
+    400812: Speakers_polySurface324
+    400814: Speakers_polySurface325
+    400816: Speakers_seat1
+    400818: Speakers_seat2
+    400820: Speakers_seat3
+    400822: Speakers_seat4
+    400824: steering_column
+    400826: stock_steering
+    400828: strokeBirchBlowingLight1
+    400830: strokeBirchMedium1
+    400832: strokeBirchSimple1
+    400834: strokePalm1
+    400836: strokePineTextured1
+    400838: strokeTreeLeafy1
+    400840: Suspension_Kit_pCube16
+    400842: Suspension_Kit_pCube36
+    400844: transform114
+    400846: transform114 1
+    400848: transform114 2
+    400850: transform114 3
+    400852: transform115
+    400854: transform115 1
+    400856: transform115 2
+    400858: transform115 3
+    400860: transform123
+    400862: transform123 1
+    400864: transform123 2
+    400866: transform123 3
+    400868: transform125
+    400870: transform125 1
+    400872: transform125 2
+    400874: transform125 3
+    400876: transform147
+    400878: transform147 1
+    400880: transform147 2
+    400882: transform147 3
+    400884: transform177
+    400886: transform177 1
+    400888: transform177 10
+    400890: transform177 11
+    400892: transform177 12
+    400894: transform177 13
+    400896: transform177 14
+    400898: transform177 2
+    400900: transform177 3
+    400902: transform177 4
+    400904: transform177 5
+    400906: transform177 6
+    400908: transform177 7
+    400910: transform177 8
+    400912: transform177 9
+    400914: transform190
+    400916: transform190 1
+    400918: transform190 10
+    400920: transform190 11
+    400922: transform190 12
+    400924: transform190 13
+    400926: transform190 14
+    400928: transform190 2
+    400930: transform190 3
+    400932: transform190 4
+    400934: transform190 5
+    400936: transform190 6
+    400938: transform190 7
+    400940: transform190 8
+    400942: transform190 9
+    400944: transform191
+    400946: transform191 1
+    400948: transform191 10
+    400950: transform191 11
+    400952: transform191 12
+    400954: transform191 13
+    400956: transform191 14
+    400958: transform191 2
+    400960: transform191 3
+    400962: transform191 4
+    400964: transform191 5
+    400966: transform191 6
+    400968: transform191 7
+    400970: transform191 8
+    400972: transform191 9
+    400974: transform192
+    400976: transform192 1
+    400978: transform192 10
+    400980: transform192 11
+    400982: transform192 12
+    400984: transform192 13
+    400986: transform192 14
+    400988: transform192 2
+    400990: transform192 3
+    400992: transform192 4
+    400994: transform192 5
+    400996: transform192 6
+    400998: transform192 7
+    401000: transform192 8
+    401002: transform192 9
+    401004: transform201
+    401006: transform201 1
+    401008: transform201 10
+    401010: transform201 11
+    401012: transform201 12
+    401014: transform201 13
+    401016: transform201 14
+    401018: transform201 2
+    401020: transform201 3
+    401022: transform201 4
+    401024: transform201 5
+    401026: transform201 6
+    401028: transform201 7
+    401030: transform201 8
+    401032: transform201 9
+    401034: transform205
+    401036: transform205 1
+    401038: transform205 10
+    401040: transform205 11
+    401042: transform205 12
+    401044: transform205 13
+    401046: transform205 14
+    401048: transform205 2
+    401050: transform205 3
+    401052: transform205 4
+    401054: transform205 5
+    401056: transform205 6
+    401058: transform205 7
+    401060: transform205 8
+    401062: transform205 9
+    401064: transform208
+    401066: transform208 1
+    401068: transform208 2
+    401070: transform208 3
+    401072: transform209
+    401074: transform209 1
+    401076: transform209 2
+    401078: transform209 3
+    401080: transform259
+    401082: transform259 1
+    401084: transform259 10
+    401086: transform259 11
+    401088: transform259 12
+    401090: transform259 13
+    401092: transform259 14
+    401094: transform259 2
+    401096: transform259 3
+    401098: transform259 4
+    401100: transform259 5
+    401102: transform259 6
+    401104: transform259 7
+    401106: transform259 8
+    401108: transform259 9
+    401110: transform289
+    401112: transform289 1
+    401114: transform289 10
+    401116: transform289 11
+    401118: transform289 12
+    401120: transform289 13
+    401122: transform289 14
+    401124: transform289 2
+    401126: transform289 3
+    401128: transform289 4
+    401130: transform289 5
+    401132: transform289 6
+    401134: transform289 7
+    401136: transform289 8
+    401138: transform289 9
+    401140: transform303
+    401142: transform303 1
+    401144: transform303 10
+    401146: transform303 11
+    401148: transform303 12
+    401150: transform303 13
+    401152: transform303 14
+    401154: transform303 2
+    401156: transform303 3
+    401158: transform303 4
+    401160: transform303 5
+    401162: transform303 6
+    401164: transform303 7
+    401166: transform303 8
+    401168: transform303 9
+    401170: transform304
+    401172: transform304 1
+    401174: transform304 10
+    401176: transform304 11
+    401178: transform304 12
+    401180: transform304 13
+    401182: transform304 14
+    401184: transform304 2
+    401186: transform304 3
+    401188: transform304 4
+    401190: transform304 5
+    401192: transform304 6
+    401194: transform304 7
+    401196: transform304 8
+    401198: transform304 9
+    401200: transform323
+    401202: transform323 1
+    401204: transform323 10
+    401206: transform323 11
+    401208: transform323 12
+    401210: transform323 13
+    401212: transform323 14
+    401214: transform323 2
+    401216: transform323 3
+    401218: transform323 4
+    401220: transform323 5
+    401222: transform323 6
+    401224: transform323 7
+    401226: transform323 8
+    401228: transform323 9
+    401230: transform325
+    401232: transform325 1
+    401234: transform325 10
+    401236: transform325 11
+    401238: transform325 12
+    401240: transform325 13
+    401242: transform325 14
+    401244: transform325 2
+    401246: transform325 3
+    401248: transform325 4
+    401250: transform325 5
+    401252: transform325 6
+    401254: transform325 7
+    401256: transform325 8
+    401258: transform325 9
+    401260: transform34
+    401262: transform34 1
+    401264: transform34 2
+    401266: transform34 3
+    401268: transform378
+    401270: transform378 1
+    401272: transform378 2
+    401274: transform378 3
+    401276: transform413
+    401278: transform413 1
+    401280: transform413 10
+    401282: transform413 2
+    401284: transform413 3
+    401286: transform413 4
+    401288: transform413 5
+    401290: transform413 6
+    401292: transform413 7
+    401294: transform413 8
+    401296: transform413 9
+    401298: transform63
+    401300: transform63 1
+    401302: transform63 2
+    401304: transform63 3
+    401306: transform66
+    401308: transform66 1
+    401310: transform66 2
+    401312: transform66 3
+    401314: transform80
+    401316: transform80 1
+    401318: transform80 10
+    401320: transform80 11
+    401322: transform80 12
+    401324: transform80 13
+    401326: transform80 14
+    401328: transform80 2
+    401330: transform80 3
+    401332: transform80 4
+    401334: transform80 5
+    401336: transform80 6
+    401338: transform80 7
+    401340: transform80 8
+    401342: transform80 9
+    401344: windows
+    401346: wiper_lever
+    2300000: ash_tray
+    2300002: body
+    2300004: dashboard
+    2300006: diff
+    2300008: door_mirror_support
+    2300010: engine_mountings
+    2300012: exhaust
+    2300014: front_bumper
+    2300016: front_grill1
+    2300018: front_left_disk
+    2300020: front_left_disk1
+    2300022: front_left_disk_brake
+    2300024: front_left_disk_brake1
+    2300026: front_left_headlight
+    2300028: front_left_headlight_cover
+    2300030: front_left_indicator
+    2300032: front_left_rimm
+    2300034: front_left_tyre
+    2300036: front_left_wheel_support
+    2300038: front_left_wheel_support1
+    2300040: front_numberplate
+    2300042: front_right_headlight
+    2300044: front_right_headlight_cover
+    2300046: front_right_indicator
+    2300048: front_right_rimm
+    2300050: front_right_tyre
+    2300052: front_shocks
+    2300054: fuel_cap
+    2300056: fuel_cap_cover
+    2300058: fuel_tank
+    2300060: gear_stick
+    2300062: glove_compartment
+    2300064: glove_compartment_handle
+    2300066: hand_brake
+    2300068: hood_closed
+    2300070: hood_open
+    2300072: indicator_lever
+    2300074: interior 2
+    2300076: left_airvent
+    2300078: left_door
+    2300080: left_door_handle
+    2300082: left_door_inner_handle
+    2300084: left_door_lever
+    2300086: left_door_lever_support
+    2300088: left_door_lock
+    2300090: left_door_window_winder
+    2300092: left_rear_seat_top
+    2300094: left_seat 1
+    2300096: left_seat_head_rest
+    2300098: left_seat_top
+    2300100: left_sunguard
+    2300102: left_sunguard_support
+    2300104: levers
+    2300106: light_switch
+    2300108: main_chassis_frame
+    2300110: mirror
+    2300112: mirror_support
+    2300114: pedals1
+    2300116: polySurface54
+    2300118: propshaft
+    2300120: rear_bumper
+    2300122: rear_door_lock
+    2300124: rear_left_break_light
+    2300126: rear_left_disk
+    2300128: rear_left_disk1
+    2300130: rear_left_rimm
+    2300132: rear_left_tyre
+    2300134: rear_light_support
+    2300136: rear_number_plate
+    2300138: rear_right_break_light
+    2300140: rear_right_rimm
+    2300142: rear_right_tyre
+    2300144: rear_seat
+    2300146: rear_seat_bottom
+    2300148: rear_seat_clamps
+    2300150: rear_seat_left_top
+    2300152: rear_seat_right_top
+    2300154: rear_shocks
+    2300156: right_airvent
+    2300158: right_door
+    2300160: right_door_handle
+    2300162: right_door_inner_handle
+    2300164: right_door_lever
+    2300166: right_door_lever_suppoer
+    2300168: right_door_lock
+    2300170: right_door_mirror
+    2300172: right_door_window_winder
+    2300174: right_rear_seat_top
+    2300176: right_seat
+    2300178: right_seat_head_rest
+    2300180: right_seat_top
+    2300182: right_sunguard
+    2300184: right_sunguard_support
+    2300186: roof_interior
+    2300188: roof_light
+    2300190: roof_light_cover
+    2300192: roof_light_switch
+    2300194: roof_mirror_support
+    2300196: saftey_belt_release
+    2300198: saftey_belts
+    2300200: seat_support
+    2300202: side_skirts
+    2300204: steering_column
+    2300206: stock_steering
+    2300208: windows
+    2300210: wiper_lever
+    3300000: ash_tray
+    3300002: body
+    3300004: dashboard
+    3300006: diff
+    3300008: door_mirror_support
+    3300010: engine_mountings
+    3300012: exhaust
+    3300014: front_bumper
+    3300016: front_grill1
+    3300018: front_left_disk
+    3300020: front_left_disk1
+    3300022: front_left_disk_brake
+    3300024: front_left_disk_brake1
+    3300026: front_left_headlight
+    3300028: front_left_headlight_cover
+    3300030: front_left_indicator
+    3300032: front_left_rimm
+    3300034: front_left_tyre
+    3300036: front_left_wheel_support
+    3300038: front_left_wheel_support1
+    3300040: front_numberplate
+    3300042: front_right_headlight
+    3300044: front_right_headlight_cover
+    3300046: front_right_indicator
+    3300048: front_right_rimm
+    3300050: front_right_tyre
+    3300052: front_shocks
+    3300054: fuel_cap
+    3300056: fuel_cap_cover
+    3300058: fuel_tank
+    3300060: gear_stick
+    3300062: glove_compartment
+    3300064: glove_compartment_handle
+    3300066: hand_brake
+    3300068: hood_closed
+    3300070: hood_open
+    3300072: indicator_lever
+    3300074: interior 2
+    3300076: left_airvent
+    3300078: left_door
+    3300080: left_door_handle
+    3300082: left_door_inner_handle
+    3300084: left_door_lever
+    3300086: left_door_lever_support
+    3300088: left_door_lock
+    3300090: left_door_window_winder
+    3300092: left_rear_seat_top
+    3300094: left_seat 1
+    3300096: left_seat_head_rest
+    3300098: left_seat_top
+    3300100: left_sunguard
+    3300102: left_sunguard_support
+    3300104: levers
+    3300106: light_switch
+    3300108: main_chassis_frame
+    3300110: mirror
+    3300112: mirror_support
+    3300114: pedals1
+    3300116: polySurface54
+    3300118: propshaft
+    3300120: rear_bumper
+    3300122: rear_door_lock
+    3300124: rear_left_break_light
+    3300126: rear_left_disk
+    3300128: rear_left_disk1
+    3300130: rear_left_rimm
+    3300132: rear_left_tyre
+    3300134: rear_light_support
+    3300136: rear_number_plate
+    3300138: rear_right_break_light
+    3300140: rear_right_rimm
+    3300142: rear_right_tyre
+    3300144: rear_seat
+    3300146: rear_seat_bottom
+    3300148: rear_seat_clamps
+    3300150: rear_seat_left_top
+    3300152: rear_seat_right_top
+    3300154: rear_shocks
+    3300156: right_airvent
+    3300158: right_door
+    3300160: right_door_handle
+    3300162: right_door_inner_handle
+    3300164: right_door_lever
+    3300166: right_door_lever_suppoer
+    3300168: right_door_lock
+    3300170: right_door_mirror
+    3300172: right_door_window_winder
+    3300174: right_rear_seat_top
+    3300176: right_seat
+    3300178: right_seat_head_rest
+    3300180: right_seat_top
+    3300182: right_sunguard
+    3300184: right_sunguard_support
+    3300186: roof_interior
+    3300188: roof_light
+    3300190: roof_light_cover
+    3300192: roof_light_switch
+    3300194: roof_mirror_support
+    3300196: saftey_belt_release
+    3300198: saftey_belts
+    3300200: seat_support
+    3300202: side_skirts
+    3300204: steering_column
+    3300206: stock_steering
+    3300208: windows
+    3300210: wiper_lever
+    4300000: main_chassis_frame
+    4300002: engine_mountings
+    4300004: exhaust
+    4300006: diff
+    4300008: rear_left_rimm
+    4300010: rear_left_tyre
+    4300012: rear_right_rimm
+    4300014: rear_right_tyre
+    4300016: propshaft
+    4300018: front_shocks
+    4300020: rear_shocks
+    4300022: front_left_wheel_support
+    4300024: front_left_disk
+    4300026: front_left_disk_brake
+    4300028: front_left_rimm
+    4300030: front_left_tyre
+    4300032: rear_left_disk
+    4300034: rear_left_disk1
+    4300036: front_left_wheel_support1
+    4300038: front_left_disk1
+    4300040: front_left_disk_brake1
+    4300042: front_right_rimm
+    4300044: front_right_tyre
+    4300046: body
+    4300048: interior
+    4300050: saftey_belt_release
+    4300052: hand_brake
+    4300054: gear_stick
+    4300056: pedals1
+    4300058: rear_seat
+    4300060: rear_seat_left_top
+    4300062: rear_seat_right_top
+    4300064: left_seat
+    4300066: left_seat_top
+    4300068: left_seat_head_rest
+    4300070: right_seat
+    4300072: right_seat_top
+    4300074: right_seat_head_rest
+    4300076: dashboard
+    4300078: glove_compartment
+    4300080: glove_compartment_handle
+    4300082: ash_tray
+    4300084: light_switch
+    4300086: steering_column
+    4300088: indicator_lever
+    4300090: wiper_lever
+    4300092: stock_steering
+    4300094: right_airvent
+    4300096: left_airvent
+    4300098: levers
+    4300100: seat_support
+    4300102: roof_interior
+    4300104: right_sunguard_support
+    4300106: right_sunguard
+    4300108: left_sunguard_support
+    4300110: left_sunguard
+    4300112: roof_mirror_support
+    4300114: roof_light_cover
+    4300116: roof_light
+    4300118: mirror
+    4300120: mirror_support
+    4300122: roof_light_switch
+    4300124: saftey_belts
+    4300126: windows
+    4300128: left_door
+    4300130: left_door_inner_handle
+    4300132: left_door_lever_support
+    4300134: left_door_lever
+    4300136: left_door_lock
+    4300138: left_door_handle
+    4300140: left_door_window_winder
+    4300142: right_door
+    4300144: right_door_inner_handle
+    4300146: right_door_lever_suppoer
+    4300148: right_door_lever
+    4300150: right_door_lock
+    4300152: right_door_handle
+    4300154: door_mirror_support
+    4300156: right_door_mirror
+    4300158: right_door_window_winder
+    4300160: polySurface54
+    4300162: rear_door_lock
+    4300164: fuel_tank
+    4300166: fuel_cap
+    4300168: fuel_cap_cover
+    4300170: rear_seat_clamps
+    4300172: side_skirts
+    4300174: front_bumper
+    4300176: front_grill1
+    4300178: front_left_headlight_cover
+    4300180: front_left_headlight
+    4300182: front_right_headlight_cover
+    4300184: front_right_headlight
+    4300186: front_left_indicator
+    4300188: front_right_indicator
+    4300190: front_numberplate
+    4300192: rear_bumper
+    4300194: rear_light_support
+    4300196: rear_right_break_light
+    4300198: rear_left_break_light
+    4300200: rear_number_plate
+    4300202: hood_open
+    4300204: hood_closed
+    4300206: rear_seat_bottom
+    4300208: left_rear_seat_top
+    4300210: right_rear_seat_top
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 
