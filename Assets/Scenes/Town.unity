@@ -132,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 600027771}
   m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381661, w: .875426114}
-  m_LocalPosition: {x: -15.8336258, y: -16.3701324, z: 155.891144}
+  m_LocalPosition: {x: -15.8336258, y: 19.5333099, z: 155.891144}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -149,7 +149,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -34.7068138
+      value: 1.03432083
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalPosition.z
@@ -243,7 +243,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 940410481}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.4469824, y: -35.7144165, z: 177.001892}
+  m_LocalPosition: {x: -14.4469824, y: 0, z: 177.001892}
   m_LocalScale: {x: 6.19719458, y: 6.19719458, z: 6.19719458}
   m_Children: []
   m_Father: {fileID: 0}
@@ -285,7 +285,7 @@ Transform:
   m_PrefabInternal: {fileID: 917835900}
   m_GameObject: {fileID: 1038836554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.4137917, y: -34.7068138, z: 160.360123}
+  m_LocalPosition: {x: -18.4137917, y: 1.03432083, z: 160.360123}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2070553463}
@@ -409,7 +409,17 @@ MonoBehaviour:
   Hunger2: {fileID: 2800000, guid: 992682570bd061646a475b5f278bfff2, type: 3}
   HungerEmpty: {fileID: 2800000, guid: 4dce8fc842e841e449f8bc35ab7360ae, type: 3}
   HungerFlashing: {fileID: 2800000, guid: 6a27ca4dacb20714fb4b49806896874b, type: 3}
+  Journal: {fileID: 2800000, guid: a60ee3c227ee8dd49bf25ebfb57b5b17, type: 3}
+  ArrowLeft: {fileID: 2800000, guid: 8656b77c29d17a848b25284136830c56, type: 3}
+  ArrowRight: {fileID: 2800000, guid: c767e7964e515064aa5689a53fece7d9, type: 3}
+  BMJournal: {fileID: 2800000, guid: 6577cb53a84146a4ea9e73248605e45d, type: 3}
+  BMTracker: {fileID: 2800000, guid: 7975e94beb6ee894e87732ed6c901745, type: 3}
   HungerFlash: 0
+  TrackerOpen: 0
+  TrackerPage: 1
+  QuestPage: 1
+  JournalOpen: 0
+  journalSkin: {fileID: 11400000, guid: f6aa7dc20c7ef1648889f2d61489e4e8, type: 2}
 --- !u!1 &2007602812
 GameObject:
   m_ObjectHideFlags: 0
