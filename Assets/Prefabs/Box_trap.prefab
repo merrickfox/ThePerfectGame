@@ -417,8 +417,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyGUISkin: {fileID: 11400000, guid: a2d5fa19b0126c14c917ab1607888a74, type: 2}
-  squirrel: {fileID: 2800000, guid: 625a004b368b48a47a3a07503c8fc8a0, type: 3}
-  beaver: {fileID: 2800000, guid: d1ba87aeeefb34247b170071068cbc99, type: 3}
+  squirrel: {fileID: 2800000, guid: 45ef1ace2dabf2c4b996a317ac9b4a4a, type: 3}
+  beaver: {fileID: 2800000, guid: 45ef1ace2dabf2c4b996a317ac9b4a4a, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
