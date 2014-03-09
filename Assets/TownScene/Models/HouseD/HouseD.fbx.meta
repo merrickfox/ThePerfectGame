@@ -1,0 +1,642 @@
+fileFormatVersion: 2
+guid: efe389c50d8bfa2438eee4bcc74420f5
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: roof1
+    100004: bathroom_windows_01
+    100006: bathroom_windows_02
+    100008: BIC01
+    100010: BIC02
+    100012: BIC03
+    100014: BIC04
+    100016: ceiling01
+    100018: ceiling02
+    100020: ceiling1
+    100022: door01
+    100024: door01 1
+    100026: door01 2
+    100028: door01 3
+    100030: door01 4
+    100032: door02
+    100034: door02 1
+    100036: door02 2
+    100038: door02 3
+    100040: door02 4
+    100042: door03
+    100044: door03 1
+    100046: door03 2
+    100048: door03 3
+    100050: door03 4
+    100052: door04
+    100054: door05
+    100056: door06
+    100058: door07
+    100060: door08
+    100062: door09
+    100064: door10
+    100066: door11
+    100068: door12
+    100070: door_fixed
+    100072: door_fixed 1
+    100074: door_frames
+    100076: door_slide
+    100078: door_slide 1
+    100080: doors
+    100082: fixtures
+    100084: floor01
+    100086: floor02
+    100088: floors
+    100090: frame
+    100092: frame 1
+    100094: frame 10
+    100096: frame 11
+    100098: frame 12
+    100100: frame 13
+    100102: frame 2
+    100104: frame 3
+    100106: frame 4
+    100108: frame 5
+    100110: frame 6
+    100112: frame 7
+    100114: frame 8
+    100116: frame 9
+    100118: frame01
+    100120: frame01 1
+    100122: frame02
+    100124: frame02 1
+    100126: hall_door01
+    100128: hall_door02
+    100130: inner_wall01
+    100132: inner_wall02
+    100134: inner_walls
+    100136: left_sliding_door
+    100138: left_window
+    100140: left_window 1
+    100142: left_window 2
+    100144: left_window 3
+    100146: left_window 4
+    100148: left_window 5
+    100150: left_windows
+    100152: main_floor01
+    100154: main_floor02
+    100156: middle_wall
+    100158: open_window
+    100160: open_window 1
+    100162: open_window 2
+    100164: open_window 3
+    100166: open_window 4
+    100168: open_window 5
+    100170: pipe
+    100172: pipe 1
+    100174: pipe 2
+    100176: pipe 3
+    100178: pipes
+    100180: right_sliding_door
+    100182: right_window
+    100184: right_window 1
+    100186: right_window 2
+    100188: right_window 3
+    100190: right_window 4
+    100192: right_window 5
+    100194: right_wiodows
+    100196: sink1
+    100198: sink2
+    100200: sink3
+    100202: sink4
+    100204: toilet01
+    100206: toilet02
+    100208: toilet03
+    100210: toilet04
+    100212: wall01
+    100214: wall02
+    100216: walls1
+    100218: window
+    100220: window 1
+    100222: window 10
+    100224: window 11
+    100226: window 2
+    100228: window 3
+    100230: window 4
+    100232: window 5
+    100234: window 6
+    100236: window 7
+    100238: window 8
+    100240: window 9
+    100242: window_frame01
+    100244: window_frame02
+    100246: window_frame03
+    100248: window_frame04
+    100250: window_frame05
+    100252: window_frame06
+    100254: window_frame07
+    100256: window_frame08
+    100258: windows1
+    400000: //RootNode
+    400002: roof1
+    400004: bathroom_windows_01
+    400006: bathroom_windows_02
+    400008: BIC01
+    400010: BIC02
+    400012: BIC03
+    400014: BIC04
+    400016: ceiling01
+    400018: ceiling02
+    400020: ceiling1
+    400022: door01
+    400024: door01 1
+    400026: door01 2
+    400028: door01 3
+    400030: door01 4
+    400032: door02
+    400034: door02 1
+    400036: door02 2
+    400038: door02 3
+    400040: door02 4
+    400042: door03
+    400044: door03 1
+    400046: door03 2
+    400048: door03 3
+    400050: door03 4
+    400052: door04
+    400054: door05
+    400056: door06
+    400058: door07
+    400060: door08
+    400062: door09
+    400064: door10
+    400066: door11
+    400068: door12
+    400070: door_fixed
+    400072: door_fixed 1
+    400074: door_frames
+    400076: door_slide
+    400078: door_slide 1
+    400080: doors
+    400082: fixtures
+    400084: floor01
+    400086: floor02
+    400088: floors
+    400090: frame
+    400092: frame 1
+    400094: frame 10
+    400096: frame 11
+    400098: frame 12
+    400100: frame 13
+    400102: frame 2
+    400104: frame 3
+    400106: frame 4
+    400108: frame 5
+    400110: frame 6
+    400112: frame 7
+    400114: frame 8
+    400116: frame 9
+    400118: frame01
+    400120: frame01 1
+    400122: frame02
+    400124: frame02 1
+    400126: hall_door01
+    400128: hall_door02
+    400130: inner_wall01
+    400132: inner_wall02
+    400134: inner_walls
+    400136: left_sliding_door
+    400138: left_window
+    400140: left_window 1
+    400142: left_window 2
+    400144: left_window 3
+    400146: left_window 4
+    400148: left_window 5
+    400150: left_windows
+    400152: main_floor01
+    400154: main_floor02
+    400156: middle_wall
+    400158: open_window
+    400160: open_window 1
+    400162: open_window 2
+    400164: open_window 3
+    400166: open_window 4
+    400168: open_window 5
+    400170: pipe
+    400172: pipe 1
+    400174: pipe 2
+    400176: pipe 3
+    400178: pipes
+    400180: right_sliding_door
+    400182: right_window
+    400184: right_window 1
+    400186: right_window 2
+    400188: right_window 3
+    400190: right_window 4
+    400192: right_window 5
+    400194: right_wiodows
+    400196: sink1
+    400198: sink2
+    400200: sink3
+    400202: sink4
+    400204: toilet01
+    400206: toilet02
+    400208: toilet03
+    400210: toilet04
+    400212: wall01
+    400214: wall02
+    400216: walls1
+    400218: window
+    400220: window 1
+    400222: window 10
+    400224: window 11
+    400226: window 2
+    400228: window 3
+    400230: window 4
+    400232: window 5
+    400234: window 6
+    400236: window 7
+    400238: window 8
+    400240: window 9
+    400242: window_frame01
+    400244: window_frame02
+    400246: window_frame03
+    400248: window_frame04
+    400250: window_frame05
+    400252: window_frame06
+    400254: window_frame07
+    400256: window_frame08
+    400258: windows1
+    2300000: roof1
+    2300002: BIC01
+    2300004: BIC02
+    2300006: BIC03
+    2300008: BIC04
+    2300010: ceiling01
+    2300012: ceiling02
+    2300014: door01
+    2300016: door01 1
+    2300018: door01 2
+    2300020: door01 3
+    2300022: door01 4
+    2300024: door02
+    2300026: door02 1
+    2300028: door02 2
+    2300030: door02 3
+    2300032: door02 4
+    2300034: door03
+    2300036: door03 1
+    2300038: door03 2
+    2300040: door03 3
+    2300042: door03 4
+    2300044: door04
+    2300046: door05
+    2300048: door06
+    2300050: door07
+    2300052: door08
+    2300054: door09
+    2300056: door10
+    2300058: door11
+    2300060: door12
+    2300062: door_fixed
+    2300064: door_fixed 1
+    2300066: door_frames
+    2300068: door_slide
+    2300070: door_slide 1
+    2300072: floor01
+    2300074: floor02
+    2300076: frame
+    2300078: frame 1
+    2300080: frame 10
+    2300082: frame 11
+    2300084: frame 12
+    2300086: frame 13
+    2300088: frame 2
+    2300090: frame 3
+    2300092: frame 4
+    2300094: frame 5
+    2300096: frame 6
+    2300098: frame 7
+    2300100: frame 8
+    2300102: frame 9
+    2300104: frame01
+    2300106: frame01 1
+    2300108: frame02
+    2300110: frame02 1
+    2300112: hall_door01
+    2300114: hall_door02
+    2300116: inner_wall01
+    2300118: inner_wall02
+    2300120: left_window
+    2300122: left_window 1
+    2300124: left_window 2
+    2300126: left_window 3
+    2300128: left_window 4
+    2300130: left_window 5
+    2300132: main_floor01
+    2300134: main_floor02
+    2300136: middle_wall
+    2300138: open_window
+    2300140: open_window 1
+    2300142: open_window 2
+    2300144: open_window 3
+    2300146: open_window 4
+    2300148: open_window 5
+    2300150: pipe
+    2300152: pipe 1
+    2300154: pipe 2
+    2300156: pipe 3
+    2300158: pipes
+    2300160: right_window
+    2300162: right_window 1
+    2300164: right_window 2
+    2300166: right_window 3
+    2300168: right_window 4
+    2300170: right_window 5
+    2300172: sink1
+    2300174: sink2
+    2300176: sink3
+    2300178: sink4
+    2300180: toilet01
+    2300182: toilet02
+    2300184: toilet03
+    2300186: toilet04
+    2300188: wall01
+    2300190: wall02
+    2300192: window
+    2300194: window 1
+    2300196: window 10
+    2300198: window 11
+    2300200: window 2
+    2300202: window 3
+    2300204: window 4
+    2300206: window 5
+    2300208: window 6
+    2300210: window 7
+    2300212: window 8
+    2300214: window 9
+    3300000: roof1
+    3300002: BIC01
+    3300004: BIC02
+    3300006: BIC03
+    3300008: BIC04
+    3300010: ceiling01
+    3300012: ceiling02
+    3300014: door01
+    3300016: door01 1
+    3300018: door01 2
+    3300020: door01 3
+    3300022: door01 4
+    3300024: door02
+    3300026: door02 1
+    3300028: door02 2
+    3300030: door02 3
+    3300032: door02 4
+    3300034: door03
+    3300036: door03 1
+    3300038: door03 2
+    3300040: door03 3
+    3300042: door03 4
+    3300044: door04
+    3300046: door05
+    3300048: door06
+    3300050: door07
+    3300052: door08
+    3300054: door09
+    3300056: door10
+    3300058: door11
+    3300060: door12
+    3300062: door_fixed
+    3300064: door_fixed 1
+    3300066: door_frames
+    3300068: door_slide
+    3300070: door_slide 1
+    3300072: floor01
+    3300074: floor02
+    3300076: frame
+    3300078: frame 1
+    3300080: frame 10
+    3300082: frame 11
+    3300084: frame 12
+    3300086: frame 13
+    3300088: frame 2
+    3300090: frame 3
+    3300092: frame 4
+    3300094: frame 5
+    3300096: frame 6
+    3300098: frame 7
+    3300100: frame 8
+    3300102: frame 9
+    3300104: frame01
+    3300106: frame01 1
+    3300108: frame02
+    3300110: frame02 1
+    3300112: hall_door01
+    3300114: hall_door02
+    3300116: inner_wall01
+    3300118: inner_wall02
+    3300120: left_window
+    3300122: left_window 1
+    3300124: left_window 2
+    3300126: left_window 3
+    3300128: left_window 4
+    3300130: left_window 5
+    3300132: main_floor01
+    3300134: main_floor02
+    3300136: middle_wall
+    3300138: open_window
+    3300140: open_window 1
+    3300142: open_window 2
+    3300144: open_window 3
+    3300146: open_window 4
+    3300148: open_window 5
+    3300150: pipe
+    3300152: pipe 1
+    3300154: pipe 2
+    3300156: pipe 3
+    3300158: pipes
+    3300160: right_window
+    3300162: right_window 1
+    3300164: right_window 2
+    3300166: right_window 3
+    3300168: right_window 4
+    3300170: right_window 5
+    3300172: sink1
+    3300174: sink2
+    3300176: sink3
+    3300178: sink4
+    3300180: toilet01
+    3300182: toilet02
+    3300184: toilet03
+    3300186: toilet04
+    3300188: wall01
+    3300190: wall02
+    3300192: window
+    3300194: window 1
+    3300196: window 10
+    3300198: window 11
+    3300200: window 2
+    3300202: window 3
+    3300204: window 4
+    3300206: window 5
+    3300208: window 6
+    3300210: window 7
+    3300212: window 8
+    3300214: window 9
+    4300000: roof1
+    4300002: main_floor01
+    4300004: floor01
+    4300006: main_floor02
+    4300008: floor02
+    4300010: middle_wall
+    4300012: wall01
+    4300014: wall02
+    4300016: inner_wall01
+    4300018: inner_wall02
+    4300020: door01
+    4300022: door02
+    4300024: door03
+    4300026: door04
+    4300028: door05
+    4300030: door06
+    4300032: door07
+    4300034: door08
+    4300036: door09
+    4300038: door10
+    4300040: door11
+    4300042: door12
+    4300044: door_frames
+    4300046: door_fixed
+    4300048: door_slide
+    4300050: door_fixed
+    4300052: door_slide
+    4300054: frame
+    4300056: window
+    4300058: open_window
+    4300060: frame
+    4300062: frame
+    4300064: window
+    4300066: left_window
+    4300068: right_window
+    4300070: frame01
+    4300072: window
+    4300074: open_window
+    4300076: frame02
+    4300078: window
+    4300080: open_window
+    4300082: frame
+    4300084: frame
+    4300086: window
+    4300088: left_window
+    4300090: right_window
+    4300092: frame
+    4300094: frame
+    4300096: window
+    4300098: left_window
+    4300100: right_window
+    4300102: frame
+    4300104: frame
+    4300106: window
+    4300108: left_window
+    4300110: right_window
+    4300112: frame
+    4300114: frame
+    4300116: window
+    4300118: left_window
+    4300120: right_window
+    4300122: frame01
+    4300124: window
+    4300126: open_window
+    4300128: frame02
+    4300130: window
+    4300132: open_window
+    4300134: frame
+    4300136: frame
+    4300138: window
+    4300140: left_window
+    4300142: right_window
+    4300144: frame
+    4300146: window
+    4300148: open_window
+    4300150: sink1
+    4300152: sink2
+    4300154: sink3
+    4300156: sink4
+    4300158: toilet01
+    4300160: toilet02
+    4300162: toilet03
+    4300164: toilet04
+    4300166: hall_door01
+    4300168: hall_door02
+    4300170: BIC01
+    4300172: door01
+    4300174: door02
+    4300176: door03
+    4300178: pipe
+    4300180: BIC02
+    4300182: door01
+    4300184: door02
+    4300186: door03
+    4300188: pipe
+    4300190: BIC03
+    4300192: door01
+    4300194: door02
+    4300196: door03
+    4300198: pipe
+    4300200: BIC04
+    4300202: door01
+    4300204: door02
+    4300206: door03
+    4300208: pipe
+    4300210: pipes
+    4300212: ceiling01
+    4300214: ceiling02
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 
