@@ -128,11 +128,13 @@ public class MF_TrapScript : MonoBehaviour {
 				beaver_weighting = beaver_weighting*1.5f;	
 				break;
 		}
-		//Process Distance Modifier
-		float squirrel_chance = squirrel_weighting*(percentToHut/100.0f);
-		float beaver_chance = beaver_weighting*(percentToRiver/100.0f);
-		float snake_chance = snake_weighting*(percentToWoodsOne/100.0f);
-		float spider_chance = spider_weighting*(percentToWoodsOne/100.0f);
+
+		float [] chanceIndex = new float [4];
+		//Process Distance Modifier = final chances
+		float squirrel_chance = chanceIndex[0] = squirrel_weighting*(percentToHut/100.0f);
+		float beaver_chance = chanceIndex[1] = beaver_weighting*(percentToRiver/100.0f);
+		float snake_chance = chanceIndex[2] = snake_weighting*(percentToWoodsOne/100.0f);
+		float spider_chance = chanceIndex[3] = spider_weighting*(percentToWoodsOne/100.0f);
 
 		float totalChance = squirrel_chance + beaver_chance + snake_chance + spider_chance;
 
