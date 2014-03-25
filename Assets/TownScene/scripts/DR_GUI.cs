@@ -190,118 +190,322 @@ public class DR_GUI : MonoBehaviour
 	void trackerWindowMethod(int windowID)
 	{
 		GUILayout.BeginArea (new Rect(35, 50, 1000, 600));
-			
+
+		/*
+
+		-- Hut -- //
+		Mouse
+		Spider
+		
+		-- Woods -- //
+		Squirrel
+		Skunk
+		Hedgehog
+		Owl
+
+		-- River -- //
+		Fish
+
+		-- Dam -- //f
+		Beaver
+
+		-- Cave -- //
+		Bear
+
+		-- Field -- //
+		Rabbit
+		Deer
+		Chicken
+
+		-- Rocks --
+		Snake
+		Eagle
+		Lizard
+
+		-- Town --
+		Dog
+		Cat
+		Pidgeon
+
+		*/
+
+
 		if(TrackerPage == 1)
 		{
-			// Page 1												        // ! No text past this point
-			GUI.Box (new Rect (80, 0, 400, 35), "Name       Location       Bait");
+			// Page 1
+			GUI.Box (new Rect (80, 0, 140, 35), "Name");
+			GUI.Box (new Rect (220, 0, 120, 35), "Location");
+			GUI.Box (new Rect (360, 0, 110, 35), "Bait");
 			GUI.Box (new Rect (80, 2, 400, 40), "_______________________________");
 
 			if(PlayerPrefs.GetInt ("Animal1") == 0)
-				GUI.Box (new Rect (80, 55, 400, 35), "?????        ?????           ?????");
+				GUI.Box (new Rect (80, 55, 400, 35), " ?????      ?????        ?????");
 			else
-				GUI.Box (new Rect (80, 55, 400, 35), "Animal 1    Stream        Nuts");
+			{
+				GUI.Box (new Rect (80, 55, 140, 35), "Mouse");
+				GUI.Box (new Rect (220, 55, 120, 35), "Cabin");
+				GUI.Box (new Rect (360, 55, 110, 35), "Nuts");
+			}
 
 			if(PlayerPrefs.GetInt ("Animal2") == 0)
-				GUI.Box (new Rect (80, 105, 400, 35), "?????        ?????           ?????");
+				GUI.Box (new Rect (80, 105, 400, 35), " ?????      ?????        ?????");
 			else
-				GUI.Box (new Rect (80, 105, 400, 35), "Animal 2    Woods          Fish");
+			{
+				GUI.Box (new Rect (80, 105, 140, 35), "Spider");
+				GUI.Box (new Rect (220, 105, 120, 35), "Cabin");
+				GUI.Box (new Rect (360, 105, 110, 35), "Mouse");
+			}
 
 			if(PlayerPrefs.GetInt ("Animal3") == 0)
-				GUI.Box (new Rect (80, 155, 400, 35), "?????        ?????           ?????");
+				GUI.Box (new Rect (80, 155, 400, 35), " ?????      ?????        ?????");
 			else
-				GUI.Box (new Rect (80, 155, 400, 35), "Animal 3    Rocks        Mouse");
+			{
+				GUI.Box (new Rect (80, 155, 140, 35), "Squirrel");
+				GUI.Box (new Rect (220, 155, 120, 35), "Woods");
+				GUI.Box (new Rect (360, 155, 110, 35), "Nuts");
+			}
 
 			if(PlayerPrefs.GetInt ("Animal4") == 0)
-				GUI.Box (new Rect (80, 205, 400, 35), "?????        ?????           ?????");
+				GUI.Box (new Rect (80, 205, 400, 35), " ?????      ?????        ?????");
 			else
-				GUI.Box (new Rect (80, 205, 400, 35), "Animal 4    Rocks        Mouse");
+			{
+				GUI.Box (new Rect (80, 205, 140, 35), "Skunk");
+				GUI.Box (new Rect (220, 205, 120, 35), "Woods");
+				GUI.Box (new Rect (360, 205, 110, 35), "Mouse");
+			}
 
 			if(PlayerPrefs.GetInt ("Animal5") == 0)
-				GUI.Box (new Rect (80, 255, 400, 35), "?????        ?????           ?????");
+				GUI.Box (new Rect (80, 255, 400, 35), " ?????      ?????        ?????");
 			else
-				GUI.Box (new Rect (80, 255, 400, 35), "Animal 5    Rocks        Mouse");
+			{
+				GUI.Box (new Rect (80, 255, 140, 35), "Hedgehog");
+				GUI.Box (new Rect (220, 255, 120, 35), "Woods");
+				GUI.Box (new Rect (360, 255, 110, 35), "Nuts");
+			}
 
 			if(PlayerPrefs.GetInt ("Animal6") == 0)
-				GUI.Box (new Rect (80, 305, 400, 35), "?????        ?????           ?????");
+				GUI.Box (new Rect (80, 305, 400, 35), " ?????      ?????        ?????");
 			else
-				GUI.Box (new Rect (80, 305, 400, 35), "Animal 6    Rocks        Mouse");
+			{
+				GUI.Box (new Rect (80, 305, 140, 35), "Owl");
+				GUI.Box (new Rect (220, 305, 120, 35), "Woods");
+				GUI.Box (new Rect (360, 305, 110, 35), "Mouse");
+			}
 
 			if(PlayerPrefs.GetInt ("Animal7") == 0)
-				GUI.Box (new Rect (80, 355, 400, 35), "?????        ?????           ?????");
+				GUI.Box (new Rect (80, 355, 400, 35), " ?????      ?????        ?????");
 			else
-				GUI.Box (new Rect (80, 355, 400, 35), "Animal 7    Rocks        Mouse");
+			{
+				GUI.Box (new Rect (80, 355, 140, 35), "Fish");
+				GUI.Box (new Rect (220, 355, 120, 35), "River");
+				GUI.Box (new Rect (360, 355, 110, 35), "Mouse");
+			}
 
 			if(PlayerPrefs.GetInt ("Animal8") == 0)
-				GUI.Box (new Rect (80, 405, 400, 35), "?????        ?????           ?????");
+				GUI.Box (new Rect (80, 405, 400, 35), " ?????      ?????        ?????");
 			else
-				GUI.Box (new Rect (80, 405, 400, 35), "Animal 8    Rocks        Mouse");
+			{
+				GUI.Box (new Rect (80, 405, 140, 35), "Beaver");
+				GUI.Box (new Rect (220, 405, 120, 35), "Dam");
+				GUI.Box (new Rect (360, 405, 110, 35), "Mouse");
+			}
 
 			if(PlayerPrefs.GetInt ("Animal9") == 0)
-				GUI.Box (new Rect (80, 455, 400, 35), "?????        ?????           ?????");
+				GUI.Box (new Rect (80, 455, 400, 35), " ?????      ?????        ?????");
 			else
-				GUI.Box (new Rect (80, 455, 400, 35), "Animal 9    Rocks        Mouse");
+			{
+				GUI.Box (new Rect (80, 455, 140, 35), "Bear");
+				GUI.Box (new Rect (220, 455, 120, 35), "Cave");
+				GUI.Box (new Rect (360, 455, 110, 35), "Fish");
+			}
 				
 			// Page 2
-			GUI.Box (new Rect (495, 0, 400, 35), "Name       Location       Bait");
+			//GUI.Box (new Rect (495, 0, 400, 35), "Name       Location       Bait");
+			GUI.Box (new Rect (495, 0, 140, 35), "Name");
+			GUI.Box (new Rect (635, 0, 120, 35), "Location");
+			GUI.Box (new Rect (775, 0, 110, 35), "Bait");
 			GUI.Box (new Rect (495, 2, 400, 40), "_______________________________");
 
 			if(PlayerPrefs.GetInt ("Animal10") == 0)
+				GUI.Box (new Rect (495, 55, 400, 35), " ?????      ?????        ?????");
+			else
+			{
+				GUI.Box (new Rect (495, 55, 140, 35), "Rabbit");
+				GUI.Box (new Rect (635, 55, 120, 35), "Plains");
+				GUI.Box (new Rect (770, 55, 110, 35), "Mouse");
+			}
+			
+			if(PlayerPrefs.GetInt ("Animal11") == 0)
+				GUI.Box (new Rect (495, 105, 400, 35), " ?????      ?????        ?????");
+			else
+			{
+				GUI.Box (new Rect (495, 105, 140, 35), "Deer");
+				GUI.Box (new Rect (635, 105, 120, 35), "Plains");
+				GUI.Box (new Rect (770, 105, 110, 35), "Mouse");
+			}
+			
+			if(PlayerPrefs.GetInt ("Animal12") == 0)
+				GUI.Box (new Rect (495, 155, 400, 35), " ?????      ?????        ?????");
+			else
+			{
+				GUI.Box (new Rect (495, 155, 140, 35), "Chicken");
+				GUI.Box (new Rect (635, 155, 120, 35), "Plains");
+				GUI.Box (new Rect (770, 155, 110, 35), "Mouse");
+			}
+			
+			if(PlayerPrefs.GetInt ("Animal13") == 0)
+				GUI.Box (new Rect (495, 205, 400, 35), " ?????      ?????        ?????");
+			else
+			{
+				GUI.Box (new Rect (495, 205, 140, 35), "Snake");
+				GUI.Box (new Rect (635, 205, 120, 35), "Rocks");
+				GUI.Box (new Rect (770, 205, 110, 35), "Mouse");
+			}
+			
+			if(PlayerPrefs.GetInt ("Animal14") == 0)
+				GUI.Box (new Rect (495, 255, 400, 35), " ?????      ?????        ?????");
+			else
+			{
+				GUI.Box (new Rect (495, 255, 140, 35), "Eagle");
+				GUI.Box (new Rect (635, 255, 120, 35), "Rocks");
+				GUI.Box (new Rect (770, 255, 110, 35), "Mouse");
+			}
+			
+			if(PlayerPrefs.GetInt ("Animal15") == 0)
+				GUI.Box (new Rect (495, 305, 400, 35), " ?????      ?????        ?????");
+			else
+			{
+				GUI.Box (new Rect (495, 305, 140, 35), "Lizard");
+				GUI.Box (new Rect (635, 305, 120, 35), "Rocks");
+				GUI.Box (new Rect (770, 305, 110, 35), "Spider");
+			}
+			
+			if(PlayerPrefs.GetInt ("Animal16") == 0)
+				GUI.Box (new Rect (495, 355, 400, 35), " ?????      ?????        ?????");
+			else
+			{
+				GUI.Box (new Rect (495, 355, 140, 35), "Dog");
+				GUI.Box (new Rect (635, 355, 120, 35), "Town");
+				GUI.Box (new Rect (770, 355, 110, 35), "Cat");
+			}
+			
+			if(PlayerPrefs.GetInt ("Animal17") == 0)
+				GUI.Box (new Rect (495, 405, 400, 35), " ?????      ?????        ?????");
+			else
+			{
+				GUI.Box (new Rect (495, 405, 140, 35), "Cat");
+				GUI.Box (new Rect (635, 405, 120, 35), "Town");
+				GUI.Box (new Rect (770, 405, 110, 35), "Mouse");
+			}
+			
+			if(PlayerPrefs.GetInt ("Animal18") == 0)
+				GUI.Box (new Rect (495, 455, 400, 35), " ?????      ?????        ?????");
+			else
+			{
+				GUI.Box (new Rect (495, 455, 140, 35), "Pidgeon");
+				GUI.Box (new Rect (635, 455, 120, 35), "Town");
+				GUI.Box (new Rect (770, 455, 110, 35), "Mouse");
+			}
+		}
+		else if(TrackerPage == 2)
+		{
+			// Page 3
+			GUI.Box (new Rect (80, 0, 400, 35), "Name       Location       Bait");
+			GUI.Box (new Rect (80, 2, 400, 40), "_______________________________");
+			
+			if(PlayerPrefs.GetInt ("Animal19") == 0)
+				GUI.Box (new Rect (80, 55, 400, 35), "?????        ?????           ?????");
+			else
+				GUI.Box (new Rect (80, 55, 400, 35), "Raccoon     Stream        Mouse");
+			
+			if(PlayerPrefs.GetInt ("Animal20") == 0)
+				GUI.Box (new Rect (80, 105, 400, 35), "?????        ?????           ?????");
+			else
+				GUI.Box (new Rect (80, 105, 400, 35), "Crackwhore   Abandoned bldg.   Drugs");
+			
+			if(PlayerPrefs.GetInt ("Animal21") == 0)
+				GUI.Box (new Rect (80, 155, 400, 35), "?????        ?????           ?????");
+			else
+				GUI.Box (new Rect (80, 155, 400, 35), "Goth      Church        Book");
+			
+			if(PlayerPrefs.GetInt ("Animal22") == 0)
+				GUI.Box (new Rect (80, 205, 400, 35), "?????        ?????           ?????");
+			else
+				GUI.Box (new Rect (80, 205, 400, 35), "Mayor    Mansion        Sextape");
+			
+			if(PlayerPrefs.GetInt ("Animal23") == 0)
+				GUI.Box (new Rect (80, 255, 400, 35), "?????        ?????           ?????");
+			else
+				GUI.Box (new Rect (80, 255, 400, 35), "Hobo     Alley        Cash");
+			
+			if(PlayerPrefs.GetInt ("Animal24") == 0)
+				GUI.Box (new Rect (80, 305, 400, 35), "?????        ?????           ?????");
+			else
+				GUI.Box (new Rect (80, 305, 400, 35), "Drunk     Pub        Beer");
+			
+			if(PlayerPrefs.GetInt ("Animal25") == 0)
+				GUI.Box (new Rect (80, 355, 400, 35), "?????        ?????           ?????");
+			else
+				GUI.Box (new Rect (80, 355, 400, 35), "Priest    Church        Kid");
+			
+			if(PlayerPrefs.GetInt ("Animal26") == 0)
+				GUI.Box (new Rect (80, 405, 400, 35), "?????        ?????           ?????");
+			else
+				GUI.Box (new Rect (80, 405, 400, 35), "Kid      Park       Candy");
+			
+			if(PlayerPrefs.GetInt ("Animal27") == 0)
+				GUI.Box (new Rect (80, 455, 400, 35), "?????        ?????           ?????");
+			else
+				GUI.Box (new Rect (80, 455, 400, 35), "Shopkeeper    Shops       Nuts");
+			
+			// Page 4
+			GUI.Box (new Rect (495, 0, 400, 35), "Name       Location       Bait");
+			GUI.Box (new Rect (495, 2, 400, 40), "_______________________________");
+			
+			if(PlayerPrefs.GetInt ("Animal10") == 0)
 				GUI.Box (new Rect (495, 55, 400, 35), "?????        ?????           ?????");
 			else
-				GUI.Box (new Rect (495, 55, 400, 35), "Animal 10    Stream       Nuts");
+				GUI.Box (new Rect (495, 55, 400, 35), "Middle-class    Woods       Nuts");
 			
 			if(PlayerPrefs.GetInt ("Animal11") == 0)
 				GUI.Box (new Rect (495, 105, 400, 35), "?????        ?????           ?????");
 			else
-				GUI.Box (new Rect (495, 105, 400, 35), "Animal 11    Woods        Fish");
+				GUI.Box (new Rect (495, 105, 400, 35), "Upper-class    Upper-cass housing     Fish");
 			
 			if(PlayerPrefs.GetInt ("Animal12") == 0)
 				GUI.Box (new Rect (495, 155, 400, 35), "?????        ?????           ?????");
 			else
-				GUI.Box (new Rect (495, 155, 400, 35), "Animal 12    Rocks      Mouse");
+				GUI.Box (new Rect (495, 155, 400, 35), "Lower-class    Low class housing    Nuts");
 			
 			if(PlayerPrefs.GetInt ("Animal13") == 0)
 				GUI.Box (new Rect (495, 205, 400, 35), "?????        ?????           ?????");
 			else
-				GUI.Box (new Rect (495, 205, 400, 35), "Animal 13    Rocks      Mouse");
+				GUI.Box (new Rect (495, 205, 400, 35), "Owl    Woods      Mouse");
 			
 			if(PlayerPrefs.GetInt ("Animal14") == 0)
 				GUI.Box (new Rect (495, 255, 400, 35), "?????        ?????           ?????");
 			else
-				GUI.Box (new Rect (495, 255, 400, 35), "Animal 14    Rocks      Mouse");
+				GUI.Box (new Rect (495, 255, 400, 35), "Eagle    Rocks      Mouse");
 			
 			if(PlayerPrefs.GetInt ("Animal15") == 0)
 				GUI.Box (new Rect (495, 305, 400, 35), "?????        ?????           ?????");
 			else
-				GUI.Box (new Rect (495, 305, 400, 35), "Animal 15    Rocks      Mouse");
+				GUI.Box (new Rect (495, 305, 400, 35), "Pidgeon    Rocks      Mouse");
 			
 			if(PlayerPrefs.GetInt ("Animal16") == 0)
 				GUI.Box (new Rect (495, 355, 400, 35), "?????        ?????           ?????");
 			else
-				GUI.Box (new Rect (495, 355, 400, 35), "Animal 16    Rocks      Mouse");
+				GUI.Box (new Rect (495, 355, 400, 35), "Dog    Town      Cat");
 			
 			if(PlayerPrefs.GetInt ("Animal17") == 0)
 				GUI.Box (new Rect (495, 405, 400, 35), "?????        ?????           ?????");
 			else
-				GUI.Box (new Rect (495, 405, 400, 35), "Animal 17    Rocks      Mouse");
+				GUI.Box (new Rect (495, 405, 400, 35), "Cat    Town      Mouse");
 			
 			if(PlayerPrefs.GetInt ("Animal18") == 0)
 				GUI.Box (new Rect (495, 455, 400, 35), "?????        ?????           ?????");
 			else
-				GUI.Box (new Rect (495, 455, 400, 35), "Animal 18    Rocks      Mouse");
-		}
-		else if(TrackerPage == 2)
-		{
-		// Page 3												        // ! No text past this point
-			GUI.Box (new Rect (80, 10, 400, 160), "TrackerPage TrackerPage TrackerPage TrackerPage TrackerPage TrackerPage TrackerPage TrackerPage TrackerPage TrackerPage TrackerPage TrackerPage");
-			GUI.Box (new Rect (80, 180, 400, 160), "Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3.");
-			GUI.Box (new Rect (80, 350, 400, 160), "Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3.");
-				
-			// Page 4
-			GUI.Box (new Rect (495, 10, 400, 160), "I had that dream again... blood... screaming... One day these dreams will become truth... one day.");
-			GUI.Box (new Rect (495, 180, 400, 160), "But first, I need to fill my belly... Nothing to eat here... I'm going to have to catch something tasty to get me going.");
-			GUI.Box (new Rect (495, 350, 400, 160), "I'll need something to catch my unwitting prey... I should go outside and see what I can find to improvise a trap of some sort.");
+				GUI.Box (new Rect (495, 455, 400, 35), "Lizard    Rocks      Spider");
 		}			
 
 		if(TrackerOpen == true && TrackerPage > 1)

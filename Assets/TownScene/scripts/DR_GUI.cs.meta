@@ -9,7 +9,10 @@ MonoImporter:
   - HungerEmpty: {fileID: 2800000, guid: 4dce8fc842e841e449f8bc35ab7360ae, type: 3}
   - HungerFlashing: {fileID: 2800000, guid: 6a27ca4dacb20714fb4b49806896874b, type: 3}
   - Journal: {fileID: 2800000, guid: a60ee3c227ee8dd49bf25ebfb57b5b17, type: 3}
-  - sfdjlgh: {instanceID: 0}
+  - ArrowLeft: {fileID: 2800000, guid: 8656b77c29d17a848b25284136830c56, type: 3}
+  - ArrowRight: {fileID: 2800000, guid: c767e7964e515064aa5689a53fece7d9, type: 3}
+  - BMJournal: {fileID: 2800000, guid: 6577cb53a84146a4ea9e73248605e45d, type: 3}
+  - BMTracker: {fileID: 2800000, guid: 7975e94beb6ee894e87732ed6c901745, type: 3}
   - journalSkin: {fileID: 11400000, guid: f6aa7dc20c7ef1648889f2d61489e4e8, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
