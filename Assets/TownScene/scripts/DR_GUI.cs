@@ -3,6 +3,9 @@ using System.Collections;
 
 public class DR_GUI : MonoBehaviour 
 {	
+	public GameObject Player;
+	public GameObject TutWall;
+
 	public Texture HungerFull;
 	public Texture Hunger1;
 	public Texture Hunger2;
@@ -13,6 +16,10 @@ public class DR_GUI : MonoBehaviour
 	public Texture ArrowRight;
 	public Texture BMJournal;
 	public Texture BMTracker;
+	public Texture Paper;
+	public Texture TutHeader;
+	public Texture black;
+	public Texture JournalTexture;
 
 	public bool HungerFlash;
 
@@ -22,9 +29,31 @@ public class DR_GUI : MonoBehaviour
 	public int QuestPage = 1;
 	public bool JournalOpen;
 
+	public int TutorialInt;
+	public int Tutorial;
+
+	public int TutorialOrder;
+	public int TutorialOrder2;
+
+	public int WakeupMove;
+
+	public float topBlack;
+	public float botBlack;
+
+	public int a;
+	public int b;
+
+	public int JournalEntryPing;
+
+	public int Trap1;
+	public int Trap2;
+	public int Trap3;
+
 	public GUISkin journalSkin;
+	public GUISkin paperGUI;
 	private Rect journalWindowRect = new Rect(Screen.width/2-500,Screen.height/2-300,1000,600);
 	private Rect trackerWindowRect = new Rect(Screen.width/2-500,Screen.height/2-300,1000,600);
+	private Rect tutorialWindowRect = new Rect(Screen.width/2-300,Screen.height/2-400,600,800);
 
 	/*public bool TrackAnimal1;
 	public bool TrackAnimal2;
@@ -47,7 +76,14 @@ public class DR_GUI : MonoBehaviour
 
 	void Start () 
 	{		
+		//disableMove();
 		InvokeRepeating ("HealthDecrease", 0, 1);
+		StartCoroutine(Wakeup());
+
+		topBlack = 0f;
+		botBlack = Screen.height/2f;
+		a = 1;
+		b = 0;
 	}
 	
 	void HealthDecrease () 
@@ -59,9 +95,54 @@ public class DR_GUI : MonoBehaviour
 	{		
 		//Debug.Log(PlayerPrefs.GetInt ("Hunger"));
 
+		topBlack -= 0.8f;
+		botBlack += 0.8f;
+
+		if(Trap1 == 1) // tracks
+		{
+			if(TutorialOrder == 0)
+				TutorialOrder = 1; 
+			else if(TutorialOrder == 2)
+				TutorialOrder2 = 3; 
+			else if(TutorialOrder == 3)
+				TutorialOrder2 = 5; 
+		}
+		if(Input.GetKeyDown(KeyCode.N)) // parts
+		{
+			PlayerPrefs.SetInt("QuestPart", 5);
+			StartCoroutine(JournalEntry());
+			if(TutorialOrder == 0)
+				TutorialOrder = 2; 
+			else if(TutorialOrder == 1)
+				TutorialOrder2 = 1; 
+			else if(TutorialOrder == 3)
+				TutorialOrder2 = 6; 
+		}
+		if(Trap3 == 1) // trap
+		{
+			if(TutorialOrder == 0)
+				TutorialOrder = 3; 
+			else if(TutorialOrder == 1)
+				TutorialOrder2 = 2; 
+			else if(TutorialOrder == 2)
+				TutorialOrder2 = 4;  
+		}
+
+
+
+		//Debug.Log (TutorialOrder);
+
+		if(Tutorial > 0)
+		{
+			TrackerOpen = false;
+			JournalOpen = false;
+			disableMove();
+		}
+
 		if(Input.GetKeyDown(KeyCode.J))
 		{
-			//JournalOpen = true;
+			Tutorial = 0;
+
 			if(JournalOpen == false || TrackerOpen == true)
 			{
 				TrackerOpen = false;
@@ -78,7 +159,8 @@ public class DR_GUI : MonoBehaviour
 
 		if(Input.GetKeyDown(KeyCode.T))
 		{
-			//JournalOpen = true;
+			Tutorial = 0;
+
 			if(TrackerOpen == false || JournalOpen == true)
 			{
 				JournalOpen = false;
@@ -95,61 +177,260 @@ public class DR_GUI : MonoBehaviour
 
 		if(Input.GetKeyDown(KeyCode.Escape))
 		{
-			if(JournalOpen == true || TrackerOpen == true)
+			if(JournalOpen == true || TrackerOpen == true || Tutorial > 0)
 			{
 				JournalOpen = false;
 				TrackerOpen = false;
+				Tutorial = 0;
 				enableMove();
 			}
 		}
+
+		if(Input.GetKeyDown(KeyCode.E))
+		{
+			if(TutorialInt == 1)
+			{
+				Tutorial = 1;
+				PlayerPrefs.SetInt("QuestPart", 3);
+				StartCoroutine(JournalEntry());
+				Destroy(TutWall);
+			}
+			else if(TutorialInt == 2)
+				Tutorial = 2;
+			else if(TutorialInt == 3)
+				Tutorial = 3;
+			else if(TutorialInt == 4)
+			{
+				Tutorial = 4;
+				Trap3 = 1;
+				PlayerPrefs.SetInt("QuestPart", 5);
+				StartCoroutine(JournalEntry());
+			}
+			else if(TutorialInt == 5)
+			{
+				Trap1 = 1;
+			}
+			else if(TutorialInt == 6)
+			{
+				StartCoroutine(Wakeup());
+			}
+		}
+	}
+
+	IEnumerator Wakeup()
+	{
+		Player.transform.position = new Vector3(705.4106f, 11.39183f, 584.7635f);
+		Player.transform.rotation = Quaternion.Euler(270,0,0);
+		topBlack = 0f;
+		botBlack = Screen.height/2f;
+		disableMove();
+		yield return new WaitForSeconds(2);
+		Player.animation.Play("WakeUp");
+		yield return new WaitForSeconds(3);
+		Player.transform.position = new Vector3(705.9161f, 11.04025f, 584.7635f);
+		Player.transform.rotation = Quaternion.Euler(0,90,0);
+		enableMove();
+		if(a == 1)
+		{
+			PlayerPrefs.SetInt("QuestPart", 2);
+			StartCoroutine(JournalEntry());
+		}
+
+		a++;
+	}
+
+	IEnumerator JournalEntry()
+	{
+		JournalEntryPing = 1;
+		yield return new WaitForSeconds(4);
+		JournalEntryPing = 0;
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if(other.name == "BedCollider")
+		{
+			TutorialInt = 6;
+		}
+		if(other.name == "Tut1")
+		{
+			TutorialInt = 1;
+		}
+		if(other.name == "Tut2")
+		{
+			TutorialInt = 2;
+		}
+		if(other.name == "Tut3")
+		{
+			TutorialInt = 3;
+		}
+		if(other.name == "Tut4")
+		{
+			TutorialInt = 4;
+		}
+		if(other.transform.parent.name == "tracksMouse")
+		{
+			TutorialInt = 5;
+			PlayerPrefs.SetInt("QuestPart", 5);
+			StartCoroutine(JournalEntry());
+		}
+	}
+
+	void OnTriggerExit(Collider other)
+	{
+		if(other.name == "Tut1" || other.name == "Tut2" || other.name == "Tut3" || other.name == "Tut4" || other.name == "Tut5" || other.name == "BedCollider")
+		{
+			TutorialInt = 0;
+			Tutorial = 0;
+		}
+	}
+
+	void tutorialWindowMethod(int windowID)
+	{	
+		GUILayout.BeginArea (new Rect(35, 50, 600, 800));
+		GUI.skin.box.normal.textColor=Color.black;
+
+		if(Tutorial == 1)
+		{
+			GUI.skin.box.fontSize = 70;
+			GUI.Box (new Rect (95, 10, 400, 160), "To Do List");
+			GUI.Box (new Rect (80, 25, 400, 100), "_________");
+			GUI.skin.box.fontSize = 28;
+			GUI.Box (new Rect (30, 160, 450, 1000), "- Gather resources, discover tracks, and make traps to catch animals");
+			GUI.Box (new Rect (30, 270, 450, 1000), "- Use these animals as bait for other traps, or eat them to replinish your hunger");
+			GUI.Box (new Rect (30, 380, 450, 1000), "- You can see your hunger bar on the top right of your screen. You will need to eat regularly to prevent starvation");
+			GUI.Box (new Rect (30, 520, 450, 1000), "- Press J to open your journal and see what your next course of action is");
+			GUI.Box (new Rect (30, 630, 450, 1000), "- You can press Esc to close any windows you have open");
+		}
+		else if(Tutorial == 2)
+		{
+			GUI.skin.box.fontSize = 70;
+			GUI.Box (new Rect (95, 10, 400, 160), "To Do List");
+			GUI.Box (new Rect (80, 25, 400, 100), "_________");
+			GUI.skin.box.fontSize = 28;
+			GUI.Box (new Rect (30, 180, 450, 1000), "- There are resources like this pile of logs throughout the world");
+			GUI.Box (new Rect (30, 300, 450, 1000), "- To collect the resources, get close and press E to bring up the Resource window");
+			GUI.Box (new Rect (30, 420, 450, 1000), "- To move the resource to your inventory, simply click on the resources in the window");
+		}
+		else if(Tutorial == 3)
+		{
+			GUI.skin.box.fontSize = 70;
+			GUI.Box (new Rect (95, 10, 400, 160), "To Do List");
+			GUI.Box (new Rect (80, 25, 400, 100), "_________");
+			GUI.skin.box.fontSize = 28;
+			GUI.Box (new Rect (30, 180, 450, 1000), "- There are tracks like the one next to this sign all over the world");
+			GUI.Box (new Rect (30, 300, 450, 1000), "- These tracks can be used to obtain information about potential game");
+			GUI.Box (new Rect (30, 420, 450, 1000), "- Press E when you are close, and your Tracker Log will update");
+			GUI.Box (new Rect (30, 540, 450, 1000), "- Press T to open your Tracker Log to find what made these tracks and what its preferred bait is");
+		}
+
+		else if(Tutorial == 4)
+		{
+			GUI.skin.box.fontSize = 70;
+			GUI.Box (new Rect (95, 10, 400, 160), "To Do List");
+			GUI.Box (new Rect (80, 25, 400, 100), "_________");
+			GUI.skin.box.fontSize = 28;
+			GUI.Box (new Rect (30, 140, 450, 1000), "- To craft a trap, open your inventory by pressing I");
+			GUI.Box (new Rect (30, 215, 450, 1000), "- Next open the crafting window by pressing C");
+			GUI.Box (new Rect (30, 290, 450, 1000), "- Click on the resources in your inventory to put them into the crafting window");
+			GUI.Box (new Rect (30, 395, 450, 1000), "- If the resources are compatible for a trap, the trap will appear in the crafting window; click to put it into your inventory");
+			GUI.Box (new Rect (30, 565, 450, 1000), "- To place the trap, simply click on the trap from your inventory window and it will be put into your hands. Press E to place it in the desired position");
+		}
+
+		GUILayout.EndArea();
 	}
 
 	void journalWindowMethod(int windowID)
 	{
 		GUILayout.BeginArea (new Rect(35, 50, 1000, 600));
+		GUI.skin.box.normal.textColor=Color.black;
 
 		if(QuestPage == 1)
 		{
 			// Page 1																																							            // ! No text past this point
 			if(PlayerPrefs.GetInt ("QuestPart") > 0)
-				GUI.Box (new Rect (80, 10, 400, 160), "I had that dream again... blood... screaming... One day these dreams will become truth... one day.");
+				GUI.Box (new Rect (80, 10, 400, 160), "I had that dream again... blood... screaming... One day these dreams will become reality... one day...");
 			if(PlayerPrefs.GetInt ("QuestPart") > 1)
-				GUI.Box (new Rect (80, 180, 400, 160), "But first, I need to fill my belly... Nothing to eat here... I'm going to have to catch something tasty to get me going.");
+				GUI.Box (new Rect (80, 150, 400, 160), "But first, I need to fill my belly... Nothing to eat here... I'm going to have to catch something tasty to get me going.");
 			if(PlayerPrefs.GetInt ("QuestPart") > 2)
-				GUI.Box (new Rect (80, 350, 400, 160), "I'll need something to catch my unwitting prey... I should go outside and see what I can find to improvise a trap of some sort.");
-
+				GUI.Box (new Rect (80, 320, 400, 160), "I'll need something to catch my unwitting prey... I should go outside and see what I can find to improvise a trap of some sort.");
 			// Page 2
-			if(PlayerPrefs.GetInt ("QuestPart") > 3)
-				GUI.Box (new Rect (495, 10, 400, 160), "I had that dream again... blood... screaming... One day these dreams will become truth... one day.");
-			if(PlayerPrefs.GetInt ("QuestPart") > 4)
-				GUI.Box (new Rect (495, 180, 400, 160), "But first, I need to fill my belly... Nothing to eat here... I'm going to have to catch something tasty to get me going.");
+			if(TutorialOrder == 1) 
+			{
+				if(PlayerPrefs.GetInt ("QuestPart") > 3)
+					GUI.Box (new Rect (495, 10, 400, 160), "I found the tracks of a mouse... I suppose beggers can't be choosers... Now to catch one...");
+			}
+			else if(TutorialOrder == 2) 
+			{
+				if(PlayerPrefs.GetInt ("QuestPart") > 3)
+					GUI.Box (new Rect (495, 10, 400, 160), "I found the parts I need to make a trap... Now to find something to catch");
+			}
+			else if(TutorialOrder == 3) 
+			{
+				if(PlayerPrefs.GetInt ("QuestPart") > 3)
+					GUI.Box (new Rect (495, 10, 400, 160), "I've worked out how to craft a trap... Now to find the resources I need and something to catch");
+			}
+
+			if(TutorialOrder2 == 1) 
+			{
+				if(PlayerPrefs.GetInt ("QuestPart") > 4)
+					GUI.Box (new Rect (495, 150, 400, 160), "I found the parts I need to make a trap to catch one of the littljje buggers... Let's put those sixth-grade shop classes to use");
+			}
+			else if(TutorialOrder2 == 2) 
+			{
+				if(PlayerPrefs.GetInt ("QuestPart") > 4)
+					GUI.Box (new Rect (495, 150, 400, 160), "I've worked out how to craft a trap... Now to find the resources I need and then put those sixth-grade shop classes to use");
+			}
+			else if(TutorialOrder2 == 3) 
+			{
+				if(PlayerPrefs.GetInt ("QuestPart") > 4)
+					GUI.Box (new Rect (495, 150, 400, 160), "I found the tracks of a mouse... I suppose beggers can't be choosers... Now to craft the trap to catch one");
+			}
+			else if(TutorialOrder2 == 4) 
+			{
+				if(PlayerPrefs.GetInt ("QuestPart") > 4)
+					GUI.Box (new Rect (495, 150, 400, 160), "I've worked out how to craft a trap... Now to find something to catch and then put those sixth-grade shop classes to use");
+			}
+			else if(TutorialOrder2 == 5) 
+			{
+				if(PlayerPrefs.GetInt ("QuestPart") > 4)
+					GUI.Box (new Rect (495, 150, 400, 160), "I found the tracks of a mouse... I suppose beggers can't be choosers... Now to find those parts");
+			}
+			else if(TutorialOrder2 == 6) 
+			{
+				if(PlayerPrefs.GetInt ("QuestPart") > 4)
+					GUI.Box (new Rect (495, 150, 400, 160), "I found the parts I need for the trap... Now to find something tasty to catch with it");
+			}
 			if(PlayerPrefs.GetInt ("QuestPart") > 5)
-				GUI.Box (new Rect (495, 350, 400, 160), "I'll need something to catch my unwitting prey... I should go outside and see what I can find to improvise a trap of some sort.");
+				GUI.Box (new Rect (495, 320, 400, 200), "Now that I've set the trap, it's time to play the waiting game... Only a morsal I know, but that mouse could be the difference between life and death!");
 		}
 		else if(QuestPage == 2)
 		{
 			// Page 3																																							            // ! No text past this point
 			if(PlayerPrefs.GetInt ("QuestPart") > 6)
-				GUI.Box (new Rect (80, 10, 400, 160), "Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page");
+				GUI.Box (new Rect (80, 10, 400, 160), "Success! I caught the little blighter... Now, do I want to eat this now, or save it for later to catch something even juicier?");
 			if(PlayerPrefs.GetInt ("QuestPart") > 7)
-				GUI.Box (new Rect (80, 180, 400, 160), "Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3.");
+				GUI.Box (new Rect (80, 180, 400, 160), "Now that I've worked out how to catch small game, it's time to venture out into the world and make better traps for bigger prey");
 			if(PlayerPrefs.GetInt ("QuestPart") > 8)
-				GUI.Box (new Rect (80, 350, 400, 160), "Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3. Page 3.");
+				GUI.Box (new Rect (80, 350, 400, 160), "My first trip into town... I picked a good time to come... Lurking in the shadows... What can I find to lure into my traps?..");
 			
 			// Page 4
 			if(PlayerPrefs.GetInt ("QuestPart") > 9)
-				GUI.Box (new Rect (495, 10, 400, 160), "I had that dream again... blood... screaming... One day these dreams will become truth... one day.");
+				GUI.Box (new Rect (495, 10, 400, 160), "There must be resources a plenty around here... I should check the bins for parts, I'm sure I can find something useful");
 			if(PlayerPrefs.GetInt ("QuestPart") > 10)
-				GUI.Box (new Rect (495, 180, 400, 160), "But first, I need to fill my belly... Nothing to eat here... I'm going to have to catch something tasty to get me going.");
+				GUI.Box (new Rect (495, 180, 400, 160), "I wonder what... Or who... I'll catch this time... I'll need somewhere to wait... How about that derelict building near the entrance");
 			if(PlayerPrefs.GetInt ("QuestPart") > 11)
-				GUI.Box (new Rect (495, 350, 400, 160), "I'll need something to catch my unwitting prey... I should go outside and see what I can find to improvise a trap of some sort.");
+				GUI.Box (new Rect (495, 350, 400, 160), "My first human... I've dreamed about this for as long as I can remember... How does human flesh taste? Do I dare find out?");
 		}
 		else if(QuestPage == 3)
 		{
-			// Page 5																																							            // ! No text past this point
-			GUI.Box (new Rect (80, 10, 400, 160), "I had that dream again... blood... screaming... One day these dreams will become truth... one day.");
-			GUI.Box (new Rect (80, 180, 400, 160), "But first, I need to fill my belly... Nothing to eat here... I'm going to have to catch something tasty to get me going.");
-			GUI.Box (new Rect (80, 350, 400, 160), "I'll need something to catch my unwitting prey... I should go outside and see what I can find to improvise a trap of some sort.");
+			// Page 5	
+			if(PlayerPrefs.GetInt ("QuestPart") > 12)
+				GUI.Box (new Rect (80, 10, 400, 160), "I've crossed that line... There's no going back now... I need more... I need better... Who to catch next? A priest? A student? The mayor?!..");
+			if(PlayerPrefs.GetInt ("QuestPart") > 13)
+				GUI.Box (new Rect (80, 180, 400, 160), "---------------------------------------------------------------------------------------------------------------------------------");
+			if(PlayerPrefs.GetInt ("QuestPart") > 14)
+				GUI.Box (new Rect (80, 350, 400, 160), "---------------------------------------------------------------------------------------------------------------------------------");
 			
 			// Page 6
 			GUI.Box (new Rect (495, 10, 400, 160), "I had that dream again... blood... screaming... One day these dreams will become truth... one day.");
@@ -190,6 +471,7 @@ public class DR_GUI : MonoBehaviour
 	void trackerWindowMethod(int windowID)
 	{
 		GUILayout.BeginArea (new Rect(35, 50, 1000, 600));
+		GUI.skin.box.normal.textColor=Color.black;
 
 		/*
 
@@ -528,6 +810,17 @@ public class DR_GUI : MonoBehaviour
 
 	void OnGUI()
 	{
+		if(JournalEntryPing == 1)
+		{
+			GUI.DrawTexture(new Rect(Screen.width-350,220,250,100), JournalTexture);
+			GUI.contentColor = Color.red;
+			GUI.Label (new Rect(Screen.width-250, 260, 500, 500), "New Journal Entry!");
+			GUI.contentColor = Color.white;
+		}
+
+		GUI.DrawTexture (new Rect(0, topBlack, Screen.width, Screen.height/2), black);
+		GUI.DrawTexture (new Rect(0, botBlack, Screen.width, Screen.height), black);
+
 		if(JournalOpen == true)
 		{
 			GUI.skin=journalSkin;
@@ -535,8 +828,16 @@ public class DR_GUI : MonoBehaviour
 		}
 		else if(TrackerOpen == true)
 		{
-				GUI.skin=journalSkin;
-				trackerWindowRect = GUI.Window (0, trackerWindowRect, trackerWindowMethod, "");
+			GUI.skin=journalSkin;
+			trackerWindowRect = GUI.Window (0, trackerWindowRect, trackerWindowMethod, "");
+		}
+		else if(Tutorial > 0)
+		{
+			GUI.skin=paperGUI;
+			tutorialWindowRect = GUI.Window (0, tutorialWindowRect, tutorialWindowMethod, "");
+
+			/*GUI.skin=paperHeader;
+			tutorialHeaderWindowRect = GUI.Window (0, tutorialHeaderWindowRect, tutorialHeaderWindowMethod, "");*/
 		}
 
 		if (PlayerPrefs.GetInt ("Hunger") == 350) 

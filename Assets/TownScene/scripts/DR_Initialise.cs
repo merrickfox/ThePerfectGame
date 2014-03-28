@@ -9,7 +9,7 @@ public class DR_Initialise : MonoBehaviour {
 		PlayerPrefs.SetInt ("Hunger", 360);	//360
 		PlayerPrefs.SetInt("HungerText", 0);
 
-		PlayerPrefs.SetInt("QuestPart", 8);
+		PlayerPrefs.SetInt("QuestPart", 15);
 
 		//Tracking
 		PlayerPrefs.SetInt("Animal1", 0); // Mouse
