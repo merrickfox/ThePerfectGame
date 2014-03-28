@@ -111,7 +111,10 @@ public class DR_Tracks : MonoBehaviour
 			if(Input.GetKey(KeyCode.E))
 			{
 				if(this.transform.parent.name == "tracksMouse")
-				PlayerPrefs.SetInt("Animal1", 1);
+				{
+					//PlayerPrefs.SetInt("QuestPart", 4);
+					PlayerPrefs.SetInt("Animal1", 1);
+				}
 				else if(this.transform.parent.name == "tracksSpider")
 					PlayerPrefs.SetInt("Animal2", 1);
 				else if(this.transform.parent.name == "tracksSquirrel")
