@@ -5,12 +5,22 @@ using System.Collections.Generic;
 public class JP_InventoryGUI : MonoBehaviour {
 
 	private Rect inventoryWindowRect = new Rect(100,100,400,400);
+	private Rect tooltipWindowRect;
 	private bool InventoryUp = false;
+	private bool tooltipUp = false;
+
+	public GUISkin inventorySkin;
+	public GUISkin tooltipSkin;
+
+	private string itemDescription;
+
+	private Vector3 mPosition;
 
 	//Item_Class itemObject = new Item_Class();
 	public static Item_Class itemObject = new Item_Class();
 
 	GameObject trapObject;
+	public static GameObject selectedTrap;
 
 	static public Dictionary<int, Item_Class.ItemClass> inventoryNameDictionary = new Dictionary<int, Item_Class.ItemClass>()
 	{
@@ -56,13 +66,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 	void Start () 
 	{
 
+
 	}
 
 	void OnGUI()
 	{
 		if(InventoryUp)
 		{
+			GUI.skin = inventorySkin;
 			inventoryWindowRect = GUI.Window (0, inventoryWindowRect, InventoryWindowMethod, "Inventory");
+		}
+
+		if(tooltipUp)
+		{
+			GUI.skin = tooltipSkin;
+			tooltipWindowRect = GUI.Window (4, tooltipWindowRect, tooltipWindowMethod, "");
 		}
 
 
@@ -84,16 +102,24 @@ public class JP_InventoryGUI : MonoBehaviour {
 		transform.Find ("Main Camera").GetComponent<MouseLook>().enabled = true;
 	}
 		
-		void InventoryWindowMethod(int windowID)
+	void tooltipWindowMethod(int windowID)
+	{
+		GUI.Label (new Rect (15, 15, 100, 50), "Item Destription");
+		GUI.Label (new Rect (30, 40, 160, 50), itemDescription);
+
+	}
+
+
+	void InventoryWindowMethod(int windowID)
 	{
 	
 		// ****************************** BUTTON LAYOUT AND ACTION ********************************************
 		// ****************************************************************************************************
 		// ****************************************************************************************************
-		GUILayout.BeginArea (new Rect(35, 50, 390, 400));
+		GUILayout.BeginArea (new Rect(35, 75, 390, 400));
 
 		GUILayout.BeginHorizontal();
-		if(GUILayout.Button (inventoryNameDictionary[0].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[0].icon, inventoryNameDictionary[0].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[0].isTrap == false)
 			{
@@ -101,10 +127,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[0];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[0];
+								inventoryNameDictionary[0] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -120,8 +150,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[0].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[0]);
+						inventoryNameDictionary[0] = itemObject.nullItem;
+					}
+				}
+
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[1].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[1].icon, inventoryNameDictionary[1].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[1].isTrap == false)
 			{
@@ -129,10 +172,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[1];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[1];
+								inventoryNameDictionary[1] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -148,8 +195,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[1].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[1]);
+						inventoryNameDictionary[1] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[2].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[2].icon, inventoryNameDictionary[2].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[2].isTrap == false)
 			{
@@ -157,10 +217,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[2];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[2];
+								inventoryNameDictionary[2] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -176,8 +240,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[2].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[2]);
+						inventoryNameDictionary[2] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[3].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[3].icon, inventoryNameDictionary[3].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[3].isTrap == false)
 			{
@@ -185,10 +262,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[3];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[3];
+								inventoryNameDictionary[3] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -204,8 +285,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[3].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[3]);
+						inventoryNameDictionary[3] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[4].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[4].icon, inventoryNameDictionary[4].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[4].isTrap == false)
 			{
@@ -215,10 +309,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 					{
 						for(int i = 0; i < 6; i++)
 						{
-							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							if(JP_FG_CraftingGUI.CraftingUp == true)
 							{
-								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[4];
-								break;
+								if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+								{
+									JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[4];
+									inventoryNameDictionary[4] = itemObject.nullItem;
+									break;
+								}
 							}
 						}
 					}
@@ -235,8 +333,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[4].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[4]);
+						inventoryNameDictionary[4] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[5].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[5].icon, inventoryNameDictionary[5].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[5].isTrap == false)
 			{
@@ -247,6 +358,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
 						{
 							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[5];
+							inventoryNameDictionary[5] = itemObject.nullItem;
 							break;
 						}
 					}
@@ -263,11 +375,24 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[5].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[5]);
+						inventoryNameDictionary[5] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
 		GUILayout.EndHorizontal();
 
 		GUILayout.BeginHorizontal();
-		if(GUILayout.Button (inventoryNameDictionary[6].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[6].icon, inventoryNameDictionary[6].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[6].isTrap == false)
 			{
@@ -275,10 +400,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[6];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[6];
+								inventoryNameDictionary[6] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -294,8 +423,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[6].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[6]);
+						inventoryNameDictionary[6] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[7].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[7].icon, inventoryNameDictionary[7].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[7].isTrap == false)
 			{
@@ -303,10 +445,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[7];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[7];
+								inventoryNameDictionary[7] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -322,8 +468,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[7].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[7]);
+						inventoryNameDictionary[7] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[8].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[7].icon, inventoryNameDictionary[7].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[8].isTrap == false)
 			{
@@ -331,10 +490,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[8];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[8];
+								inventoryNameDictionary[8] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -350,8 +513,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[8].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[8]);
+						inventoryNameDictionary[8] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[9].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[9].icon, inventoryNameDictionary[9].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[9].isTrap == false)
 			{
@@ -359,10 +535,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[9];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[9];
+								inventoryNameDictionary[9] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -378,9 +558,22 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[9].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[9]);
+						inventoryNameDictionary[9] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
 
-		if(GUILayout.Button (inventoryNameDictionary[10].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[10].icon, inventoryNameDictionary[10].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[10].isTrap == false)
 			{
@@ -388,10 +581,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[10];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[10];
+								inventoryNameDictionary[10] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -407,8 +604,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[10].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[10]);
+						inventoryNameDictionary[10] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[11].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[11].icon, inventoryNameDictionary[11].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[11].isTrap == false)
 			{
@@ -416,10 +626,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[11];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[11];
+								inventoryNameDictionary[11] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -435,11 +649,24 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[11].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[11]);
+						inventoryNameDictionary[11] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
 		GUILayout.EndHorizontal();
 
 		GUILayout.BeginHorizontal();
-		if(GUILayout.Button (inventoryNameDictionary[12].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[12].icon, inventoryNameDictionary[12].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[12].isTrap == false)
 			{
@@ -447,10 +674,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[12];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[12];
+								inventoryNameDictionary[12] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -466,8 +697,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[12].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[12]);
+						inventoryNameDictionary[12] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[13].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[13].icon, inventoryNameDictionary[13].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[13].isTrap == false)
 			{
@@ -475,10 +719,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[13];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[13];
+								inventoryNameDictionary[13] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -494,8 +742,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[13].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[13]);
+						inventoryNameDictionary[13] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[14].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[14].icon, inventoryNameDictionary[14].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[14].isTrap == false)
 			{
@@ -503,10 +764,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[14];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[14];
+								inventoryNameDictionary[14] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -522,8 +787,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[14].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[14]);
+						inventoryNameDictionary[14] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[15].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[15].icon, inventoryNameDictionary[15].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[15].isTrap == false)
 			{
@@ -531,10 +809,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[15];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[15];
+								inventoryNameDictionary[15] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -550,8 +832,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[15].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[15]);
+						inventoryNameDictionary[15] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[16].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[16].icon, inventoryNameDictionary[16].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[16].isTrap == false)
 			{
@@ -559,10 +854,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[16];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[16];
+								inventoryNameDictionary[16] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -578,8 +877,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[16].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[16]);
+						inventoryNameDictionary[16] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[17].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[17].icon, inventoryNameDictionary[17].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[17].isTrap == false)
 			{
@@ -587,10 +899,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[17];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[17];
+								inventoryNameDictionary[17] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -606,11 +922,24 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[17].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[17]);
+						inventoryNameDictionary[17] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
 		GUILayout.EndHorizontal();
 
 		GUILayout.BeginHorizontal();
-		if(GUILayout.Button (inventoryNameDictionary[18].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[18].icon, inventoryNameDictionary[18].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[18].isTrap == false)
 			{
@@ -618,10 +947,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[18];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[18];
+								inventoryNameDictionary[18] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -637,8 +970,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[18].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[18]);
+						inventoryNameDictionary[18] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[19].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[19].icon, inventoryNameDictionary[19].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[19].isTrap == false)
 			{
@@ -646,10 +992,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[19];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[19];
+								inventoryNameDictionary[19] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -665,8 +1015,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[19].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[19]);
+						inventoryNameDictionary[19] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[20].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[20].icon, inventoryNameDictionary[20].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[20].isTrap == false)
 			{
@@ -674,10 +1037,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[20];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[20];
+								inventoryNameDictionary[20] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -693,8 +1060,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[20].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[20]);
+						inventoryNameDictionary[20] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[21].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[21].icon, inventoryNameDictionary[21].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[21].isTrap == false)
 			{
@@ -702,10 +1082,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[21];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[21];
+								inventoryNameDictionary[21] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -721,8 +1105,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[21].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[21]);
+						inventoryNameDictionary[21] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[22].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[22].icon, inventoryNameDictionary[22].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[22].isTrap == false)
 			{
@@ -730,10 +1127,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[22];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[22];
+								inventoryNameDictionary[22] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -749,8 +1150,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[22].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[22]);
+						inventoryNameDictionary[22] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[23].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[23].icon, inventoryNameDictionary[23].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[23].isTrap == false)
 			{
@@ -758,10 +1172,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[23];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[23];
+								inventoryNameDictionary[23] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -777,11 +1195,24 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[23].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[23]);
+						inventoryNameDictionary[23] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
 		GUILayout.EndHorizontal();
 
 		GUILayout.BeginHorizontal();
-		if(GUILayout.Button (inventoryNameDictionary[24].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[24].icon, inventoryNameDictionary[24].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[24].isTrap == false)
 			{
@@ -789,10 +1220,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[24];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[24];
+								inventoryNameDictionary[24] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -808,8 +1243,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[24].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[24]);
+						inventoryNameDictionary[24] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[25].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[25].icon, inventoryNameDictionary[25].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[25].isTrap == false)
 			{
@@ -817,10 +1265,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[25];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[25];
+								inventoryNameDictionary[25] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -836,8 +1288,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[25].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[25]);
+						inventoryNameDictionary[25] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[26].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[26].icon, inventoryNameDictionary[26].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[26].isTrap == false)
 			{
@@ -845,10 +1310,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[26];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[26];
+								inventoryNameDictionary[26] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -864,8 +1333,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[26].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[26]);
+						inventoryNameDictionary[26] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[27].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[27].icon, inventoryNameDictionary[27].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[27].isTrap == false)
 			{
@@ -873,10 +1355,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[27];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[27];
+								inventoryNameDictionary[27] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -892,8 +1378,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[27].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[27]);
+						inventoryNameDictionary[27] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[28].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[28].icon, inventoryNameDictionary[28].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[28].isTrap == false)
 			{
@@ -901,10 +1400,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[28];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[28];
+								inventoryNameDictionary[28] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -920,8 +1423,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[28].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[28]);
+						inventoryNameDictionary[28] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[29].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[29].icon, inventoryNameDictionary[29].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[29].isTrap == false)
 			{
@@ -929,10 +1445,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[29];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[29];
+								inventoryNameDictionary[29] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -948,11 +1468,24 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[29].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[29]);
+						inventoryNameDictionary[29] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
 		GUILayout.EndHorizontal();
 
 		GUILayout.BeginHorizontal();
-		if(GUILayout.Button (inventoryNameDictionary[30].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[30].icon, inventoryNameDictionary[30].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[30].isTrap == false)
 			{
@@ -960,10 +1493,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[30];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[30];
+								inventoryNameDictionary[30] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -979,8 +1516,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[30].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[30]);
+						inventoryNameDictionary[30] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[31].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[31].icon, inventoryNameDictionary[31].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[31].isTrap == false)
 			{
@@ -988,10 +1538,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[31];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[31];
+								inventoryNameDictionary[31] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -1007,8 +1561,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[31].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[31]);
+						inventoryNameDictionary[31] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[32].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[32].icon, inventoryNameDictionary[32].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[2].isTrap == false)
 			{
@@ -1016,10 +1583,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[2];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[32];
+								inventoryNameDictionary[32] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -1035,8 +1606,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[32].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[32]);
+						inventoryNameDictionary[32] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[33].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[33].icon, inventoryNameDictionary[33].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[2].isTrap == false)
 			{
@@ -1044,10 +1628,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[2];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[33];
+								inventoryNameDictionary[33] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -1063,8 +1651,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[33].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[33]);
+						inventoryNameDictionary[33] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[34].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[34].icon, inventoryNameDictionary[34].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[2].isTrap == false)
 			{
@@ -1072,10 +1673,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[2];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[34];
+								inventoryNameDictionary[34] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -1091,8 +1696,21 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[34].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[34]);
+						inventoryNameDictionary[34] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
-		if(GUILayout.Button (inventoryNameDictionary[35].icon, GUILayout.Width (50), GUILayout.Height (50)))
+		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[35].icon, inventoryNameDictionary[35].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[2].isTrap == false)
 			{
@@ -1100,10 +1718,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[2];
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[35];
+								inventoryNameDictionary[35] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -1119,6 +1741,19 @@ public class JP_InventoryGUI : MonoBehaviour {
 				EnableMovement ();
 				InventoryUp = false;
 			}
+
+			if(inventoryNameDictionary[35].baitID > 0)
+			{
+				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				{
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					{
+						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[35]);
+						inventoryNameDictionary[35] = itemObject.nullItem;
+					}
+				}
+				
+			}
 		}
 		GUILayout.EndHorizontal();
 
@@ -1127,6 +1762,18 @@ public class JP_InventoryGUI : MonoBehaviour {
 		// ************************************** END OF BUTTON LAYOUT AND ACTION **************************************
 		// *************************************************************************************************************
 		// *************************************************************************************************************
+
+		if(GUI.tooltip != "")
+		{
+			mPosition = Event.current.mousePosition;
+			tooltipWindowRect = new Rect(mPosition.x+110,mPosition.y+100,200,100);
+			itemDescription = GUI.tooltip;
+			tooltipUp = true;
+		}
+		else
+		{
+			tooltipUp = false;
+		}
 
 	}
 	

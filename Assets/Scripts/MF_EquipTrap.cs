@@ -31,11 +31,7 @@ public class MF_EquipTrap : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown ("1")){
-			trapOneEquip = true;
-			trapTwoEquip = false;
-
-			trapTwo.GetComponent<MeshRenderer>().enabled = false;
-			trapTwo.GetComponent<SphereCollider>().enabled = false;
+			Application.LoadLevel("TownScene");
 		}
 
 		if (Input.GetKeyDown ("2")){

@@ -28,6 +28,16 @@ public class JP_SpawnTrap : MonoBehaviour
 		itemObject = trapObject;
 	}
 
+	public int GetTrapID()
+	{
+		return itemObject.ItemID;
+	}
+
+	public bool isHolding()
+	{
+		return holdingTrap;
+	}
+
 	void Update()
 	{
 		if(holdingTrap)

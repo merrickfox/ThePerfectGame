@@ -98,8 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyGUISkin: {fileID: 11400000, guid: a2d5fa19b0126c14c917ab1607888a74, type: 2}
-  squirrel: {fileID: 0}
-  beaver: {fileID: 0}
+  score: {fileID: 13200000, guid: e5db30a6d20289d46892c841f92fb09e, type: 2}
+  squirrel: {fileID: 2800000, guid: aeab8fae7128dae4bbb58b63b2e1393e, type: 3}
+  beaver: {fileID: 2800000, guid: 918fa064b30997b478279dd18d88b684, type: 3}
+  textLocation: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

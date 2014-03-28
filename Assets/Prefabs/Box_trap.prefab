@@ -401,7 +401,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1ec4a369eb49054e8d67b8f6f205773, type: 3}
+  m_Script: {fileID: 11500000, guid: ec01ce40ae8430642ba8e15b1ecb1d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
@@ -417,8 +417,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyGUISkin: {fileID: 11400000, guid: a2d5fa19b0126c14c917ab1607888a74, type: 2}
-  squirrel: {fileID: 2800000, guid: 45ef1ace2dabf2c4b996a317ac9b4a4a, type: 3}
-  beaver: {fileID: 2800000, guid: 45ef1ace2dabf2c4b996a317ac9b4a4a, type: 3}
+  score: {fileID: 13200000, guid: e5db30a6d20289d46892c841f92fb09e, type: 2}
+  squirrel: {fileID: 2800000, guid: aeab8fae7128dae4bbb58b63b2e1393e, type: 3}
+  beaver: {fileID: 2800000, guid: 918fa064b30997b478279dd18d88b684, type: 3}
+  spider: {fileID: 2800000, guid: 36701cac71a22b74b8cc14afdfb2e530, type: 3}
+  mouse: {fileID: 2800000, guid: 84fb15eca45148f428ae79a0b8814270, type: 3}
+  bear: {fileID: 2800000, guid: 5438b3dd7292e0e4da5ce33e38c902c4, type: 3}
+  snake: {fileID: 2800000, guid: e7a3b7f960eedf446adfbb7eb7e1b487, type: 3}
+  rabbit: {fileID: 2800000, guid: 4189d347dd307c5459bb80720f8dc2ba, type: 3}
+  deer: {fileID: 2800000, guid: f10fb01c1cafdb74bbd4ef7a5e933ad3, type: 3}
+  skunk: {fileID: 2800000, guid: f214419c502bfb74db52c3b1cfb506ac, type: 3}
+  hedgehog: {fileID: 2800000, guid: f4191516fd162e845a473f7acb9e8554, type: 3}
+  chicken: {fileID: 2800000, guid: ba4b0f97e8831164281aceb44472e3f4, type: 3}
+  owl: {fileID: 2800000, guid: 184bfd601c8163241abc8fc399ca805a, type: 3}
+  eagle: {fileID: 2800000, guid: 51a7bb0374ab0fe40bd68f68b460a226, type: 3}
+  pigeon: {fileID: 2800000, guid: e258581d8ba72104ca5e54761baa8b13, type: 3}
+  dog: {fileID: 2800000, guid: 15b02a16126942b4f904f67e82a732d8, type: 3}
+  cat: {fileID: 2800000, guid: 45106728fcbbb1f48986f221dda65bab, type: 3}
+  lizard: {fileID: 2800000, guid: ad6e6cc3fe4683e4f8532e83573dd219, type: 3}
+  raccoon: {fileID: 2800000, guid: 55b2a75e700f2df408e57cccd9eac4ba, type: 3}
+  human: {fileID: 2800000, guid: a7465a8cea292c54f9d1d6c22e18e6df, type: 3}
+  textLocation: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
