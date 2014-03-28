@@ -7,45 +7,70 @@ public class Item_Class : MonoBehaviour {
 	public static Texture2D stickIcon = (Texture2D) Resources.Load ("Textures/Stick_IMG");
 	public static Texture2D stringIcon = (Texture2D) Resources.Load ("Textures/String");
 	public static Texture2D boxIcon = (Texture2D) Resources.Load ("Textures/Box");
-	public static Texture2D ropeIcon;
+	public static Texture2D ropeIcon = (Texture2D) Resources.Load ("Textures/Rope");
 	public static Texture2D rockIcon = (Texture2D) Resources.Load ("Textures/Rock");
-	public static Texture2D knifeIcon;
-	public static Texture2D needleIcon;
-	public static Texture2D balloonIcon;
-	public static Texture2D cbatteryIcon;
-	public static Texture2D wheelIcon;
-	public static Texture2D hangerIcon;
-	public static Texture2D alcoholIcon;
+	public static Texture2D knifeIcon = (Texture2D) Resources.Load ("Textures/Knife");
+	public static Texture2D needleIcon = (Texture2D) Resources.Load ("Textures/Needle");
+	public static Texture2D balloonIcon = (Texture2D) Resources.Load ("Textures/Balloon");
+	public static Texture2D cbatteryIcon = (Texture2D) Resources.Load ("Textures/CarBattery");
+	public static Texture2D wheelIcon = (Texture2D) Resources.Load ("Textures/BikeWheel");
+	public static Texture2D hangerIcon = (Texture2D) Resources.Load ("Textures/Hanger");
+	public static Texture2D alcoholIcon = (Texture2D) Resources.Load ("Textures/Alcohol");
 	public static Texture2D leafIcon = (Texture2D) Resources.Load ("Textures/PileofLeaf");
-	public static Texture2D springIcon;
-	public static Texture2D wireIcon;
-	public static Texture2D fishingRodIcon;
-	public static Texture2D netIcon;
+	public static Texture2D springIcon = (Texture2D) Resources.Load ("Textures/Spring");
+	public static Texture2D wireIcon = (Texture2D) Resources.Load ("Textures/Wire");
+	public static Texture2D fishingRodIcon = (Texture2D) Resources.Load ("Textures/FishingRod");
+	public static Texture2D netIcon = (Texture2D) Resources.Load ("Textures/net");
+	public static Texture2D metalIcon = (Texture2D) Resources.Load ("Textures/scrapMetal");
 	public static Texture2D nullIcon;
 
 	// Trap Textures
 	public static Texture2D boxTrapIcon = (Texture2D)Resources.Load ("Textures/Traps/Box_Trap");
 	public static Texture2D spikeTrapIcon = (Texture2D)Resources.Load ("Textures/Traps/spiketrap");
-	public static Texture2D bearTrapIcon;
-	public static Texture2D cageTrapIcon;
-	public static Texture2D snareTrapIcon;
-	public static Texture2D RodIcon;
-	public static Texture2D electricHumanIcon;
-	public static Texture2D electricNetIcon;
-	public static Texture2D balloonTrapIcon;
+	public static Texture2D bearTrapIcon = (Texture2D)Resources.Load ("Textures/Traps/BearTrap");
+	public static Texture2D cageTrapIcon = (Texture2D)Resources.Load ("Textures/Traps/Cage");
+	public static Texture2D snareTrapIcon = (Texture2D)Resources.Load ("Textures/Traps/Snare");
+	public static Texture2D RodIcon = (Texture2D)Resources.Load ("Textures/Traps/RodTrap");
+	public static Texture2D electricHumanIcon = (Texture2D)Resources.Load ("Textures/Traps/ElectricTrap");
+	public static Texture2D electricNetIcon = (Texture2D)Resources.Load ("Textures/Traps/ElectricNet");
+	public static Texture2D balloonTrapIcon = (Texture2D)Resources.Load ("Textures/Traps/BalloonTrap");
 
 	//Bait Textures
-	public static Texture2D nutBaitIcon = (Texture2D)Resources.Load ("Textures/Nuts");
-	public static Texture2D spiderBaitIcon;
+	public static Texture2D nutBaitIcon = (Texture2D)Resources.Load ("Textures/Bait/Nuts");
+	public static Texture2D carrotsBaitIcon = (Texture2D)Resources.Load ("Textures/Bait/Carrot");
+	public static Texture2D moneyBaitIcon = (Texture2D)Resources.Load ("Textures/Bait/DollarBill");
+	public static Texture2D sextapeBaitIcon = (Texture2D)Resources.Load ("Textures/Bait/SexTape");
+	public static Texture2D bookBaitIcon = (Texture2D)Resources.Load ("Textures/Bait/Book");
+	public static Texture2D spiderBaitIcon = (Texture2D)Resources.Load ("Textures/Bait/Spider");
 	public static Texture2D squirrelBaitIcon;
-	public static Texture2D fishBaitIcon;
+	//public static Texture2D fishBaitIcon;
 	public static Texture2D beaverBaitIcon;
 	public static Texture2D mouseBaitIcon;
 	public static Texture2D bearBaitIcon;
-	public static Texture2D carrotsBaitIcon;
-	public static Texture2D moneyBaitIcon;
-	public static Texture2D sextapeBaitIcon;
-	public static Texture2D bookBaitIcon;
+	public static Texture2D snakeIcon;
+	public static Texture2D rabbitIcon;
+	public static Texture2D deerIcon;
+	public static Texture2D skunkIcon;
+	public static Texture2D hedgehogIcon;
+	public static Texture2D chickenIcon;
+	public static Texture2D owlIcon;
+	public static Texture2D eagleIcon;
+	public static Texture2D pigeonIcon;
+	public static Texture2D dogsIcon;
+	public static Texture2D catsIcon;
+	public static Texture2D lizardIcon;
+	public static Texture2D racoonIcon;
+	public static Texture2D gothIcon;
+	public static Texture2D mayorIcon;
+	public static Texture2D druggyIcon;
+	public static Texture2D whoreIcon;
+	public static Texture2D priestIcon;
+	public static Texture2D drunkIcon;
+	public static Texture2D homelessIcon;
+	public static Texture2D pharmacistIcon;
+	public static Texture2D bankerIcon;
+	public static Texture2D binmanIcon;
+
 
 	// Items
 	public ItemClass nullItem = new ItemClass(0, 0, 0, "null", nullIcon, "null",false);
@@ -63,8 +88,9 @@ public class Item_Class : MonoBehaviour {
 	public ItemClass leaf_r = new ItemClass (13, 0, 0, "Leaf", leafIcon, "A leaf... useless on it's own... maybe I can use it for a trap as camouflage...", false);
 	public ItemClass spring_r = new ItemClass (14, 0, 0, "Spring", springIcon, "A spring... Well maybe I can use it in a trap for something...", false);
 	public ItemClass wire_r = new ItemClass (15, 0, 0, "Wire", wireIcon, "A strong piece of metal wire... This can be pretty useful in a trap.", false);
-	public ItemClass fishingRod_r = new ItemClass (16, 0, 0, "Fishing Rod", fishingRodIcon, "A fishing rod with no string... Maybe I can use this to create a trap of some sort.", false);
+	public ItemClass fishingRod_r = new ItemClass (16, 0, 0, "Broken Fishing Rod", fishingRodIcon, "A fishing rod with no string... Maybe I can use this to create a trap of some sort.", false);
 	public ItemClass net_r = new ItemClass (17, 0, 0, "Net", netIcon, "A net, it is still in decent condition to catch weaker things in a trap.", false);
+	public ItemClass scrapMetal_r = new ItemClass (18, 0, 0, "Scrap Metal", metalIcon, "This can be used to construct traps!", false);
 
 	// Traps
 	public ItemClass boxTrap_c = new ItemClass(0, 1, 0, "Box Trap", boxTrapIcon, "A simple box trap.", true);
@@ -72,17 +98,17 @@ public class Item_Class : MonoBehaviour {
 	public ItemClass bearTrap_c = new ItemClass(0, 3, 0, "Bear Trap", bearTrapIcon, "A bear trap, can be used on more than just bears", true);
 	public ItemClass cageTrap_c = new ItemClass(0, 4, 0, "Cage Trap", cageTrapIcon, "A cage which will catch anything that gets lured inside", true);
 	public ItemClass snareTrap_c = new ItemClass(0, 5, 0, "Snare Trap", snareTrapIcon, "A snare camouflaged to catch and hold things.", true);
-	public ItemClass Rod_c = new ItemClass(0, 6, 0, "Human Rod", RodIcon, "Dollar Bill Rod, time to reel in some poor homeless people", true);
+	public ItemClass Rod_c = new ItemClass(0, 6, 0, "Rod", RodIcon, "A sturdy Rod, time to reel in some poor homeless people", true);
 	public ItemClass electricHuman_c = new ItemClass (0, 7, 0, "Electrify Human Trap", electricHumanIcon, "A electric trap, powerful enough to paralyse most things", true);
 	public ItemClass electricNetTrap_c = new ItemClass (0, 8, 0, "Electric Net Trap", electricNetIcon, "Electric Net Trap", true);
 	public ItemClass balloonTrap_c = new ItemClass (0, 9, 0, "Ballon Trap", balloonTrapIcon, "A balloon to the regular person, but what they don't know is it has a spider inside which can paralyse any unsuspecting prey", true);
 
 	//Bait
-	public ItemClass alcohol_r = new ItemClass(0, 0, 1, "Alcohol", alcoholIcon, "Ooooo, Alcohol... Must resist urge to drink, I can probably use this in a trap for a weak fool...",false);
+	public ItemClass alcohol_b = new ItemClass(0, 0, 1, "Alcohol", alcoholIcon, "Ooooo, Alcohol... Must resist urge to drink, I can probably use this in a trap for a weak fool...",false);
 	public ItemClass nuts_b = new ItemClass (0, 0, 2, "Nuts", nutBaitIcon, "Too bad I have a nut allergy, but maybe I can use it to lure something I can eat!", false);
 	public ItemClass spider_b = new ItemClass (0, 0, 3, "Spider", spiderBaitIcon, "A spider... YUCK! Maybe I can use it in a trap!", false);
 	public ItemClass squirrel_b = new ItemClass (0, 0, 4, "Squirrel", squirrelBaitIcon, "Aww a cute Squirrel. Maybe I can fool someone with it!", false);
-	public ItemClass fish_b = new ItemClass (0, 0, 5, "Fish", fishBaitIcon, "This fish has gone a little sour for me, maybe I can use it to capture something fresh!", false);
+	//public ItemClass fish_b = new ItemClass (0, 0, 5, "Fish", fishBaitIcon, "This fish has gone a little sour for me, maybe I can use it to capture something fresh!", false);
 	public ItemClass beaver_b = new ItemClass (0, 0, 6, "Beaver", beaverBaitIcon, "This beaver was a pain to catch, but maybe I can get something more useful using it in a trap!", false);
 	public ItemClass mouse_b = new ItemClass (0, 0, 7, "Mouse", mouseBaitIcon, "A cute little mouse, the perfect bait!", false);
 	public ItemClass bear_b = new ItemClass (0, 0, 8, "Bear", bearBaitIcon, "A massive bear, what the hell am I going to do with this?!", false);
@@ -90,6 +116,33 @@ public class Item_Class : MonoBehaviour {
 	public ItemClass money_b = new ItemClass (0, 0, 10, "Money", moneyBaitIcon, "Pfft, Money. Usless to me... But maybe I can fool a fool!", false);
 	public ItemClass sextape_b = new ItemClass (0, 0, 11, "Sextape", sextapeBaitIcon, "Oh a sextape, it seems important!", false);
 	public ItemClass book_b = new ItemClass (0, 0, 12, "Lovecraft", bookBaitIcon, "Goths love Cthulu, maybe I can use this to trap some idgits!", false);
+	public ItemClass snake_b = new ItemClass (0, 0, 13, "Snake", snakeIcon, "A snake, delicious to eat but maybe I can use it in a trap as a bait", false);
+	public ItemClass rabbit_b = new ItemClass (0, 0, 14, "Rabbit", rabbitIcon, "A cute little rabbit, could be used in a trap as bait!", false);
+	public ItemClass deer_b = new ItemClass (0, 0, 15, "Deer", deerIcon, "A deer, beautiful and majestic... maybe I can use it as bait", false);
+	public ItemClass skunk_b = new ItemClass (0, 0, 16, "Skunk", skunkIcon, "A stinky, disgusting little creature... maybe I can use it as bait!", false);
+	public ItemClass hedgehog_b = new ItemClass (0, 0, 17, "Hedgehog", hedgehogIcon, "A prickly little devil, maybe it can cause damage as bait!", false);
+	public ItemClass chicken_b = new ItemClass (0, 0, 18, "Chicken", chickenIcon, "Chicken is delicious, but maybe I can lure something even tastier...", false);
+	public ItemClass owl_b = new ItemClass (0, 0, 19, "Owl", owlIcon, "A hooting owl, it's noise could make good bait.", false);
+	public ItemClass eagle_b = new ItemClass (0, 0, 20, "Eagle", eagleIcon, "A majestic bird, violent and proud. Great for bait on a trap!", false);
+	public ItemClass pigeon_b = new ItemClass (0, 0, 21, "Pigeon", pigeonIcon, "A very basic bird, a very basic bait, but something nonetheless.", false);
+	public ItemClass dogs_b = new ItemClass (0, 0, 22, "Dogs", dogsIcon, "A dog, loved by many. Will be great as bait!", false);
+	public ItemClass cats_b = new ItemClass (0, 0, 23, "Cats", catsIcon, "A cat, loved by many. Will be great as bait!", false);
+	public ItemClass lizard_b = new ItemClass (0, 0, 24, "Lizard", lizardIcon, "A sneaky little bugger, maybe I can use it as bait", false);
+	public ItemClass goth_b = new ItemClass (0, 0, 25, "Goth", bookBaitIcon, "Goths love Cthulu, maybe I can use this", false);
+	public ItemClass mayor_b = new ItemClass (0, 0, 26, "Mayor", bookBaitIcon, "Goths love Cthulu, maybe I can use this", false);
+	public ItemClass druggy_b = new ItemClass (0, 0, 27, "Drug User", bookBaitIcon, "Goths love Cthulu, maybe I can use this", false);
+	public ItemClass whore_b = new ItemClass (0, 0, 28, "Whore", bookBaitIcon, "Goths love Cthulu, maybe I can use this", false);
+	public ItemClass priest_b = new ItemClass (0, 0, 29, "Priest", bookBaitIcon, "Goths love Cthulu, maybe I can use this", false);
+	public ItemClass drunk_b = new ItemClass (0, 0, 30, "Drunk", bookBaitIcon, "Goths love Cthulu, maybe I can use this", false);
+	public ItemClass homeless_b = new ItemClass (0, 0, 31, "Homeless", bookBaitIcon, "Goths love Cthulu, maybe I can use this", false);
+	public ItemClass pharmacist_b = new ItemClass (0, 0, 32, "Pharmacist", bookBaitIcon, "Goths love Cthulu, maybe I can use this", false);
+	public ItemClass banker_b = new ItemClass (0, 0, 33, "Banker", bookBaitIcon, "Goths love Cthulu, maybe I can use this", false);
+	public ItemClass binman_b = new ItemClass (0, 0, 34, "Binman", bookBaitIcon, "Goths love Cthulu, maybe I can use this", false);
+
+
+	//public ItemClass snake_b = new ItemClass (0, 0, 12, "Lovecraft", bookBaitIcon, "Goths love Cthulu, maybe I can use this");
+
+
 
 	/*
 	//Traps with Bait

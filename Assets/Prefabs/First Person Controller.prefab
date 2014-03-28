@@ -459,6 +459,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70ab376057b8674e9af244e07039395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  TutWall: {fileID: 0}
   HungerFull: {fileID: 2800000, guid: 6e3adc7a848ff3e4b8d33231d85c646b, type: 3}
   Hunger1: {fileID: 2800000, guid: 0c9d0d1f8961084419cec4421220549e, type: 3}
   Hunger2: {fileID: 2800000, guid: 992682570bd061646a475b5f278bfff2, type: 3}
@@ -469,12 +471,30 @@ MonoBehaviour:
   ArrowRight: {fileID: 2800000, guid: c767e7964e515064aa5689a53fece7d9, type: 3}
   BMJournal: {fileID: 2800000, guid: 6577cb53a84146a4ea9e73248605e45d, type: 3}
   BMTracker: {fileID: 2800000, guid: 7975e94beb6ee894e87732ed6c901745, type: 3}
+  Paper: {fileID: 0}
+  TutHeader: {fileID: 0}
+  black: {fileID: 0}
+  JournalTexture: {fileID: 0}
   HungerFlash: 0
   TrackerOpen: 0
   TrackerPage: 1
   QuestPage: 1
   JournalOpen: 0
+  TutorialInt: 0
+  Tutorial: 0
+  TutorialOrder: 0
+  TutorialOrder2: 0
+  WakeupMove: 0
+  topBlack: 0
+  botBlack: 0
+  a: 0
+  b: 0
+  JournalEntryPing: 0
+  Trap1: 0
+  Trap2: 0
+  Trap3: 0
   journalSkin: {fileID: 11400000, guid: f6aa7dc20c7ef1648889f2d61489e4e8, type: 2}
+  paperGUI: {fileID: 0}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

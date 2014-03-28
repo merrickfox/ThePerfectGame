@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class MF_TrapScript : MonoBehaviour {
+	Item_Class.ItemClass itemObject = new Item_Class.ItemClass();
+	public static Item_Class baitItem = new Item_Class();
+
 	private Rect captureWindow;
 	public GUISkin MyGUISkin;
 	GameObject FPC;
@@ -106,6 +109,7 @@ public class MF_TrapScript : MonoBehaviour {
 
 		totalDist = distanceToRiver+distanceToHut+distanceToWoodsOne+distanceToBear+distanceToBeaver+distanceToChicken+distanceToEagle+distanceToHedgehog+
 		distanceToLizard+distanceToOwl+distanceToRabbit+distanceToSkunk+distanceToSnake+distanceToSpider+distanceToSquirrel;
+		//Debug.Log(totalDist);
 
 		percentToWoodsOne = 100 - (distanceToWoodsOne/totalDist)*100;
 		percentToHut = 100 - (distanceToHut/totalDist)*100;
@@ -134,6 +138,8 @@ public class MF_TrapScript : MonoBehaviour {
 		deployed = true;
 		trapType = trap;
 		baitType = bait;
+
+		Debug.Log("Bait ID: " + bait + " TrapID: "+ trap);
 	}
 
 	void OnGUI(){
@@ -189,16 +195,84 @@ public class MF_TrapScript : MonoBehaviour {
 				human_weighting = 50.0f;
 
 				break;
+
+			case 2: // spike trap
+				squirrel_weighting = 50.0f;
+				beaver_weighting = 50.0f;	
+				snake_weighting = 50.0f;
+				spider_weighting  = 50.0f;
+				mouse_weighting = 50.0f;
+				bear_weighting = 50.0f;
+				rabbit_weighting = 50.0f;
+				deer_weighting = 50.0f;
+				skunk_weighting = 50.0f;
+				hedgehog_weighting = 50.0f;
+				chicken_weighting = 50.0f;
+				owl_weighting = 50.0f;
+				eagle_weighting = 50.0f;
+				pigeon_weighting = 50.0f;
+				dog_weighting = 50.0f;
+				cat_weighting = 50.0f;
+				lizard_weighting = 50.0f;
+				raccoon_weighting = 50.0f;
+				human_weighting = 50.0f;
+
+				break;
+
+			case 3: // bear trap
+				squirrel_weighting = 50.0f;
+				beaver_weighting = 50.0f;	
+				snake_weighting = 50.0f;
+				spider_weighting  = 50.0f;
+				mouse_weighting = 50.0f;
+				bear_weighting = 100.0f;
+				rabbit_weighting = 50.0f;
+				deer_weighting = 50.0f;
+				skunk_weighting = 50.0f;
+				hedgehog_weighting = 50.0f;
+				chicken_weighting = 50.0f;
+				owl_weighting = 50.0f;
+				eagle_weighting = 50.0f;
+				pigeon_weighting = 50.0f;
+				dog_weighting = 50.0f;
+				cat_weighting = 50.0f;
+				lizard_weighting = 50.0f;
+				raccoon_weighting = 50.0f;
+				human_weighting = 50.0f;
+
+				break;
 		}
 
 		//Process chances for bait type
 		switch(baitType){
-			case 1: // Berries
-				squirrel_weighting = squirrel_weighting*1.5f;
+			case 1: // Alcohol
+				squirrel_weighting = squirrel_weighting*0f;
+				beaver_weighting = beaver_weighting*0f;
+				snake_weighting = snake_weighting*0f;
+				spider_weighting = spider_weighting*0f;
+				mouse_weighting = mouse_weighting*0f;
+				bear_weighting = bear_weighting*0f;
+				rabbit_weighting = rabbit_weighting*0f;
+				deer_weighting = deer_weighting*0f;
+				skunk_weighting = skunk_weighting*0f;
+				hedgehog_weighting = hedgehog_weighting*0f;
+				chicken_weighting = chicken_weighting*0f;
+				owl_weighting = owl_weighting*0f;
+				eagle_weighting = eagle_weighting*0f;
+				pigeon_weighting = pigeon_weighting*0f;
+				dog_weighting = dog_weighting*0f;
+				cat_weighting = cat_weighting*0f;
+				lizard_weighting = lizard_weighting*0f;
+				raccoon_weighting = raccoon_weighting*0f;
+				human_weighting = human_weighting*1.5f;
+				
+				break;
+			case 2: // Nut
+				squirrel_weighting = squirrel_weighting*2.5f;
 				beaver_weighting = beaver_weighting*0.5f;
 				snake_weighting = snake_weighting*1.0f;
 				spider_weighting = spider_weighting*0.5f;
-				mouse_weighting = mouse_weighting*0.5f;
+				mouse_weighting = mouse_weighting*1.0f;
 				bear_weighting = bear_weighting*0.5f;
 				rabbit_weighting = rabbit_weighting*0.5f;
 				deer_weighting = deer_weighting*0.5f;
@@ -212,16 +286,11 @@ public class MF_TrapScript : MonoBehaviour {
 				cat_weighting = cat_weighting*0.5f;
 				lizard_weighting = lizard_weighting*0.5f;
 				raccoon_weighting = raccoon_weighting*0.5f;
-				human_weighting = human_weighting*0.5f;
-				
-				break;
-			case 2: // Berries
-				squirrel_weighting = squirrel_weighting*0.2f;
-				beaver_weighting = beaver_weighting*1.5f;	
+				human_weighting = human_weighting*0.5f;	
 				break;
 		}
 
-		float [] chanceIndex = new float [18];
+		float [] chanceIndex = new float [19];
 		float [] cumalativeChance = new float [chanceIndex.Length];
 		//Process Distance Modifier = final chances
 		// seperate these per town/woods
@@ -243,6 +312,7 @@ public class MF_TrapScript : MonoBehaviour {
 		float cat_chance = chanceIndex[15] = cat_weighting/(distanceToHut/totalDist);
 		float lizard_chance = chanceIndex[16] = lizard_weighting/(distanceToLizard/totalDist);
 		float raccoon_chance = chanceIndex[17] = raccoon_weighting/(distanceToRiver/totalDist);
+		float human_chance = chanceIndex[18] = human_weighting/(distanceToRiver/totalDist);
 		
 
 		Debug.Log(percentToHut + " " +percentToRiver + " " +percentToWoodsOne  );
@@ -319,6 +389,7 @@ public class MF_TrapScript : MonoBehaviour {
 		}
 		else if(rand >= cumalativeChance[12] && rand < cumalativeChance[13]){
 			Debug.Log("Rand:" + rand + " Caught Pigeon");
+
 			return "Pigeon";
 		}
 		else if(rand >= cumalativeChance[13] && rand < cumalativeChance[14]){
@@ -336,6 +407,11 @@ public class MF_TrapScript : MonoBehaviour {
 		else if(rand >= cumalativeChance[16] && rand < cumalativeChance[17]){
 			Debug.Log("Rand:" + rand + " Caught Raccoon");
 			return "Raccoon";
+		}
+		else if(rand >= cumalativeChance[17] && rand < cumalativeChance[18]){
+			Debug.Log("Rand:" + rand + " Caught Human");
+			itemObject = baitItem.homeless_b;
+			return "Human";
 		}
 		
 		else
@@ -360,6 +436,12 @@ public class MF_TrapScript : MonoBehaviour {
 			caught = false;
 			EnableMovement();
 			Instantiate(score, textLocation, Quaternion.identity);
+			for(int i =0; i<36; i++){
+				if(JP_InventoryGUI.inventoryNameDictionary[i].name == "null"){
+					JP_InventoryGUI.inventoryNameDictionary[i] = itemObject;
+					break;
+				}
+			}
 		}
        
         GUILayout.EndVertical();

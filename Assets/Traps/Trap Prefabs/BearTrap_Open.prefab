@@ -1,0 +1,200 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 33: {fileID: 3300000}
+  - 23: {fileID: 2300000}
+  m_Layer: 0
+  m_Name: bearTrap_Open
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400002}
+  - 95: {fileID: 9500000}
+  - 114: {fileID: 11400000}
+  - 54: {fileID: 5400000}
+  - 114: {fileID: 11400002}
+  - 65: {fileID: 6500000}
+  - 114: {fileID: 11400004}
+  m_Layer: 0
+  m_Name: BearTrap_Open
+  m_TagString: Trap
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400002}
+--- !u!4 &400002
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.38886738, y: .06464912, z: 2.38248944}
+  m_LocalScale: {x: .0837589502, y: .0837589502, z: .0837589502}
+  m_Children:
+  - {fileID: 400000}
+  m_Father: {fileID: 0}
+--- !u!23 &2300000
+Renderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: ea1273883184d574b8513482a3bc5757, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &3300000
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Mesh: {fileID: 4300002, guid: 92f55cf7f08310848b9df6e82a28883b, type: 3}
+--- !u!54 &5400000
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &6500000
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 29.5629921, y: 5.12950039, z: 19.8294563}
+  m_Center: {x: 4.74524498, y: 2.17842102, z: -.750034809}
+--- !u!95 &9500000
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 92f55cf7f08310848b9df6e82a28883b, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec01ce40ae8430642ba8e15b1ecb1d2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 100002, guid: 7c945c4f671d7b2478c5e36721ecfaeb, type: 2}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1b88299af0e2943b771aa367828204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60de4a62f54140348a1b0876cfc7152b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyGUISkin: {fileID: 11400000, guid: 4a1b5f5482ea6b44a8f58133fffe8c01, type: 2}
+  score: {fileID: 13200000, guid: e5db30a6d20289d46892c841f92fb09e, type: 2}
+  squirrel: {fileID: 2800000, guid: aeab8fae7128dae4bbb58b63b2e1393e, type: 3}
+  beaver: {fileID: 2800000, guid: 918fa064b30997b478279dd18d88b684, type: 3}
+  spider: {fileID: 2800000, guid: 36701cac71a22b74b8cc14afdfb2e530, type: 3}
+  mouse: {fileID: 2800000, guid: 84fb15eca45148f428ae79a0b8814270, type: 3}
+  bear: {fileID: 2800000, guid: 5438b3dd7292e0e4da5ce33e38c902c4, type: 3}
+  snake: {fileID: 2800000, guid: e7a3b7f960eedf446adfbb7eb7e1b487, type: 3}
+  rabbit: {fileID: 2800000, guid: 4189d347dd307c5459bb80720f8dc2ba, type: 3}
+  deer: {fileID: 2800000, guid: f10fb01c1cafdb74bbd4ef7a5e933ad3, type: 3}
+  skunk: {fileID: 2800000, guid: f214419c502bfb74db52c3b1cfb506ac, type: 3}
+  hedgehog: {fileID: 2800000, guid: f4191516fd162e845a473f7acb9e8554, type: 3}
+  chicken: {fileID: 2800000, guid: ba4b0f97e8831164281aceb44472e3f4, type: 3}
+  owl: {fileID: 2800000, guid: 184bfd601c8163241abc8fc399ca805a, type: 3}
+  eagle: {fileID: 2800000, guid: 51a7bb0374ab0fe40bd68f68b460a226, type: 3}
+  pigeon: {fileID: 2800000, guid: e258581d8ba72104ca5e54761baa8b13, type: 3}
+  dog: {fileID: 2800000, guid: 15b02a16126942b4f904f67e82a732d8, type: 3}
+  cat: {fileID: 2800000, guid: 45106728fcbbb1f48986f221dda65bab, type: 3}
+  lizard: {fileID: 2800000, guid: ad6e6cc3fe4683e4f8532e83573dd219, type: 3}
+  raccoon: {fileID: 2800000, guid: 55b2a75e700f2df408e57cccd9eac4ba, type: 3}
+  human: {fileID: 2800000, guid: a7465a8cea292c54f9d1d6c22e18e6df, type: 3}
+  textLocation: {x: 0, y: 0, z: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100002}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1

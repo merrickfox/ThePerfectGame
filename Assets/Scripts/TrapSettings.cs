@@ -12,7 +12,8 @@ public class TrapSettings : MonoBehaviour
 	// Trap Variables
 	private Rect baitWindowRect = new Rect(600,100,100,100);
 	private bool BaitUp = false;
-	private int BaitID;
+	private int BaitID = 0;
+	MF_TrapScript trapScript;
 
 	public Dictionary<int, Item_Class.ItemClass> BaitNameDictionary = new Dictionary<int, Item_Class.ItemClass>()
 	{
@@ -85,6 +86,7 @@ public class TrapSettings : MonoBehaviour
 		Player = GameObject.FindGameObjectWithTag("Player");
 		itemObject = Player.GetComponent<JP_TrapSelection>().GetTrap ();
 		gameObject.tag = "Trap";
+		trapScript = gameObject.GetComponent<MF_TrapScript>();
 	}
 
 	void OnGUI()
@@ -128,6 +130,7 @@ public class TrapSettings : MonoBehaviour
 		if (BaitID < 1 && BaitNameDictionary[0].name != "null")
 		{
 			BaitID = BaitNameDictionary[0].baitID;
+			trapScript.Deploy(itemObject.TrapID, BaitID);
 		}
 
 		if(BaitUp)

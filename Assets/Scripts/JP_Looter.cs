@@ -67,6 +67,7 @@ public class JP_Looter : MonoBehaviour {
 
 			lootDictionary[0] = itemObject.stick_r;
 			lootDictionary[1] = itemObject.box_r;
+			lootDictionary[2] = itemObject.nuts_b;
 		}
 
 		// ************************* STICK RESOURCE ********************************

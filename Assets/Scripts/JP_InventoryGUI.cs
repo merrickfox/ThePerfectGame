@@ -24,8 +24,8 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 	static public Dictionary<int, Item_Class.ItemClass> inventoryNameDictionary = new Dictionary<int, Item_Class.ItemClass>()
 	{
-		{0, itemObject.nullItem},
-		{1, itemObject.nullItem},
+		{0, itemObject.bearTrap_c},
+		{1, itemObject.alcohol_b},
 		{2, itemObject.nullItem},
 		{3, itemObject.nullItem},
 		{4, itemObject.nullItem},
@@ -200,7 +200,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[1]);
 						inventoryNameDictionary[1] = itemObject.nullItem;
@@ -245,7 +245,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[2]);
 						inventoryNameDictionary[2] = itemObject.nullItem;
@@ -290,7 +290,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[3]);
 						inventoryNameDictionary[3] = itemObject.nullItem;
@@ -338,7 +338,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[4]);
 						inventoryNameDictionary[4] = itemObject.nullItem;
@@ -380,7 +380,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[5]);
 						inventoryNameDictionary[5] = itemObject.nullItem;
@@ -428,7 +428,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[6]);
 						inventoryNameDictionary[6] = itemObject.nullItem;
@@ -473,7 +473,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[7]);
 						inventoryNameDictionary[7] = itemObject.nullItem;
@@ -518,7 +518,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[8]);
 						inventoryNameDictionary[8] = itemObject.nullItem;
@@ -563,7 +563,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[9]);
 						inventoryNameDictionary[9] = itemObject.nullItem;
@@ -609,7 +609,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[10]);
 						inventoryNameDictionary[10] = itemObject.nullItem;
@@ -654,7 +654,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName ()== "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[11]);
 						inventoryNameDictionary[11] = itemObject.nullItem;
@@ -702,7 +702,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[12]);
 						inventoryNameDictionary[12] = itemObject.nullItem;
@@ -747,7 +747,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[13]);
 						inventoryNameDictionary[13] = itemObject.nullItem;
@@ -792,7 +792,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[14]);
 						inventoryNameDictionary[14] = itemObject.nullItem;
@@ -837,7 +837,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[15]);
 						inventoryNameDictionary[15] = itemObject.nullItem;
@@ -882,7 +882,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[16]);
 						inventoryNameDictionary[16] = itemObject.nullItem;
@@ -927,7 +927,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[17]);
 						inventoryNameDictionary[17] = itemObject.nullItem;
@@ -975,7 +975,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[18]);
 						inventoryNameDictionary[18] = itemObject.nullItem;
@@ -1020,7 +1020,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[19]);
 						inventoryNameDictionary[19] = itemObject.nullItem;
@@ -1065,7 +1065,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[20]);
 						inventoryNameDictionary[20] = itemObject.nullItem;
@@ -1110,7 +1110,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[21]);
 						inventoryNameDictionary[21] = itemObject.nullItem;
@@ -1155,7 +1155,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[22]);
 						inventoryNameDictionary[22] = itemObject.nullItem;
@@ -1200,7 +1200,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[23]);
 						inventoryNameDictionary[23] = itemObject.nullItem;
@@ -1248,7 +1248,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[24]);
 						inventoryNameDictionary[24] = itemObject.nullItem;
@@ -1293,7 +1293,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[25]);
 						inventoryNameDictionary[25] = itemObject.nullItem;
@@ -1338,7 +1338,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[26]);
 						inventoryNameDictionary[26] = itemObject.nullItem;
@@ -1383,7 +1383,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[27]);
 						inventoryNameDictionary[27] = itemObject.nullItem;
@@ -1428,7 +1428,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[28]);
 						inventoryNameDictionary[28] = itemObject.nullItem;
@@ -1473,7 +1473,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[29]);
 						inventoryNameDictionary[29] = itemObject.nullItem;
@@ -1521,7 +1521,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[30]);
 						inventoryNameDictionary[30] = itemObject.nullItem;
@@ -1566,7 +1566,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[31]);
 						inventoryNameDictionary[31] = itemObject.nullItem;
@@ -1611,7 +1611,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[32]);
 						inventoryNameDictionary[32] = itemObject.nullItem;
@@ -1656,7 +1656,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[33]);
 						inventoryNameDictionary[33] = itemObject.nullItem;
@@ -1701,7 +1701,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[34]);
 						inventoryNameDictionary[34] = itemObject.nullItem;
@@ -1746,7 +1746,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 			{
 				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () != "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
 					{
 						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[35]);
 						inventoryNameDictionary[35] = itemObject.nullItem;
