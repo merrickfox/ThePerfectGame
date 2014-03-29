@@ -142,6 +142,7 @@ public class TrapSettings : MonoBehaviour
 		{
 			if(BaitUp)
 			{
+				PlayerPrefs.SetInt ("Bait", 1);
 				EnableMovement();
 				BaitUp = false;
 			}

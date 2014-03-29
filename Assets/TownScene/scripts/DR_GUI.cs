@@ -5,6 +5,7 @@ public class DR_GUI : MonoBehaviour
 {	
 	public GameObject Player;
 	public GameObject TutWall;
+	public GameObject Tut2Walls;
 
 	public Texture HungerFull;
 	public Texture Hunger1;
@@ -20,6 +21,8 @@ public class DR_GUI : MonoBehaviour
 	public Texture TutHeader;
 	public Texture black;
 	public Texture JournalTexture;
+	public Texture TrackerTexture;
+	public Texture blackTexture;
 
 	public bool HungerFlash;
 
@@ -42,8 +45,11 @@ public class DR_GUI : MonoBehaviour
 
 	public int a;
 	public int b;
+	public int c;
+	public int ToDoList;
 
 	public int JournalEntryPing;
+	public int TrackerEntryPing;
 
 	public int Trap1;
 	public int Trap2;
@@ -55,28 +61,8 @@ public class DR_GUI : MonoBehaviour
 	private Rect trackerWindowRect = new Rect(Screen.width/2-500,Screen.height/2-300,1000,600);
 	private Rect tutorialWindowRect = new Rect(Screen.width/2-300,Screen.height/2-400,600,800);
 
-	/*public bool TrackAnimal1;
-	public bool TrackAnimal2;
-	public bool TrackAnimal3;
-	public bool TrackAnimal4;
-	public bool TrackAnimal5;
-	public bool TrackAnimal6;
-	public bool TrackAnimal7;
-	public bool TrackAnimal8;
-	public bool TrackAnimal9;
-	public bool TrackAnimal10;
-	public bool TrackAnimal11;
-	public bool TrackAnimal12;
-	public bool TrackAnimal13;
-	public bool TrackAnimal14;
-	public bool TrackAnimal15;
-	public bool TrackAnimal16;
-	public bool TrackAnimal17;
-	public bool TrackAnimal18;*/
-
 	void Start () 
 	{		
-		//disableMove();
 		InvokeRepeating ("HealthDecrease", 0, 1);
 		StartCoroutine(Wakeup());
 
@@ -84,6 +70,7 @@ public class DR_GUI : MonoBehaviour
 		botBlack = Screen.height/2f;
 		a = 1;
 		b = 0;
+		c = 0;
 	}
 	
 	void HealthDecrease () 
@@ -92,9 +79,7 @@ public class DR_GUI : MonoBehaviour
 	}
 	
 	void Update () 
-	{		
-		//Debug.Log(PlayerPrefs.GetInt ("Hunger"));
-
+	{
 		topBlack -= 0.8f;
 		botBlack += 0.8f;
 
@@ -107,10 +92,8 @@ public class DR_GUI : MonoBehaviour
 			else if(TutorialOrder == 3)
 				TutorialOrder2 = 5; 
 		}
-		if(Input.GetKeyDown(KeyCode.N)) // parts
+		if(Trap2 == 1) // parts
 		{
-			PlayerPrefs.SetInt("QuestPart", 5);
-			StartCoroutine(JournalEntry());
 			if(TutorialOrder == 0)
 				TutorialOrder = 2; 
 			else if(TutorialOrder == 1)
@@ -127,10 +110,6 @@ public class DR_GUI : MonoBehaviour
 			else if(TutorialOrder == 2)
 				TutorialOrder2 = 4;  
 		}
-
-
-
-		//Debug.Log (TutorialOrder);
 
 		if(Tutorial > 0)
 		{
@@ -191,9 +170,13 @@ public class DR_GUI : MonoBehaviour
 			if(TutorialInt == 1)
 			{
 				Tutorial = 1;
-				PlayerPrefs.SetInt("QuestPart", 3);
-				StartCoroutine(JournalEntry());
-				Destroy(TutWall);
+				if(c < 1)
+				{
+					PlayerPrefs.SetInt("QuestPart", 3);
+					StartCoroutine(JournalEntry());
+					Destroy(TutWall);
+					c++;
+				}
 			}
 			else if(TutorialInt == 2)
 				Tutorial = 2;
@@ -202,23 +185,80 @@ public class DR_GUI : MonoBehaviour
 			else if(TutorialInt == 4)
 			{
 				Tutorial = 4;
-				Trap3 = 1;
-				PlayerPrefs.SetInt("QuestPart", 5);
-				StartCoroutine(JournalEntry());
+				if(b < 2)
+				{
+					Trap3 = 1;
+					PlayerPrefs.SetInt("QuestPart", 5);
+					StartCoroutine(JournalEntry());
+					b++;
+				}
 			}
-			else if(TutorialInt == 5)
+			/*else if(TutorialInt == 5)
 			{
-				Trap1 = 1;
-			}
+				if(b < 2)
+				{
+					Trap1 = 1;
+					PlayerPrefs.SetInt("QuestPart", 5);
+					StartCoroutine(JournalEntry());
+					b++;
+				}
+			}*/
 			else if(TutorialInt == 6)
+			{
+				//PlayerPrefs.SetInt ("TrapWait", 1);
+				StartCoroutine(Wakeup());
+			}
+			else if(TutorialInt == 7)
 			{
 				StartCoroutine(Wakeup());
 			}
+			else if(TutorialInt == 9)
+			{
+				if(b < 2)
+				{
+					Trap2 = 1;
+					PlayerPrefs.SetInt("QuestPart", 5);
+					StartCoroutine(JournalEntry());
+					b++;
+				}
+			}
+		}
+
+		if(PlayerPrefs.GetInt ("ResourceGet") == 1)
+		{
+			PlayerPrefs.SetInt("QuestPart", 6);
+			StartCoroutine(JournalEntry());
+			Destroy(Tut2Walls);
+		}
+		if(PlayerPrefs.GetInt ("Resource") == 1)
+		{
+			StartCoroutine(Resource());
+		}
+
+		if(PlayerPrefs.GetInt ("BaitGet") == 1)
+		{
+			PlayerPrefs.SetInt("QuestPart", 7);
+			StartCoroutine(JournalEntry());
+		}
+		if(PlayerPrefs.GetInt ("Bait") == 1)
+		{
+			StartCoroutine(Bait());
+		}
+
+		if(PlayerPrefs.GetInt ("CaughtGet") == 1)
+		{
+			PlayerPrefs.SetInt("QuestPart", 8);
+			StartCoroutine(JournalEntry());
+		}
+		if(PlayerPrefs.GetInt ("Caught") == 1)
+		{
+			StartCoroutine(Caught());
 		}
 	}
 
 	IEnumerator Wakeup()
 	{
+		PlayerPrefs.SetInt ("TrapWait", 1);
 		Player.transform.position = new Vector3(705.4106f, 11.39183f, 584.7635f);
 		Player.transform.rotation = Quaternion.Euler(270,0,0);
 		topBlack = 0f;
@@ -246,12 +286,50 @@ public class DR_GUI : MonoBehaviour
 		JournalEntryPing = 0;
 	}
 
+	IEnumerator Resource()
+	{
+		PlayerPrefs.SetInt ("Resource", 0);
+		PlayerPrefs.SetInt ("ResourceGet", 1);
+		yield return new WaitForSeconds(1);
+		PlayerPrefs.SetInt ("ResourceGet", 0);
+	}
+
+	IEnumerator Bait()
+	{
+		QuestPage = 2;
+		PlayerPrefs.SetInt ("Bait", 0);
+		PlayerPrefs.SetInt ("BaitGet", 1);
+		yield return new WaitForSeconds(1);
+		PlayerPrefs.SetInt ("BaitGet", 0);
+	}
+
+	IEnumerator Caught()
+	{
+		PlayerPrefs.SetInt ("Caught", 0);
+		PlayerPrefs.SetInt ("CaughtGet", 1);
+		yield return new WaitForSeconds(1);
+		PlayerPrefs.SetInt ("CaughtGet", 0);
+	}
+
+	void OnTriggerStay(Collider other)
+	{
+		if (other.name == "mouseCollider") 
+		{
+			if(Input.GetKey(KeyCode.E))
+			{
+				if(b < 2)
+				{
+					Trap1 = 1;
+					PlayerPrefs.SetInt("QuestPart", 5);
+					StartCoroutine(JournalEntry());
+					b++;
+				}
+			}
+		}
+	}
+
 	void OnTriggerEnter(Collider other)
 	{
-		if(other.name == "BedCollider")
-		{
-			TutorialInt = 6;
-		}
 		if(other.name == "Tut1")
 		{
 			TutorialInt = 1;
@@ -268,17 +346,31 @@ public class DR_GUI : MonoBehaviour
 		{
 			TutorialInt = 4;
 		}
-		if(other.transform.parent.name == "tracksMouse")
+		if(other.name == "mouseCollider")
 		{
 			TutorialInt = 5;
-			PlayerPrefs.SetInt("QuestPart", 5);
-			StartCoroutine(JournalEntry());
+		}
+		if(other.name == "BedCollider")
+		{
+			TutorialInt = 6;
+		}
+		if(other.name == "TutColl")
+		{
+			TutorialInt = 7;
+		}
+		if(other.name == "TutColl2")
+		{
+			TutorialInt = 8;
+		}
+		if(other.name == "ResourceColl")
+		{
+			TutorialInt = 9;
 		}
 	}
 
 	void OnTriggerExit(Collider other)
 	{
-		if(other.name == "Tut1" || other.name == "Tut2" || other.name == "Tut3" || other.name == "Tut4" || other.name == "Tut5" || other.name == "BedCollider")
+		if(other.name == "Tut1" || other.name == "Tut2" || other.name == "Tut3" || other.name == "Tut4" || other.name == "Tut5" || other.name == "BedCollider" || other.name == "mouseCollider" || other.name == "TutColl" || other.name == "TutColl2" || other.name == "ResourceColl")
 		{
 			TutorialInt = 0;
 			Tutorial = 0;
@@ -374,7 +466,7 @@ public class DR_GUI : MonoBehaviour
 			if(TutorialOrder2 == 1) 
 			{
 				if(PlayerPrefs.GetInt ("QuestPart") > 4)
-					GUI.Box (new Rect (495, 150, 400, 160), "I found the parts I need to make a trap to catch one of the littljje buggers... Let's put those sixth-grade shop classes to use");
+					GUI.Box (new Rect (495, 150, 400, 160), "I found the parts I need to make a trap to catch one of the little buggers... Let's put those sixth-grade shop classes to use");
 			}
 			else if(TutorialOrder2 == 2) 
 			{
@@ -402,33 +494,37 @@ public class DR_GUI : MonoBehaviour
 					GUI.Box (new Rect (495, 150, 400, 160), "I found the parts I need for the trap... Now to find something tasty to catch with it");
 			}
 			if(PlayerPrefs.GetInt ("QuestPart") > 5)
-				GUI.Box (new Rect (495, 320, 400, 200), "Now that I've set the trap, it's time to play the waiting game... Only a morsal I know, but that mouse could be the difference between life and death!");
+			{
+				GUI.skin.box.fontSize = 26;
+				GUI.Box (new Rect (495, 320, 400, 200), "Now that I've set the trap, I can add bait to it by pressing F on it and adding any bait I have from my inventory... That nut I found should increase my chances of catching that mouse");
+				GUI.skin.box.fontSize = 28;
+			}
 		}
 		else if(QuestPage == 2)
 		{
 			// Page 3																																							            // ! No text past this point
 			if(PlayerPrefs.GetInt ("QuestPart") > 6)
-				GUI.Box (new Rect (80, 10, 400, 160), "Success! I caught the little blighter... Now, do I want to eat this now, or save it for later to catch something even juicier?");
+				GUI.Box (new Rect (80, 10, 400, 160), "I need to wait for a while for my prey to come for that bait... I'll have a quick nap in my cabin...");
 			if(PlayerPrefs.GetInt ("QuestPart") > 7)
-				GUI.Box (new Rect (80, 180, 400, 160), "Now that I've worked out how to catch small game, it's time to venture out into the world and make better traps for bigger prey");
+				GUI.Box (new Rect (80, 180, 400, 160), "Success! I caught the little blighter... Now, do I want to eat this now, or save it for later to catch something even juicier?");
 			if(PlayerPrefs.GetInt ("QuestPart") > 8)
-				GUI.Box (new Rect (80, 350, 400, 160), "My first trip into town... I picked a good time to come... Lurking in the shadows... What can I find to lure into my traps?..");
+				GUI.Box (new Rect (80, 350, 400, 160), "Now that I've worked out how to catch small game, it's time to venture out into the world and make better traps for bigger prey");
 			
 			// Page 4
 			if(PlayerPrefs.GetInt ("QuestPart") > 9)
-				GUI.Box (new Rect (495, 10, 400, 160), "There must be resources a plenty around here... I should check the bins for parts, I'm sure I can find something useful");
+				GUI.Box (new Rect (495, 10, 400, 160), "My first trip into town... I picked a good time to come... Lurking in the shadows... What can I find to lure into my traps?..");
 			if(PlayerPrefs.GetInt ("QuestPart") > 10)
-				GUI.Box (new Rect (495, 180, 400, 160), "I wonder what... Or who... I'll catch this time... I'll need somewhere to wait... How about that derelict building near the entrance");
+				GUI.Box (new Rect (495, 180, 400, 160), "There must be resources a plenty around here... I should check the bins for parts, I'm sure I can find something useful");
 			if(PlayerPrefs.GetInt ("QuestPart") > 11)
-				GUI.Box (new Rect (495, 350, 400, 160), "My first human... I've dreamed about this for as long as I can remember... How does human flesh taste? Do I dare find out?");
+				GUI.Box (new Rect (495, 350, 400, 160), "I wonder what... Or who... I'll catch this time... I'll need somewhere to wait... How about that derelict building near the entrance");
 		}
 		else if(QuestPage == 3)
 		{
 			// Page 5	
 			if(PlayerPrefs.GetInt ("QuestPart") > 12)
-				GUI.Box (new Rect (80, 10, 400, 160), "I've crossed that line... There's no going back now... I need more... I need better... Who to catch next? A priest? A student? The mayor?!..");
+				GUI.Box (new Rect (80, 10, 400, 160), "My first human... I've dreamed about this for as long as I can remember... How does human flesh taste? Do I dare find out?");
 			if(PlayerPrefs.GetInt ("QuestPart") > 13)
-				GUI.Box (new Rect (80, 180, 400, 160), "---------------------------------------------------------------------------------------------------------------------------------");
+				GUI.Box (new Rect (80, 180, 400, 160), "I've crossed that line... There's no going back now... I need more... I need better... Who to catch next? A priest? A student? The mayor?!..");
 			if(PlayerPrefs.GetInt ("QuestPart") > 14)
 				GUI.Box (new Rect (80, 350, 400, 160), "---------------------------------------------------------------------------------------------------------------------------------");
 			
@@ -472,45 +568,6 @@ public class DR_GUI : MonoBehaviour
 	{
 		GUILayout.BeginArea (new Rect(35, 50, 1000, 600));
 		GUI.skin.box.normal.textColor=Color.black;
-
-		/*
-
-		-- Hut -- //
-		Mouse
-		Spider
-		
-		-- Woods -- //
-		Squirrel
-		Skunk
-		Hedgehog
-		Owl
-
-		-- River -- //
-		Fish
-
-		-- Dam -- //f
-		Beaver
-
-		-- Cave -- //
-		Bear
-
-		-- Field -- //
-		Rabbit
-		Deer
-		Chicken
-
-		-- Rocks --
-		Snake
-		Eagle
-		Lizard
-
-		-- Town --
-		Dog
-		Cat
-		Pidgeon
-
-		*/
-
 
 		if(TrackerPage == 1)
 		{
@@ -578,7 +635,7 @@ public class DR_GUI : MonoBehaviour
 				GUI.Box (new Rect (80, 355, 400, 35), " ?????      ?????        ?????");
 			else
 			{
-				GUI.Box (new Rect (80, 355, 140, 35), "Fish");
+				GUI.Box (new Rect (80, 355, 140, 35), "Raccoon");
 				GUI.Box (new Rect (220, 355, 120, 35), "River");
 				GUI.Box (new Rect (360, 355, 110, 35), "Mouse");
 			}
@@ -692,102 +749,133 @@ public class DR_GUI : MonoBehaviour
 		else if(TrackerPage == 2)
 		{
 			// Page 3
-			GUI.Box (new Rect (80, 0, 400, 35), "Name       Location       Bait");
+			GUI.Box (new Rect (80, 0, 140, 35), "Name");
+			GUI.Box (new Rect (220, 0, 120, 35), "Location");
+			GUI.Box (new Rect (360, 0, 110, 35), "Bait");
 			GUI.Box (new Rect (80, 2, 400, 40), "_______________________________");
 			
 			if(PlayerPrefs.GetInt ("Animal19") == 0)
-				GUI.Box (new Rect (80, 55, 400, 35), "?????        ?????           ?????");
+			{
+				GUI.Box (new Rect (80, 70, 400, 35), " ?????      ?????        ?????");
+				GUI.Box (new Rect (772, 105, 400, 35), "?????");
+			}
 			else
-				GUI.Box (new Rect (80, 55, 400, 35), "Raccoon     Stream        Mouse");
+			{
+				GUI.Box (new Rect (80, 70, 140, 35), "Druggy");
+				GUI.Box (new Rect (220, 70, 120, 35), "Derelict");
+				GUI.Box (new Rect (220, 105, 120, 35), "Building");
+				GUI.Box (new Rect (360, 70, 110, 35), "Meth");
+			}
 			
 			if(PlayerPrefs.GetInt ("Animal20") == 0)
-				GUI.Box (new Rect (80, 105, 400, 35), "?????        ?????           ?????");
+			{
+				GUI.Box (new Rect (80, 160, 400, 35), " ?????      ?????        ?????");
+				GUI.Box (new Rect (72, 195, 400, 35), "????? ");
+			}
 			else
-				GUI.Box (new Rect (80, 105, 400, 35), "Crackwhore   Abandoned bldg.   Drugs");
+			{
+				GUI.Box (new Rect (80, 160, 140, 35), "Whore");
+				GUI.Box (new Rect (220, 160, 120, 35), "Low-Class");
+				GUI.Box (new Rect (220, 195, 120, 35), "Housing");
+				GUI.Box (new Rect (360, 160, 110, 35), "Money");
+			}
 			
 			if(PlayerPrefs.GetInt ("Animal21") == 0)
-				GUI.Box (new Rect (80, 155, 400, 35), "?????        ?????           ?????");
+				GUI.Box (new Rect (80, 250, 400, 35), " ?????      ?????        ?????");
 			else
-				GUI.Box (new Rect (80, 155, 400, 35), "Goth      Church        Book");
+			{
+				GUI.Box (new Rect (80, 250, 140, 35), "Drunk");
+				GUI.Box (new Rect (220, 250, 120, 35), "Pub");
+				GUI.Box (new Rect (360, 250, 110, 35), "Beer");
+			}
 			
 			if(PlayerPrefs.GetInt ("Animal22") == 0)
-				GUI.Box (new Rect (80, 205, 400, 35), "?????        ?????           ?????");
+			{
+				GUI.Box (new Rect (80, 340, 400, 35), " ?????      ?????        ?????");
+				GUI.Box (new Rect (5, 375, 400, 35), " ?????      ?????");
+			}
 			else
-				GUI.Box (new Rect (80, 205, 400, 35), "Mayor    Mansion        Sextape");
+			{
+				GUI.Box (new Rect (80, 340, 140, 35), "Homeless");
+				GUI.Box (new Rect (80, 375, 140, 35), "Person");
+				GUI.Box (new Rect (220, 340, 120, 35), "Shopping");
+				GUI.Box (new Rect (220, 375, 120, 35), "Mall");
+				GUI.Box (new Rect (360, 340, 110, 35), "Money");
+			}
 			
 			if(PlayerPrefs.GetInt ("Animal23") == 0)
-				GUI.Box (new Rect (80, 255, 400, 35), "?????        ?????           ?????");
+			{
+				GUI.Box (new Rect (80, 430, 400, 35), " ?????      ?????        ?????");
+				GUI.Box (new Rect (72, 465, 400, 35), "?????");
+			}
 			else
-				GUI.Box (new Rect (80, 255, 400, 35), "Hobo     Alley        Cash");
+			{
+				GUI.Box (new Rect (80, 430, 140, 35), "Binman");
+				GUI.Box (new Rect (220, 430, 120, 35), "Apart-");
+				GUI.Box (new Rect (220, 465, 120, 35), "ments");
+				GUI.Box (new Rect (360, 430, 110, 35), "Money");
+			}
+			//---------------------------------------------------------------------
 			
-			if(PlayerPrefs.GetInt ("Animal24") == 0)
-				GUI.Box (new Rect (80, 305, 400, 35), "?????        ?????           ?????");
-			else
-				GUI.Box (new Rect (80, 305, 400, 35), "Drunk     Pub        Beer");
-			
-			if(PlayerPrefs.GetInt ("Animal25") == 0)
-				GUI.Box (new Rect (80, 355, 400, 35), "?????        ?????           ?????");
-			else
-				GUI.Box (new Rect (80, 355, 400, 35), "Priest    Church        Kid");
-			
-			if(PlayerPrefs.GetInt ("Animal26") == 0)
-				GUI.Box (new Rect (80, 405, 400, 35), "?????        ?????           ?????");
-			else
-				GUI.Box (new Rect (80, 405, 400, 35), "Kid      Park       Candy");
-			
-			if(PlayerPrefs.GetInt ("Animal27") == 0)
-				GUI.Box (new Rect (80, 455, 400, 35), "?????        ?????           ?????");
-			else
-				GUI.Box (new Rect (80, 455, 400, 35), "Shopkeeper    Shops       Nuts");
-			
-			// Page 4
-			GUI.Box (new Rect (495, 0, 400, 35), "Name       Location       Bait");
+			//Page 4
+			GUI.Box (new Rect (495, 0, 140, 35), "Name");
+			GUI.Box (new Rect (635, 0, 120, 35), "Location");
+			GUI.Box (new Rect (775, 0, 110, 35), "Bait");
 			GUI.Box (new Rect (495, 2, 400, 40), "_______________________________");
 			
-			if(PlayerPrefs.GetInt ("Animal10") == 0)
-				GUI.Box (new Rect (495, 55, 400, 35), "?????        ?????           ?????");
+			if(PlayerPrefs.GetInt ("Animal24") == 0)
+				GUI.Box (new Rect (495, 70, 400, 35), " ?????      ?????        ?????");
 			else
-				GUI.Box (new Rect (495, 55, 400, 35), "Middle-class    Woods       Nuts");
+			{
+				GUI.Box (new Rect (495, 70, 150, 35), "Pharmacist");
+				GUI.Box (new Rect (635, 70, 120, 35), "Shops");
+				GUI.Box (new Rect (770, 70, 110, 35), "Mouse");
+			}
 			
-			if(PlayerPrefs.GetInt ("Animal11") == 0)
-				GUI.Box (new Rect (495, 105, 400, 35), "?????        ?????           ?????");
+			if(PlayerPrefs.GetInt ("Animal25") == 0)
+			{
+				GUI.Box (new Rect (495, 160, 400, 35), " ?????      ?????        ?????");
+				GUI.Box (new Rect (560, 195, 400, 35), "?????        ?????");
+			}
 			else
-				GUI.Box (new Rect (495, 105, 400, 35), "Upper-class    Upper-cass housing     Fish");
+			{
+				GUI.Box (new Rect (495, 160, 140, 35), "Goth");
+				GUI.Box (new Rect (635, 160, 120, 35), "Church");
+				GUI.Box (new Rect (615, 195, 150, 35), "Graveyard");
+				GUI.Box (new Rect (755, 160, 150, 35), "Lovecraft");
+				GUI.Box (new Rect (770, 195, 110, 35), "Book");
+			}
 			
-			if(PlayerPrefs.GetInt ("Animal12") == 0)
-				GUI.Box (new Rect (495, 155, 400, 35), "?????        ?????           ?????");
+			if(PlayerPrefs.GetInt ("Animal26") == 0)
+				GUI.Box (new Rect (495, 250, 400, 35), " ?????      ?????        ?????");
 			else
-				GUI.Box (new Rect (495, 155, 400, 35), "Lower-class    Low class housing    Nuts");
+			{
+				GUI.Box (new Rect (495, 250, 140, 35), "Priest");
+				GUI.Box (new Rect (635, 250, 120, 35), "Church");
+				GUI.Box (new Rect (770, 250, 110, 35), "Mouse");
+			}
 			
-			if(PlayerPrefs.GetInt ("Animal13") == 0)
-				GUI.Box (new Rect (495, 205, 400, 35), "?????        ?????           ?????");
+			if(PlayerPrefs.GetInt ("Animal27") == 0)
+			{
+				GUI.Box (new Rect (495, 340, 400, 35), " ?????      ?????        ?????");
+				GUI.Box (new Rect (487, 375, 400, 35), "?????");
+			}
 			else
-				GUI.Box (new Rect (495, 205, 400, 35), "Owl    Woods      Mouse");
+			{
+				GUI.Box (new Rect (495, 340, 140, 35), "Banker");
+				GUI.Box (new Rect (620, 340, 150, 35), "High-class");
+				GUI.Box (new Rect (635, 375, 120, 35), "Housing");
+				GUI.Box (new Rect (770, 340, 110, 35), "Money");
+			}
 			
-			if(PlayerPrefs.GetInt ("Animal14") == 0)
-				GUI.Box (new Rect (495, 255, 400, 35), "?????        ?????           ?????");
+			if(PlayerPrefs.GetInt ("Animal28") == 0)
+				GUI.Box (new Rect (495, 430, 400, 35), " ?????      ?????        ?????");
 			else
-				GUI.Box (new Rect (495, 255, 400, 35), "Eagle    Rocks      Mouse");
-			
-			if(PlayerPrefs.GetInt ("Animal15") == 0)
-				GUI.Box (new Rect (495, 305, 400, 35), "?????        ?????           ?????");
-			else
-				GUI.Box (new Rect (495, 305, 400, 35), "Pidgeon    Rocks      Mouse");
-			
-			if(PlayerPrefs.GetInt ("Animal16") == 0)
-				GUI.Box (new Rect (495, 355, 400, 35), "?????        ?????           ?????");
-			else
-				GUI.Box (new Rect (495, 355, 400, 35), "Dog    Town      Cat");
-			
-			if(PlayerPrefs.GetInt ("Animal17") == 0)
-				GUI.Box (new Rect (495, 405, 400, 35), "?????        ?????           ?????");
-			else
-				GUI.Box (new Rect (495, 405, 400, 35), "Cat    Town      Mouse");
-			
-			if(PlayerPrefs.GetInt ("Animal18") == 0)
-				GUI.Box (new Rect (495, 455, 400, 35), "?????        ?????           ?????");
-			else
-				GUI.Box (new Rect (495, 455, 400, 35), "Lizard    Rocks      Spider");
+			{
+				GUI.Box (new Rect (495, 430, 140, 35), "Mayor");
+				GUI.Box (new Rect (635, 430, 120, 35), "Mansion");
+				GUI.Box (new Rect (770, 430, 110, 35), "Sextape");
+			}
 		}			
 
 		if(TrackerOpen == true && TrackerPage > 1)
@@ -797,7 +885,7 @@ public class DR_GUI : MonoBehaviour
 				TrackerPage--;
 			}
 		}
-		if(TrackerOpen == true && TrackerPage < 4)
+		if(TrackerOpen == true && TrackerPage < 2)
 		{
 			if(GUI.Button(new Rect(900, 230, 40, 40), ArrowRight))
 			{
@@ -810,11 +898,35 @@ public class DR_GUI : MonoBehaviour
 
 	void OnGUI()
 	{
+		if (TutorialInt == 7) 
+		{
+			GUI.DrawTexture(new Rect(Screen.width/2-90,Screen.height/2-30,180,60), blackTexture);
+			GUI.contentColor = Color.red;
+			GUI.Label(new Rect(Screen.width/2-65, Screen.height/2-10, 200, 200), "Check your To Do List");
+			GUI.contentColor = Color.white;
+		}
+		
+		if (TutorialInt == 8) 
+		{
+			GUI.DrawTexture(new Rect(Screen.width/2-90,Screen.height/2-30,180,60), blackTexture);
+			GUI.contentColor = Color.red;
+			GUI.Label(new Rect(Screen.width/2-65, Screen.height/2-10, 200, 200), "Learn to craft a trap");
+			GUI.contentColor = Color.white;
+		}
+
 		if(JournalEntryPing == 1)
 		{
 			GUI.DrawTexture(new Rect(Screen.width-350,220,250,100), JournalTexture);
-			GUI.contentColor = Color.red;
+			GUI.contentColor = Color.black;
 			GUI.Label (new Rect(Screen.width-250, 260, 500, 500), "New Journal Entry!");
+			GUI.contentColor = Color.white;
+		}
+
+		if(TrackerEntryPing == 1)
+		{
+			GUI.DrawTexture(new Rect(Screen.width-350,320,250,100), TrackerTexture);
+			GUI.contentColor = Color.red;
+			GUI.Label (new Rect(Screen.width-250, 360, 500, 500), "New Tracker Entry!");
 			GUI.contentColor = Color.white;
 		}
 
@@ -916,36 +1028,6 @@ public class DR_GUI : MonoBehaviour
 		if(HungerFlash == true)
 			GUI.Label (new Rect(Screen.width/2+700, Screen.height/2-400, 500, 500), HungerFlashing);
 
-		/*if(JournalOpen == true && QuestPage > 1)
-		{
-			if(GUI.Button(new Rect(Screen.width/2-510, Screen.height/2-20, 40, 40), ArrowLeft))
-			{
-				QuestPage--;
-			}
-		}
-		if(JournalOpen == true && QuestPage < 4)
-		{
-			if(GUI.Button(new Rect(Screen.width/2+485, Screen.height/2-20, 40, 40), ArrowRight))
-			{
-				QuestPage++;
-			}
-		}*/
-
-		/*if(TrackerOpen == true && TrackerPage > 1)
-		{
-			if(GUI.Button(new Rect(Screen.width/2-510, Screen.height/2-20, 40, 40), ArrowLeft))
-			{
-				TrackerPage--;
-			}
-		}
-		if(TrackerOpen == true && TrackerPage < 4)
-		{
-			if(GUI.Button(new Rect(Screen.width/2+485, Screen.height/2-20, 40, 40), ArrowRight))
-			{
-				TrackerPage++;
-			}
-		}*/
-
 		if(TrackerOpen == true || JournalOpen == true)
 		{
 			if(GUI.Button(new Rect(Screen.width/2-320, Screen.height/2-332, 80, 80), BMJournal))
@@ -959,8 +1041,6 @@ public class DR_GUI : MonoBehaviour
 				TrackerOpen = true;
 			}
 		}
-
-		//GUI.Label (new Rect(Screen.width/2, Screen.height/2-400, 1500, 2000), "QP = " + QuestPage);
 	}
 
 	IEnumerator HungerFlashy()

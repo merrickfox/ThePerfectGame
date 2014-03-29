@@ -44,6 +44,7 @@ public class JP_SpawnTrap : MonoBehaviour
 		{
 			if(Input.GetKeyUp (KeyCode.F))
 			{
+				PlayerPrefs.SetInt("Resource", 1);
 				gameObject.transform.parent = null;
 				gameObject.GetComponent<Rigidbody>().useGravity = true;
 				gameObject.GetComponent<Rigidbody>().detectCollisions = true;

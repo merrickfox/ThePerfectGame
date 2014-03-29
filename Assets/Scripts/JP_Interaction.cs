@@ -104,7 +104,7 @@ public class JP_Interaction : MonoBehaviour {
 		// ********************************************************************************************
 
 		if(Input.GetKey (KeyCode.E) && resourceObject != null){
-			PlayerPrefs.SetInt("Resource", 1);
+
 			hit.collider.gameObject.GetComponent<JP_Looter>().EnableLooting();
 		}
 

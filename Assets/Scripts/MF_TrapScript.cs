@@ -132,6 +132,14 @@ public class MF_TrapScript : MonoBehaviour {
 			caught = true;
 			sceneController.SendMessage("DisplayTrophy", capture);
 		}
+
+		/*if(PlayerPrefs.GetInt ("TrapWait") == 1 && deployed){
+			capture = GetCapture();
+			caught = true;
+			sceneController.SendMessage("DisplayTrophy", capture);
+			PlayerPrefs.SetInt ("TrapWait", 0);
+			PlayerPrefs.SetInt ("Caught", 1);
+		}*/
 	}
 
 	public void Deploy(int trap, int bait){
