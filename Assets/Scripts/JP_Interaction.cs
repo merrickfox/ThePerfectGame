@@ -207,7 +207,13 @@ public class JP_Interaction : MonoBehaviour {
 			else if(hit.collider.gameObject.GetComponent<TrapSettings>().GetEmpty () == false)
 			{
 				if(hit.collider.gameObject.GetComponent<MF_TrapScript>().isCaptured() == false)
+				{
 					hit.collider.gameObject.GetComponent<MF_TrapScript>().CaptureMethod();
+					if(PlayerPrefs.GetInt ("Caught") == 0)
+						PlayerPrefs.SetInt ("Caught", 1);
+					if(PlayerPrefs.GetInt ("CaughtTown") == 0 && PlayerPrefs.GetInt ("LevelSelect") == 2)
+						PlayerPrefs.SetInt("CaughtTown", 1);
+				}
 			}
 		}
 

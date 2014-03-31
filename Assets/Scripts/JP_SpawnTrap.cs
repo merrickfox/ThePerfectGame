@@ -44,7 +44,12 @@ public class JP_SpawnTrap : MonoBehaviour
 		{
 			if(Input.GetKeyUp (KeyCode.F))
 			{
-				PlayerPrefs.SetInt("Resource", 1);
+				if(PlayerPrefs.GetInt ("Resource") == 0)
+					PlayerPrefs.SetInt("Resource", 1);
+
+				if(PlayerPrefs.GetInt ("TrapTown") == 0 && PlayerPrefs.GetInt ("LevelSelect") == 2)
+					PlayerPrefs.SetInt("TrapTown", 1);
+
 				gameObject.transform.parent = null;
 				gameObject.GetComponent<Rigidbody>().useGravity = true;
 				gameObject.GetComponent<Rigidbody>().detectCollisions = true;

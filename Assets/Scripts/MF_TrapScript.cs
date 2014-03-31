@@ -716,6 +716,11 @@ public class MF_TrapScript : MonoBehaviour {
         	caught = false;
         	EnableMovement();
         	Instantiate(score, textLocation, Quaternion.identity);
+			if(PlayerPrefs.GetInt ("Captured") == 0)
+				PlayerPrefs.SetInt ("Captured", 1);
+			if(PlayerPrefs.GetInt ("CapturedTown") == 0 && PlayerPrefs.GetInt ("LevelSelect") == 2)
+				PlayerPrefs.SetInt("CapturedTown", 1);
+			Destroy (gameObject);
         }
 		if(GUILayout.Button("Store In Inventory")){
 			caught = false;
@@ -727,6 +732,9 @@ public class MF_TrapScript : MonoBehaviour {
 					break;
 				}
 			}
+			if(PlayerPrefs.GetInt ("Captured") == 0)
+				PlayerPrefs.SetInt ("Captured", 1);
+			Destroy (gameObject);
 		}
        
         GUILayout.EndVertical();

@@ -32,12 +32,14 @@ public class MF_TitleScreen : MonoBehaviour {
 	        	start = true;
 				PlayerPrefs.SetInt ("GameStart", 0);
 
+				PlayerPrefs.SetInt ("Quest", 0);
 				PlayerPrefs.SetInt("TutorialOrder", 0);
 				PlayerPrefs.SetInt("TutorialOrder2", 0);
 				
 				PlayerPrefs.SetInt("a", 1);
 				PlayerPrefs.SetInt("b", 0);
 				PlayerPrefs.SetInt("c", 0);
+				PlayerPrefs.SetInt("d", 0);
 				
 				PlayerPrefs.SetInt ("Resource", 0);
 				PlayerPrefs.SetInt ("Bait", 0);
