@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1b88299af0e2943b771aa367828204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trapSkin: {fileID: 11400000, guid: feaa2e6c972bde7449e118245842aa81, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

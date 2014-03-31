@@ -13,15 +13,95 @@ public class JP_Interaction : MonoBehaviour {
 	float X;
 	float Y;
 
+	private Rect trapWindowRect = new Rect(Screen.width/2 - 150, Screen.height/2 - 100, 300, 200);
+	private bool trapUp = false;
+	public GUISkin trapSkin;
+	GameObject sceneController;
 
-	// Use this for initialization
-	void Start () 
+	// Test
+	GameObject[] Traps;
+
+	void Start()
 	{
+		sceneController = GameObject.Find("WoodsController");
+	}
+
+	void DisableMovement()
+	{
+		transform.parent.gameObject.GetComponent<MouseLook>().enabled = false;
+		transform.parent.gameObject.GetComponent<FPSInputController>().enabled = false;
+		transform.parent.gameObject.GetComponent<CharacterMotor>().enabled = false;
+		gameObject.GetComponent<MouseLook>().enabled = false;
+	}
 	
+	void EnableMovement()
+	{
+		transform.parent.gameObject.GetComponent<MouseLook>().enabled = true;
+		transform.parent.gameObject.GetComponent<FPSInputController>().enabled = true;
+		transform.parent.gameObject.GetComponent<CharacterMotor>().enabled = true;
+		gameObject.GetComponent<MouseLook>().enabled = true;
 	}
 
 	void OnGUI()
 	{
+		if (trapUp)
+		{
+			GUI.skin = trapSkin;
+			trapWindowRect = GUI.Window (6, trapWindowRect, trapWindow, "Trap Window");
+		}
+
+	}
+
+	void trapWindow(int windowID)
+	{
+		GUILayout.BeginArea (new Rect(25, 20, 250, 180));
+
+		GUILayout.BeginHorizontal();
+		GUILayout.Space(20);
+		GUILayout.Label("Your trap hasn't caught anything yet");
+		GUILayout.EndHorizontal();
+
+		GUILayout.BeginVertical();
+		GUILayout.Space(20);
+		GUILayout.EndVertical();
+
+		GUILayout.BeginHorizontal();
+		if(GUILayout.Button ("Pickup", GUILayout.Width (120), GUILayout.Height (25)))
+		{
+			if(hit.collider.gameObject.GetComponent<TrapSettings>().GetCanMove () == true)
+			{
+				for(int i = 0; i < 36; i++)
+				{
+					if(JP_InventoryGUI.inventoryNameDictionary[i].name == "null")
+					{
+						JP_InventoryGUI.inventoryNameDictionary[i] = hit.collider.gameObject.GetComponent<TrapSettings>().GetTrap();
+						Destroy (hit.collider.gameObject);
+						trapUp = false;
+						EnableMovement();
+						break;
+					}
+				}
+			}
+		}
+
+		GUILayout.Space (10);
+		if(GUILayout.Button ("Access Bait", GUILayout.Width (120), GUILayout.Height (25)))
+		{
+			if(trapObject.GetComponent<JP_SpawnTrap>().isHolding () == false)
+			{
+				if(hit.collider.gameObject.GetComponent<TrapSettings>().GetBaitWindow() == false)
+				{
+					hit.collider.gameObject.GetComponent<TrapSettings>().SetBaitWindow(true);
+					JP_InventoryGUI.InventoryUp = true;
+					JP_InventoryGUI.selectedTrap = hit.collider.gameObject;
+					trapUp = false;
+				}
+			}
+
+		}
+
+		GUILayout.EndHorizontal();
+		GUILayout.EndArea ();
 
 	}
 		
@@ -103,37 +183,47 @@ public class JP_Interaction : MonoBehaviour {
 		// ********************************* RESOURCE OBJECTS *****************************************
 		// ********************************************************************************************
 
-		if(Input.GetKey (KeyCode.E) && resourceObject != null){
-			PlayerPrefs.SetInt("Resource", 1);
+		if(Input.GetKey ("e") && resourceObject != null){
+
 			hit.collider.gameObject.GetComponent<JP_Looter>().EnableLooting();
 		}
 
 		// ******************************** TRAP OBJECTS **********************************************
 		// ********************************************************************************************
-		if(Input.GetKey (KeyCode.E) && trapObject != null)
+		if(Input.GetKey ("e") && trapObject != null)
 		{
-			if(hit.collider.gameObject.GetComponent<TrapSettings>().GetCanMove () == true)
+			if(hit.collider.gameObject.GetComponent<TrapSettings>().GetEmpty() == true)
 			{
-				Debug.Log ("Picking up");
-				for(int i = 0; i < 36; i++)
-				{
-					if(JP_InventoryGUI.inventoryNameDictionary[i].name == "null")
-					{
-						JP_InventoryGUI.inventoryNameDictionary[i] = hit.collider.gameObject.GetComponent<TrapSettings>().GetTrap();
-						Destroy (hit.collider.gameObject);
-						break;
-					}
-				}
+				trapUp = true;
+
+				DisableMovement();
+			}
+			else if(hit.collider.gameObject.GetComponent<TrapSettings>().GetEmpty () == false)
+			{
+				if(hit.collider.gameObject.GetComponent<MF_TrapScript>().isCaptured() == false)
+					hit.collider.gameObject.GetComponent<MF_TrapScript>().CaptureMethod();
 			}
 		}
 
-		if(Input.GetKey (KeyCode.F) && trapObject != null && trapObject.GetComponent<JP_SpawnTrap>().isHolding () == false)
+		if(Input.GetKey ("k"))
 		{
-			Debug.Log("Opening");
-			if(hit.collider.gameObject.GetComponent<TrapSettings>().GetBaitWindow() == false)
+			Traps = GameObject.FindGameObjectsWithTag("Trap");
+				for(int j = 0; j < Traps.Length; j++)
+				{
+					if(Traps[j] != null)
+					{
+						if(Traps[j].gameObject.GetComponent<TrapSettings>().GetBait() > 0)
+							Traps[j].gameObject.GetComponent<TrapSettings>().SetEmpty(false);
+					}
+				}
+		}
+
+		if(Input.GetKey (KeyCode.Escape))
+		{
+			if(trapUp == true)
 			{
-				hit.collider.gameObject.GetComponent<TrapSettings>().SetBaitWindow(true);
-				JP_InventoryGUI.selectedTrap = hit.collider.gameObject;
+				trapUp = false;
+				EnableMovement();
 			}
 		}
 	

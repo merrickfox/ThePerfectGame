@@ -6,7 +6,7 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 	private Rect inventoryWindowRect = new Rect(100,100,400,400);
 	private Rect tooltipWindowRect;
-	private bool InventoryUp = false;
+	public static bool InventoryUp = false;
 	private bool tooltipUp = false;
 
 	public GUISkin inventorySkin;
@@ -153,12 +153,15 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[0].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[0]);
-						inventoryNameDictionary[0] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[0]);
+							inventoryNameDictionary[0] = itemObject.nullItem;
+						}
 					}
 				}
 
@@ -198,12 +201,15 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[1].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[1]);
-						inventoryNameDictionary[1] = itemObject.nullItem;
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[1]);
+							inventoryNameDictionary[1] = itemObject.nullItem;
+						}
 					}
 				}
 				
@@ -243,12 +249,15 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[2].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[2]);
-						inventoryNameDictionary[2] = itemObject.nullItem;
+					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[2]);
+							inventoryNameDictionary[2] = itemObject.nullItem;
+						}
 					}
 				}
 				
@@ -288,35 +297,34 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[3].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[3]);
-						inventoryNameDictionary[3] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[3]);
+							inventoryNameDictionary[3] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[4].icon, inventoryNameDictionary[4].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
 			if(inventoryNameDictionary[4].isTrap == false)
 			{
-				if(inventoryNameDictionary[4].isTrap == false)
+				if(inventoryNameDictionary[4].name != "null")
 				{
-					if(inventoryNameDictionary[4].name != "null")
+					for(int i = 0; i < 6; i++)
 					{
-						for(int i = 0; i < 6; i++)
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							if(JP_FG_CraftingGUI.CraftingUp == true)
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
 							{
-								if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
-								{
-									JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[4];
-									inventoryNameDictionary[4] = itemObject.nullItem;
-									break;
-								}
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[4];
+								inventoryNameDictionary[4] = itemObject.nullItem;
+								break;
 							}
 						}
 					}
@@ -336,15 +344,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[4].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[4]);
-						inventoryNameDictionary[4] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[4]);
+							inventoryNameDictionary[4] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[5].icon, inventoryNameDictionary[5].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -355,11 +365,14 @@ public class JP_InventoryGUI : MonoBehaviour {
 				{
 					for(int i = 0; i < 6; i++)
 					{
-						if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+						if(JP_FG_CraftingGUI.CraftingUp == true)
 						{
-							JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[5];
-							inventoryNameDictionary[5] = itemObject.nullItem;
-							break;
+							if(JP_FG_CraftingGUI.craftingDictionary[i].name == "null")
+							{
+								JP_FG_CraftingGUI.craftingDictionary[i] = inventoryNameDictionary[5];
+								inventoryNameDictionary[5] = itemObject.nullItem;
+								break;
+							}
 						}
 					}
 				}
@@ -378,15 +391,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[5].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[5]);
-						inventoryNameDictionary[5] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[5]);
+							inventoryNameDictionary[5] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		GUILayout.EndHorizontal();
@@ -426,15 +441,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[6].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[6]);
-						inventoryNameDictionary[6] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[6]);
+							inventoryNameDictionary[6] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[7].icon, inventoryNameDictionary[7].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -471,15 +488,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[7].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[7]);
-						inventoryNameDictionary[7] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[7]);
+							inventoryNameDictionary[7] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[7].icon, inventoryNameDictionary[7].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -516,15 +535,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[8].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[8]);
-						inventoryNameDictionary[8] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[8]);
+							inventoryNameDictionary[8] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[9].icon, inventoryNameDictionary[9].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -561,15 +582,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[9].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[9]);
-						inventoryNameDictionary[9] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[9]);
+							inventoryNameDictionary[9] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 
@@ -607,15 +630,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[10].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[10]);
-						inventoryNameDictionary[10] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[10]);
+							inventoryNameDictionary[10] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[11].icon, inventoryNameDictionary[11].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -652,15 +677,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[11].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName ()== "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[11]);
-						inventoryNameDictionary[11] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName ()== "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[11]);
+							inventoryNameDictionary[11] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		GUILayout.EndHorizontal();
@@ -700,15 +727,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[12].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[12]);
-						inventoryNameDictionary[12] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[12]);
+							inventoryNameDictionary[12] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[13].icon, inventoryNameDictionary[13].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -745,15 +774,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[13].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[13]);
-						inventoryNameDictionary[13] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[13]);
+							inventoryNameDictionary[13] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[14].icon, inventoryNameDictionary[14].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -790,15 +821,16 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[14].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[14]);
-						inventoryNameDictionary[14] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[14]);
+							inventoryNameDictionary[14] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[15].icon, inventoryNameDictionary[15].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -835,15 +867,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[15].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[15]);
-						inventoryNameDictionary[15] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[15]);
+							inventoryNameDictionary[15] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[16].icon, inventoryNameDictionary[16].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -880,15 +914,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[16].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[16]);
-						inventoryNameDictionary[16] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[16]);
+							inventoryNameDictionary[16] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[17].icon, inventoryNameDictionary[17].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -925,15 +961,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[17].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[17]);
-						inventoryNameDictionary[17] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[17]);
+							inventoryNameDictionary[17] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		GUILayout.EndHorizontal();
@@ -973,15 +1011,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[18].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[18]);
-						inventoryNameDictionary[18] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[18]);
+							inventoryNameDictionary[18] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[19].icon, inventoryNameDictionary[19].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -1018,15 +1058,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[19].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[19]);
-						inventoryNameDictionary[19] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[19]);
+							inventoryNameDictionary[19] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[20].icon, inventoryNameDictionary[20].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -1063,15 +1105,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[20].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[20]);
-						inventoryNameDictionary[20] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[20]);
+							inventoryNameDictionary[20] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[21].icon, inventoryNameDictionary[21].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -1108,15 +1152,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[21].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[21]);
-						inventoryNameDictionary[21] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[21]);
+							inventoryNameDictionary[21] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[22].icon, inventoryNameDictionary[22].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -1153,15 +1199,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[22].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[22]);
-						inventoryNameDictionary[22] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[22]);
+							inventoryNameDictionary[22] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[23].icon, inventoryNameDictionary[23].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -1198,15 +1246,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[23].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[23]);
-						inventoryNameDictionary[23] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[23]);
+							inventoryNameDictionary[23] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		GUILayout.EndHorizontal();
@@ -1246,15 +1296,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[24].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[24]);
-						inventoryNameDictionary[24] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[24]);
+							inventoryNameDictionary[24] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[25].icon, inventoryNameDictionary[25].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -1291,15 +1343,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[25].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[25]);
-						inventoryNameDictionary[25] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[25]);
+							inventoryNameDictionary[25] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[26].icon, inventoryNameDictionary[26].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -1336,15 +1390,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[26].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[26]);
-						inventoryNameDictionary[26] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[26]);
+							inventoryNameDictionary[26] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[27].icon, inventoryNameDictionary[27].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -1381,15 +1437,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[27].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[27]);
-						inventoryNameDictionary[27] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[27]);
+							inventoryNameDictionary[27] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[28].icon, inventoryNameDictionary[28].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -1426,15 +1484,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[28].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[28]);
-						inventoryNameDictionary[28] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[28]);
+							inventoryNameDictionary[28] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[29].icon, inventoryNameDictionary[29].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -1471,15 +1531,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[29].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[29]);
-						inventoryNameDictionary[29] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[29]);
+							inventoryNameDictionary[29] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		GUILayout.EndHorizontal();
@@ -1519,15 +1581,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[30].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[30]);
-						inventoryNameDictionary[30] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[30]);
+							inventoryNameDictionary[30] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[31].icon, inventoryNameDictionary[31].description), GUILayout.Width (50), GUILayout.Height (50)))
@@ -1564,22 +1628,24 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[31].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[31]);
-						inventoryNameDictionary[31] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[31]);
+							inventoryNameDictionary[31] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[32].icon, inventoryNameDictionary[32].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
-			if(inventoryNameDictionary[2].isTrap == false)
+			if(inventoryNameDictionary[32].isTrap == false)
 			{
-				if(inventoryNameDictionary[2].name != "null")
+				if(inventoryNameDictionary[32].name != "null")
 				{
 					for(int i = 0; i < 6; i++)
 					{
@@ -1609,22 +1675,24 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[32].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[32]);
-						inventoryNameDictionary[32] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[32]);
+							inventoryNameDictionary[32] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[33].icon, inventoryNameDictionary[33].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
-			if(inventoryNameDictionary[2].isTrap == false)
+			if(inventoryNameDictionary[33].isTrap == false)
 			{
-				if(inventoryNameDictionary[2].name != "null")
+				if(inventoryNameDictionary[33].name != "null")
 				{
 					for(int i = 0; i < 6; i++)
 					{
@@ -1654,22 +1722,24 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[33].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[33]);
-						inventoryNameDictionary[33] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[33]);
+							inventoryNameDictionary[33] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[34].icon, inventoryNameDictionary[34].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
-			if(inventoryNameDictionary[2].isTrap == false)
+			if(inventoryNameDictionary[34].isTrap == false)
 			{
-				if(inventoryNameDictionary[2].name != "null")
+				if(inventoryNameDictionary[34].name != "null")
 				{
 					for(int i = 0; i < 6; i++)
 					{
@@ -1699,22 +1769,24 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[34].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[34]);
-						inventoryNameDictionary[34] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[34]);
+							inventoryNameDictionary[34] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		if(GUILayout.Button (new GUIContent(inventoryNameDictionary[35].icon, inventoryNameDictionary[35].description), GUILayout.Width (50), GUILayout.Height (50)))
 		{
-			if(inventoryNameDictionary[2].isTrap == false)
+			if(inventoryNameDictionary[35].isTrap == false)
 			{
-				if(inventoryNameDictionary[2].name != "null")
+				if(inventoryNameDictionary[35].name != "null")
 				{
 					for(int i = 0; i < 6; i++)
 					{
@@ -1744,15 +1816,17 @@ public class JP_InventoryGUI : MonoBehaviour {
 
 			if(inventoryNameDictionary[35].baitID > 0)
 			{
-				if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
+				if(selectedTrap != null)
 				{
-					if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+					if(selectedTrap.GetComponent<TrapSettings>().GetBaitWindow() == true)
 					{
-						selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[35]);
-						inventoryNameDictionary[35] = itemObject.nullItem;
+						if(selectedTrap.GetComponent<TrapSettings>().GetName () == "null")
+						{
+							selectedTrap.GetComponent<TrapSettings>().SetBaitDictionary(inventoryNameDictionary[35]);
+							inventoryNameDictionary[35] = itemObject.nullItem;
+						}
 					}
 				}
-				
 			}
 		}
 		GUILayout.EndHorizontal();

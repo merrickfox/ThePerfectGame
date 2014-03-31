@@ -292,6 +292,7 @@ MonoBehaviour:
   resourceInteraction: {fileID: 0}
   trapInteraction: {fileID: 0}
   otherInteraction: {fileID: 0}
+  trapSkin: {fileID: 0}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -305,6 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   craftingSkin: {fileID: 11400000, guid: cce9b45b4c2bb464e8d0da8de219e0ca, type: 2}
   hammerIcon: {fileID: 2800000, guid: 8326131c6c862fe44853ea3bacf5f6b9, type: 3}
+  clearIcon: {fileID: 0}
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -316,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2409b12e30f663e4894e21fd56f9c588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySkin: {fileID: 11400000, guid: 19eeed7ee78108042b8314d14b667290, type: 2}
+  inventorySkin: {fileID: 11400000, guid: a2d5fa19b0126c14c917ab1607888a74, type: 2}
   tooltipSkin: {fileID: 11400000, guid: 47837f21b9dc34445bf41e5d02db0509, type: 2}
 --- !u!114 &11400014
 MonoBehaviour:
@@ -330,8 +332,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Box_Trap: {fileID: 100014, guid: 0019ede9ed10c994eb9619b5bf6b407e, type: 2}
-  Bow_Trap: {fileID: 100012, guid: d542cf9459084014a828b603722636b4, type: 3}
-  Trap_C: {fileID: 0}
+  Cage_Trap: {fileID: 100002, guid: 8fa9de071c2549e43a3348ea72de5cfb, type: 2}
+  Snare_Trap: {fileID: 100002, guid: f6036f9f11e3789449e85cb0e14f8174, type: 2}
+  Bear_Trap: {fileID: 100002, guid: 7fc4ffd40db640e4d843efcc9400dfb5, type: 2}
+  Rod_Trap: {fileID: 100002, guid: 09fad9d90ce8fc440983ebd2077affd6, type: 2}
+  ElectricHuman_Trap: {fileID: 100002, guid: 1ad16061fce92d843972fd22885b993c, type: 2}
+  ElectricNet_Trap: {fileID: 100002, guid: c2ec5e76b7ef7314f8a1847a953f8c2e, type: 2}
+  Balloon_Trap: {fileID: 100002, guid: b05a2369aa729b0418a242390eed8190, type: 2}
+  Spike_Trap: {fileID: 100002, guid: cb6d3b01633fa1c4ba814a8e709fb87e, type: 2}
 --- !u!114 &11400016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -448,6 +456,7 @@ MonoBehaviour:
   resourceInteraction: {fileID: 0}
   trapInteraction: {fileID: 0}
   otherInteraction: {fileID: 0}
+  trapSkin: {fileID: 0}
 --- !u!114 &11400026
 MonoBehaviour:
   m_ObjectHideFlags: 1

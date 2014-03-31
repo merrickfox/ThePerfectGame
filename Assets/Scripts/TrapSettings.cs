@@ -4,13 +4,15 @@ using System.Collections.Generic;
 
 public class TrapSettings : MonoBehaviour 
 {
+	bool isEmpty = true;
 	bool canMove = true;
 	Item_Class.ItemClass itemObject = new Item_Class.ItemClass();
 	public static Item_Class baitItem = new Item_Class();
+	public GUISkin trapSkin;
 	GameObject Player;
 
 	// Trap Variables
-	private Rect baitWindowRect = new Rect(600,100,100,100);
+	private Rect baitWindowRect = new Rect(600,100,150,150);
 	private bool BaitUp = false;
 	private int BaitID = 0;
 	MF_TrapScript trapScript;
@@ -39,6 +41,16 @@ public class TrapSettings : MonoBehaviour
 	public Dictionary<int, Item_Class.ItemClass> GetBaitDictionary()
 	{
 		return BaitNameDictionary;
+	}
+
+	public bool GetEmpty()
+	{
+		return isEmpty;
+	}
+
+	public void SetEmpty(bool newEmpty)
+	{
+		isEmpty = newEmpty;
 	}
 
 	public string GetName()
@@ -93,6 +105,7 @@ public class TrapSettings : MonoBehaviour
 	{
 		if (BaitUp)
 		{
+			GUI.skin = trapSkin;
 			baitWindowRect = GUI.Window (6, baitWindowRect, BaitWindowMethod, "Bait"); 
 		}
 
@@ -100,7 +113,7 @@ public class TrapSettings : MonoBehaviour
 
 	void BaitWindowMethod(int windowID)
 	{
-		GUILayout.BeginArea (new Rect(25, 20, 100, 100));
+		GUILayout.BeginArea (new Rect(75, 50, 150, 150));
 		
 		GUILayout.BeginHorizontal();
 		if(GUILayout.Button (BaitNameDictionary[0].icon, GUILayout.Width (50), GUILayout.Height (50)))
@@ -142,6 +155,7 @@ public class TrapSettings : MonoBehaviour
 		{
 			if(BaitUp)
 			{
+				PlayerPrefs.SetInt ("Bait", 1);
 				EnableMovement();
 				BaitUp = false;
 			}
