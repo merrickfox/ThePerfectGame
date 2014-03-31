@@ -25,7 +25,7 @@ public class MF_DisplayTrophy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
 	}
 
 	void DisplayTrophy(string trophy){

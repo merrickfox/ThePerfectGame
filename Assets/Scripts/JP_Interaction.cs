@@ -24,6 +24,12 @@ public class JP_Interaction : MonoBehaviour {
 	void Start()
 	{
 		sceneController = GameObject.Find("WoodsController");
+		if(Application.loadedLevel == 1){
+			PlayerPrefs.SetInt("Level", 0);
+		}
+		if(Application.loadedLevel == 3){
+			PlayerPrefs.SetInt("Level", 1);
+		}
 	}
 
 	void DisableMovement()
@@ -107,7 +113,7 @@ public class JP_Interaction : MonoBehaviour {
 		
 		// Update is called once per frame
 	void FixedUpdate () 
-	{	
+	{	//print(Application.loadedLevel);
 		float distance = 6f;
 		// Looting screen
 		if (Physics.Raycast (transform.position, transform.forward * distance, out hit)) 
