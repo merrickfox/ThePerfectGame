@@ -35,6 +35,7 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400014}
   - 114: {fileID: 11400026}
+  - 111: {fileID: 11100000}
   m_Layer: 0
   m_Name: First Person Controller
   m_TagString: Player
@@ -85,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: -.984983385, z: 0, w: .172649533}
-  m_LocalPosition: {x: 707.831604, y: 11.3918276, z: 595.897827}
+  m_LocalPosition: {x: 710.009155, y: 10.4057035, z: 592.046631}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -181,6 +182,21 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
+--- !u!111 &11100000
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 7ea921d01fb9eb64ba2b7a15afdec89f, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 7ea921d01fb9eb64ba2b7a15afdec89f, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -364,7 +380,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d35a90bed98554f4d8b92c9cd3cfbafa, type: 3}
   m_Name: 
@@ -405,7 +421,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dad87ba4f1e04d6eb7f287e1f2e08fe, type: 3}
   m_Name: 
@@ -428,7 +444,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0923359e9e352a4b9b11c7b7161ad67, type: 3}
   m_Name: 
@@ -456,7 +472,7 @@ MonoBehaviour:
   resourceInteraction: {fileID: 0}
   trapInteraction: {fileID: 0}
   otherInteraction: {fileID: 0}
-  trapSkin: {fileID: 0}
+  trapSkin: {fileID: 11400000, guid: 4a1b5f5482ea6b44a8f58133fffe8c01, type: 2}
 --- !u!114 &11400026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -468,8 +484,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70ab376057b8674e9af244e07039395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 100002}
   TutWall: {fileID: 0}
+  Tut2Walls: {fileID: 0}
   HungerFull: {fileID: 2800000, guid: 6e3adc7a848ff3e4b8d33231d85c646b, type: 3}
   Hunger1: {fileID: 2800000, guid: 0c9d0d1f8961084419cec4421220549e, type: 3}
   Hunger2: {fileID: 2800000, guid: 992682570bd061646a475b5f278bfff2, type: 3}
@@ -482,8 +499,10 @@ MonoBehaviour:
   BMTracker: {fileID: 2800000, guid: 7975e94beb6ee894e87732ed6c901745, type: 3}
   Paper: {fileID: 0}
   TutHeader: {fileID: 0}
-  black: {fileID: 0}
-  JournalTexture: {fileID: 0}
+  black: {fileID: 2800000, guid: 1691292c172c06e41b6c566a8fb18fbb, type: 3}
+  JournalTexture: {fileID: 2800000, guid: 5d6fd4c231d3415498fd25b29265c5ab, type: 3}
+  TrackerTexture: {fileID: 2800000, guid: 58e24893a505b0d468050c48633c432f, type: 3}
+  blackTexture: {fileID: 2800000, guid: e2d64ab3c1978624faf9dd5ddeeafa4a, type: 3}
   HungerFlash: 0
   TrackerOpen: 0
   TrackerPage: 1
@@ -494,16 +513,20 @@ MonoBehaviour:
   TutorialOrder: 0
   TutorialOrder2: 0
   WakeupMove: 0
+  wakingup: 0
   topBlack: 0
   botBlack: 0
   a: 0
   b: 0
+  c: 0
+  ToDoList: 0
   JournalEntryPing: 0
+  TrackerEntryPing: 0
   Trap1: 0
   Trap2: 0
   Trap3: 0
   journalSkin: {fileID: 11400000, guid: f6aa7dc20c7ef1648889f2d61489e4e8, type: 2}
-  paperGUI: {fileID: 0}
+  paperGUI: {fileID: 11400000, guid: 2576e5127d50a3347ad5daaa1bd20cfb, type: 2}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

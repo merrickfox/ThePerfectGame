@@ -4,7 +4,7 @@ using System.Collections;
 public class JP_SpawnTrap : MonoBehaviour 
 {
 	public GameObject Player;
-	bool holdingTrap;
+	public bool holdingTrap, dropTrap;
 
 	//Item_Class itemObject = new Item_Class();
 	public Item_Class.ItemClass itemObject = new Item_Class.ItemClass();
@@ -12,15 +12,17 @@ public class JP_SpawnTrap : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		Player = GameObject.FindGameObjectWithTag("Player");
-		gameObject.transform.parent = Player.transform;
+		if(!dropTrap){
+			Player = GameObject.FindGameObjectWithTag("Player");
+			gameObject.transform.parent = Player.transform;
 
-		gameObject.GetComponent<Rigidbody>().useGravity = false;
-		gameObject.GetComponent<Rigidbody>().detectCollisions = false;
+			gameObject.GetComponent<Rigidbody>().useGravity = false;
+			gameObject.GetComponent<Rigidbody>().detectCollisions = false;
 
-		itemObject = Player.GetComponent<JP_TrapSelection>().GetTrap ();
+			itemObject = Player.GetComponent<JP_TrapSelection>().GetTrap ();
 
-		holdingTrap = true;
+			holdingTrap = true;
+		}
 	}
 
 	public void SetItemObject(Item_Class.ItemClass trapObject)
@@ -55,6 +57,7 @@ public class JP_SpawnTrap : MonoBehaviour
 				gameObject.GetComponent<Rigidbody>().detectCollisions = true;
 				//gameObject.GetComponent<TrapSettings>().SetTrapType (itemObject);
 				holdingTrap = false;
+				dropTrap = true;
 			}
 
 			if(Input.GetKeyUp (KeyCode.Escape))
@@ -70,6 +73,7 @@ public class JP_SpawnTrap : MonoBehaviour
 				}
 
 				holdingTrap = false;
+				dropTrap = false;
 				Destroy (gameObject);
 			}
 		}

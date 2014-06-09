@@ -25,7 +25,7 @@ public class JP_Looter : MonoBehaviour {
 
 	// Enable Looting
 	public void EnableLooting()
-	{
+	{	Debug.Log("looting enabled");
 		resourceWindowUp = true;
 	}
 
@@ -62,8 +62,7 @@ public class JP_Looter : MonoBehaviour {
 		// ************************************************************************
 		if(ResourceName == "Tutorial Resource")
 		{
-			looterSkin.window.normal.background = woodBackground;
-			looterSkin.window.onNormal.background = woodBackground;
+			
 
 			lootDictionary[0] = itemObject.stick_r;
 			lootDictionary[1] = itemObject.box_r;
@@ -74,8 +73,7 @@ public class JP_Looter : MonoBehaviour {
 		// ************************************************************************
 		if(ResourceName == "Stick Resource")
 		{
-			looterSkin.window.normal.background = woodBackground;
-			looterSkin.window.onNormal.background = woodBackground;
+			
 			if(randNum >= 0)
 			{
 				for(int j = 0; j < 4; j++)
@@ -101,12 +99,211 @@ public class JP_Looter : MonoBehaviour {
 			}
 		}
 
+		// ************************* Woods RESOURCE ********************************
+		// ************************************************************************
+		if(ResourceName == "Woods")
+		{
+			
+
+			randNum = Random.Range (0,100);
+			if(randNum >= 0)
+			{
+				for(int j = 0; j < 4; j++)
+				{
+					if(lootDictionary[j].name == "null")
+					{
+						lootDictionary[j] = itemObject.nuts_b;
+						break;
+					}
+				}
+			}
+
+			randNum = Random.Range (0,100);
+			if(randNum >= 5)
+			{
+				for(int j = 0; j < 4; j++)
+				{
+					if(lootDictionary[j].name == "null")
+					{
+						lootDictionary[j] = itemObject.stick_r;
+						break;
+					}
+				}
+			}
+
+			randNum = Random.Range (0,100);
+			if(randNum >= 40 && randNum <= 60)
+			{
+				for(int j = 0; j < 4; j++)
+				{
+					if(lootDictionary[j].name == "null")
+					{
+						lootDictionary[j] = itemObject.box_r;
+						break;
+					}
+				}
+			}
+
+			randNum = Random.Range (0,100);
+			if(randNum >= 40 && randNum <= 60)
+			{
+				for(int j = 0; j < 4; j++)
+				{
+					if(lootDictionary[j].name == "null")
+					{
+						lootDictionary[j] = itemObject.string_r;
+						break;
+					}
+				}
+			}
+
+			randNum = Random.Range (0,100);
+			if(randNum >= 40 && randNum <= 60)
+			{
+				for(int j = 0; j < 4; j++)
+				{
+					if(lootDictionary[j].name == "null")
+					{
+						lootDictionary[j] = itemObject.rope_r;
+						break;
+					}
+				}
+			}
+
+			randNum = Random.Range (0,100);
+			if(randNum >= 40 && randNum <= 60)
+			{
+				for(int j = 0; j < 4; j++)
+				{
+					if(lootDictionary[j].name == "null")
+					{
+						lootDictionary[j] = itemObject.rock_r;
+						break;
+					}
+				}
+			}
+
+			randNum = Random.Range (0,100);
+			if(randNum >= 40 && randNum <= 60)
+			{
+				for(int j = 0; j < 4; j++)
+				{
+					if(lootDictionary[j].name == "null")
+					{
+						lootDictionary[j] = itemObject.leaf_r;
+						break;
+					}
+				}
+			}
+
+		
+		}
+
+		// ************************* bins RESOURCE ********************************
+		// ************************************************************************
+		if(ResourceName == "Bins")
+		{
+			
+
+			randNum = Random.Range (0,100);
+			if(randNum >= 0)
+			{
+				for(int j = 0; j < 4; j++)
+				{
+					if(lootDictionary[j].name == "null")
+					{
+						lootDictionary[j] = itemObject.needle_r;
+						break;
+					}
+				}
+			}
+
+			randNum = Random.Range (0,100);
+			if(randNum >= 5)
+			{
+				for(int j = 0; j < 4; j++)
+				{
+					if(lootDictionary[j].name == "null")
+					{
+						lootDictionary[j] = itemObject.hanger_r;
+						break;
+					}
+				}
+			}
+
+			randNum = Random.Range (0,100);
+			if(randNum >= 40 && randNum <= 60)
+			{
+				for(int j = 0; j < 4; j++)
+				{
+					if(lootDictionary[j].name == "null")
+					{
+						lootDictionary[j] = itemObject.spring_r;
+						break;
+					}
+				}
+			}
+
+			randNum = Random.Range (0,100);
+			if(randNum >= 40 && randNum <= 60)
+			{
+				for(int j = 0; j < 4; j++)
+				{
+					if(lootDictionary[j].name == "null")
+					{
+						lootDictionary[j] = itemObject.string_r;
+						break;
+					}
+				}
+			}
+
+			randNum = Random.Range (0,100);
+			if(randNum >= 40 && randNum <= 60)
+			{
+				for(int j = 0; j < 4; j++)
+				{
+					if(lootDictionary[j].name == "null")
+					{
+						lootDictionary[j] = itemObject.wire_r;
+						break;
+					}
+				}
+			}
+
+			randNum = Random.Range (0,100);
+			if(randNum >= 40 && randNum <= 60)
+			{
+				for(int j = 0; j < 4; j++)
+				{
+					if(lootDictionary[j].name == "null")
+					{
+						lootDictionary[j] = itemObject.scrapMetal_r;
+						break;
+					}
+				}
+			}
+
+			randNum = Random.Range (0,100);
+			if(randNum >= 40 && randNum <= 60)
+			{
+				for(int j = 0; j < 4; j++)
+				{
+					if(lootDictionary[j].name == "null")
+					{
+						lootDictionary[j] = itemObject.net_r;
+						break;
+					}
+				}
+			}
+
+		
+		}
+
 		// ************************* JUNK RESOURCE ********************************
 		// ************************************************************************
 		if(ResourceName == "Junk Resource")
 		{
-			looterSkin.window.normal.background = woodBackground;
-			looterSkin.window.onNormal.background = woodBackground;
+			
 			if(randNum >= 10)
 			{
 				for(int j = 0; j < 4; j++)
@@ -148,8 +345,7 @@ public class JP_Looter : MonoBehaviour {
 		// ************************************************************************
 		if(ResourceName == "Car Resource")
 		{
-			looterSkin.window.normal.background = woodBackground;
-			looterSkin.window.onNormal.background = woodBackground;
+			
 			if(randNum >= 0)
 			{
 				for(int j = 0; j < 4; j++)

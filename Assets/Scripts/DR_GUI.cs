@@ -129,10 +129,7 @@ public class DR_GUI : MonoBehaviour
 			disableMove();
 		}
 
-		if(Input.GetKeyDown(KeyCode.P))
-		{
-			Application.LoadLevel ("DanForestTut");
-		}
+		
 
 		if(Input.GetKeyDown(KeyCode.J))
 		{

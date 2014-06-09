@@ -62,14 +62,11 @@ public class JP_Interaction : MonoBehaviour {
 	{
 		GUILayout.BeginArea (new Rect(25, 20, 250, 180));
 
-		GUILayout.BeginHorizontal();
-		GUILayout.Space(20);
-		GUILayout.Label("Your trap hasn't caught anything yet");
-		GUILayout.EndHorizontal();
 
-		GUILayout.BeginVertical();
-		GUILayout.Space(20);
-		GUILayout.EndVertical();
+		GUILayout.Space(55f);
+		GUILayout.Label("Your trap hasn't caught anything yet");
+	
+
 
 		GUILayout.BeginHorizontal();
 		if(GUILayout.Button ("Pickup", GUILayout.Width (120), GUILayout.Height (25)))
@@ -90,7 +87,7 @@ public class JP_Interaction : MonoBehaviour {
 			}
 		}
 
-		GUILayout.Space (10);
+		
 		if(GUILayout.Button ("Access Bait", GUILayout.Width (120), GUILayout.Height (25)))
 		{
 			if(trapObject.GetComponent<JP_SpawnTrap>().isHolding () == false)
@@ -107,6 +104,7 @@ public class JP_Interaction : MonoBehaviour {
 		}
 
 		GUILayout.EndHorizontal();
+		
 		GUILayout.EndArea ();
 
 	}
@@ -114,15 +112,16 @@ public class JP_Interaction : MonoBehaviour {
 		// Update is called once per frame
 	void FixedUpdate () 
 	{	//print(Application.loadedLevel);
-		float distance = 6f;
+		float distance = 3f;
 		// Looting screen
 		if (Physics.Raycast (transform.position, transform.forward * distance, out hit)) 
 		{	
 			Debug.Log(hit.transform.name);
 			// ************************************* Resource Object Detection **********************************************************
 			// **************************************************************************************************************************
-			if (hit.collider.gameObject.tag == "Resource") 
-			{
+			if (hit.collider.gameObject.tag == "Resource" || hit.collider.gameObject.tag == "Bins") 
+			{		
+					Debug.Log("in interaction");
 					resourceObject = hit.collider.gameObject;
 					resourceInteraction.transform.position = Camera.main.WorldToViewportPoint(resourceObject.transform.position);
 					resourceInteraction.gameObject.SetActive(true);
@@ -162,25 +161,32 @@ public class JP_Interaction : MonoBehaviour {
 				}
 					
 			}
+			else{
+				otherInteraction.gameObject.SetActive(false);
+			}
 			
 
 			// ******************************************* static trap ************************************************************************
 			// *************************************************************************************************************************
-			else if((hit.collider.gameObject.tag == "Static Trap"))
+			
+
+			// ******************************************* bin ************************************************************************
+			// *************************************************************************************************************************
+			/*if((hit.collider.gameObject.tag == "Bins"))
 			{
-				otherObject = hit.collider.gameObject;
-				otherInteraction.transform.position = Camera.main.WorldToViewportPoint(otherObject.transform.position);
-				otherInteraction.gameObject.SetActive(true);
+				resourceObject = hit.collider.gameObject;
+				resourceInteraction.transform.position = Camera.main.WorldToViewportPoint(resourceObject.transform.position);
+				resourceInteraction.gameObject.SetActive(true);
 				if(Input.GetKey (KeyCode.E)){
 					//place bait
-					Debug.Log("place bait");
+					Debug.Log("at the bin");
 				}
 					
 			}
 			else{
-				otherObject = null;
-				otherInteraction.gameObject.SetActive(false);
-			}
+				resourceObject = null;
+				resourceInteraction.gameObject.SetActive(false);
+			}*/
 		}
 		// END OF RAYCAST
 
@@ -190,7 +196,7 @@ public class JP_Interaction : MonoBehaviour {
 		// ********************************************************************************************
 
 		if(Input.GetKey ("e") && resourceObject != null){
-
+			Debug.Log("In E menu");
 			hit.collider.gameObject.GetComponent<JP_Looter>().EnableLooting();
 		}
 

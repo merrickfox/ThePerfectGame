@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//need to add the chances for each trap/bait
+
+using UnityEngine;
 using System.Collections;
 
 public class MF_TrapScript : MonoBehaviour {
@@ -11,7 +13,8 @@ public class MF_TrapScript : MonoBehaviour {
 	GameObject sceneController;
 
 	public GUIText score;
-	public Texture squirrel, beaver, spider, mouse, bear, snake, rabbit, deer, skunk, hedgehog, chicken, owl, eagle, pigeon, dog, cat, lizard, raccoon, human;
+	public Texture squirrel, beaver, spider, mouse, bear, snake, rabbit, deer, skunk, hedgehog, chicken, owl, 
+	eagle, pigeon, dog, cat, lizard, raccoon, banker, goth, mayor, druggy, whore, priest, drunk, homeless, pharmacist, binman;
 	
 
 	public Vector3 textLocation;
@@ -281,7 +284,7 @@ public class MF_TrapScript : MonoBehaviour {
 					snake_weighting = 50.0f;
 					spider_weighting  = 50.0f;
 					mouse_weighting = 50.0f;
-					bear_weighting = 50.0f;
+					bear_weighting = 5.0f;
 					rabbit_weighting = 50.0f;
 					deer_weighting = 50.0f;
 					skunk_weighting = 50.0f;
@@ -297,18 +300,19 @@ public class MF_TrapScript : MonoBehaviour {
 					human_weighting = 50.0f;
 				}
 				if(Application.loadedLevel == 3){
-					goth_weighting = 50.0f;
-					mayor_weighting = 50.0f;
-					druggy_weighting = 50.0f;
-					whore_weighting = 50.0f;
-					priest_weighting = 50.0f;
-					drunk_weighting = 50.0f;
-					homeless_weighting = 50.0f;
-					pharmacist_weighting = 50.0f;
-					banker_weighting = 50.0f;
-					binman_weighting = 50.0f;
+					goth_weighting = 0.0f;
+					mayor_weighting = 0.0f;
+					druggy_weighting = 0.0f;
+					whore_weighting = 0.0f;
+					priest_weighting = 0.0f;
+					drunk_weighting = 0.0f;
+					homeless_weighting = 0.0f;
+					pharmacist_weighting = 0.0f;
+					banker_weighting = 0.0f;
+					binman_weighting = 0.0f;
 					cat_weighting = 50.0f;
 					dog_weighting = 50.0f;
+					pigeon_weighting = 50.0f;
 				}
 				break;
 
@@ -317,7 +321,7 @@ public class MF_TrapScript : MonoBehaviour {
 					squirrel_weighting = 50.0f;
 					beaver_weighting = 50.0f;	
 					snake_weighting = 50.0f;
-					spider_weighting  = 50.0f;
+					spider_weighting  = 0.0f;
 					mouse_weighting = 50.0f;
 					bear_weighting = 50.0f;
 					rabbit_weighting = 50.0f;
@@ -325,22 +329,22 @@ public class MF_TrapScript : MonoBehaviour {
 					skunk_weighting = 50.0f;
 					hedgehog_weighting = 50.0f;
 					chicken_weighting = 50.0f;
-					owl_weighting = 50.0f;
-					eagle_weighting = 50.0f;
-					pigeon_weighting = 50.0f;
+					owl_weighting = 0.0f;
+					eagle_weighting = 0.0f;
+					pigeon_weighting = 0.0f;
 					dog_weighting = 50.0f;
 					cat_weighting = 50.0f;
-					lizard_weighting = 50.0f;
+					lizard_weighting = 0.0f;
 					raccoon_weighting = 50.0f;
 					human_weighting = 50.0f;
 				}
 				if(Application.loadedLevel == 3){
 					goth_weighting = 50.0f;
 					mayor_weighting = 50.0f;
-					druggy_weighting = 50.0f;
+					druggy_weighting = 75.0f;
 					whore_weighting = 50.0f;
 					priest_weighting = 50.0f;
-					drunk_weighting = 50.0f;
+					drunk_weighting = 75.0f;
 					homeless_weighting = 50.0f;
 					pharmacist_weighting = 50.0f;
 					banker_weighting = 50.0f;
@@ -354,23 +358,23 @@ public class MF_TrapScript : MonoBehaviour {
 				if(Application.loadedLevel == 1){
 					squirrel_weighting = 50.0f;
 					beaver_weighting = 50.0f;	
-					snake_weighting = 50.0f;
+					snake_weighting = 0.0f;
 					spider_weighting  = 50.0f;
-					mouse_weighting = 50.0f;
-					bear_weighting = 50.0f;
+					mouse_weighting = 0.0f;
+					bear_weighting = 100.0f;
 					rabbit_weighting = 50.0f;
 					deer_weighting = 50.0f;
 					skunk_weighting = 50.0f;
-					hedgehog_weighting = 50.0f;
+					hedgehog_weighting = 0.0f;
 					chicken_weighting = 50.0f;
-					owl_weighting = 50.0f;
-					eagle_weighting = 50.0f;
-					pigeon_weighting = 50.0f;
+					owl_weighting = 0.0f;
+					eagle_weighting = 0.0f;
+					pigeon_weighting = 0.0f;
 					dog_weighting = 50.0f;
 					cat_weighting = 50.0f;
-					lizard_weighting = 50.0f;
+					lizard_weighting = 0.0f;
 					raccoon_weighting = 50.0f;
-					human_weighting = 50.0f;
+					
 				}
 				if(Application.loadedLevel == 3){
 					goth_weighting = 50.0f;
@@ -388,6 +392,244 @@ public class MF_TrapScript : MonoBehaviour {
 				}
 
 				break;
+
+			case 4: // cage trap
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = 50.0f;
+					beaver_weighting = 50.0f;	
+					snake_weighting = 50.0f;
+					spider_weighting  = 50.0f;
+					mouse_weighting = 50.0f;
+					bear_weighting = 50.0f;
+					rabbit_weighting = 50.0f;
+					deer_weighting = 50.0f;
+					skunk_weighting = 50.0f;
+					hedgehog_weighting = 50.0f;
+					chicken_weighting = 50.0f;
+					owl_weighting = 50.0f;
+					eagle_weighting = 50.0f;
+					pigeon_weighting = 50.0f;
+					dog_weighting = 50.0f;
+					cat_weighting = 50.0f;
+					lizard_weighting = 50.0f;
+					raccoon_weighting = 50.0f;
+					
+				}
+				if(Application.loadedLevel == 3){
+					goth_weighting = 50.0f;
+					mayor_weighting = 50.0f;
+					druggy_weighting = 50.0f;
+					whore_weighting = 50.0f;
+					priest_weighting = 50.0f;
+					drunk_weighting = 50.0f;
+					homeless_weighting = 50.0f;
+					pharmacist_weighting = 50.0f;
+					banker_weighting = 50.0f;
+					binman_weighting = 50.0f;
+					cat_weighting = 50.0f;
+					dog_weighting = 50.0f;
+				}
+
+				break;
+
+			case 5: // snare trap
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = 50.0f;
+					beaver_weighting = 50.0f;	
+					snake_weighting = 0.0f;
+					spider_weighting  = 0.0f;
+					mouse_weighting = 50.0f;
+					bear_weighting = 50.0f;
+					rabbit_weighting = 50.0f;
+					deer_weighting = 50.0f;
+					skunk_weighting = 50.0f;
+					hedgehog_weighting = 50.0f;
+					chicken_weighting = 50.0f;
+					owl_weighting = 0.0f;
+					eagle_weighting = 0.0f;
+					pigeon_weighting = 0.0f;
+					dog_weighting = 50.0f;
+					cat_weighting = 50.0f;
+					lizard_weighting = 50.0f;
+					raccoon_weighting = 50.0f;
+					
+				}
+				if(Application.loadedLevel == 3){
+					goth_weighting = 50.0f;
+					mayor_weighting = 50.0f;
+					druggy_weighting = 50.0f;
+					whore_weighting = 50.0f;
+					priest_weighting = 50.0f;
+					drunk_weighting = 50.0f;
+					homeless_weighting = 50.0f;
+					pharmacist_weighting = 50.0f;
+					banker_weighting = 50.0f;
+					binman_weighting = 50.0f;
+					cat_weighting = 50.0f;
+					dog_weighting = 50.0f;
+				}
+
+				break;
+
+			case 6: // rod trap
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = 50.0f;
+					beaver_weighting = 50.0f;	
+					snake_weighting = 50.0f;
+					spider_weighting  = 50.0f;
+					mouse_weighting = 50.0f;
+					bear_weighting = 50.0f;
+					rabbit_weighting = 50.0f;
+					deer_weighting = 50.0f;
+					skunk_weighting = 50.0f;
+					hedgehog_weighting = 50.0f;
+					chicken_weighting = 50.0f;
+					owl_weighting = 50.0f;
+					eagle_weighting = 50.0f;
+					pigeon_weighting = 50.0f;
+					dog_weighting = 50.0f;
+					cat_weighting = 50.0f;
+					lizard_weighting = 50.0f;
+					raccoon_weighting = 50.0f;
+					
+				}
+				if(Application.loadedLevel == 3){
+					goth_weighting = 50.0f;
+					mayor_weighting = 50.0f;
+					druggy_weighting = 100.0f;
+					whore_weighting = 50.0f;
+					priest_weighting = 50.0f;
+					drunk_weighting = 100.0f;
+					homeless_weighting = 100.0f;
+					pharmacist_weighting = 50.0f;
+					banker_weighting = 50.0f;
+					binman_weighting = 50.0f;
+					cat_weighting = 50.0f;
+					dog_weighting = 50.0f;
+					pigeon_weighting = 50.0f;
+				}
+
+				break;
+
+			case 7: // electrified cage
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = 50.0f;
+					beaver_weighting = 50.0f;	
+					snake_weighting = 50.0f;
+					spider_weighting  = 50.0f;
+					mouse_weighting = 50.0f;
+					bear_weighting = 50.0f;
+					rabbit_weighting = 50.0f;
+					deer_weighting = 50.0f;
+					skunk_weighting = 50.0f;
+					hedgehog_weighting = 50.0f;
+					chicken_weighting = 50.0f;
+					owl_weighting = 50.0f;
+					eagle_weighting = 50.0f;
+					pigeon_weighting = 50.0f;
+					dog_weighting = 50.0f;
+					cat_weighting = 50.0f;
+					lizard_weighting = 50.0f;
+					raccoon_weighting = 50.0f;
+					
+				}
+				if(Application.loadedLevel == 3){
+					goth_weighting = 50.0f;
+					mayor_weighting = 50.0f;
+					druggy_weighting = 50.0f;
+					whore_weighting = 50.0f;
+					priest_weighting = 50.0f;
+					drunk_weighting = 50.0f;
+					homeless_weighting = 50.0f;
+					pharmacist_weighting = 50.0f;
+					banker_weighting = 50.0f;
+					binman_weighting = 50.0f;
+					cat_weighting = 50.0f;
+					dog_weighting = 50.0f;
+					pigeon_weighting = 50.0f;
+				}
+
+				break;
+
+			case 8: // electrified net
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = 50.0f;
+					beaver_weighting = 50.0f;	
+					snake_weighting = 50.0f;
+					spider_weighting  = 50.0f;
+					mouse_weighting = 50.0f;
+					bear_weighting = 50.0f;
+					rabbit_weighting = 50.0f;
+					deer_weighting = 50.0f;
+					skunk_weighting = 50.0f;
+					hedgehog_weighting = 50.0f;
+					chicken_weighting = 50.0f;
+					owl_weighting = 50.0f;
+					eagle_weighting = 50.0f;
+					pigeon_weighting = 50.0f;
+					dog_weighting = 50.0f;
+					cat_weighting = 50.0f;
+					lizard_weighting = 50.0f;
+					raccoon_weighting = 50.0f;
+					
+				}
+				if(Application.loadedLevel == 3){
+					goth_weighting = 50.0f;
+					mayor_weighting = 50.0f;
+					druggy_weighting = 50.0f;
+					whore_weighting = 50.0f;
+					priest_weighting = 50.0f;
+					drunk_weighting = 50.0f;
+					homeless_weighting = 50.0f;
+					pharmacist_weighting = 50.0f;
+					banker_weighting = 50.0f;
+					binman_weighting = 50.0f;
+					cat_weighting = 50.0f;
+					dog_weighting = 50.0f;
+				}
+
+				break;
+
+			case 9: // baloon trap
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = 0.0f;
+					beaver_weighting = 0.0f;	
+					snake_weighting = 0.0f;
+					spider_weighting  = 0.0f;
+					mouse_weighting = 0.0f;
+					bear_weighting = 50.0f;
+					rabbit_weighting = 0.0f;
+					deer_weighting = 0.0f;
+					skunk_weighting = 0.0f;
+					hedgehog_weighting = 0.0f;
+					chicken_weighting = 0.0f;
+					owl_weighting = 0.0f;
+					eagle_weighting = 0.0f;
+					pigeon_weighting = 0.0f;
+					dog_weighting = 0.0f;
+					cat_weighting = 0.0f;
+					lizard_weighting = 0.0f;
+					raccoon_weighting = 0.0f;
+					
+				}
+				if(Application.loadedLevel == 3){
+					goth_weighting = 50.0f;
+					mayor_weighting = 50.0f;
+					druggy_weighting = 50.0f;
+					whore_weighting = 50.0f;
+					priest_weighting = 50.0f;
+					drunk_weighting = 50.0f;
+					homeless_weighting = 50.0f;
+					pharmacist_weighting = 50.0f;
+					banker_weighting = 50.0f;
+					binman_weighting = 50.0f;
+					cat_weighting = 0.0f;
+					dog_weighting = 0.0f;
+				}
+
+				break;
+
+
 		}
 
 		//Process chances for bait type
@@ -412,7 +654,80 @@ public class MF_TrapScript : MonoBehaviour {
 					cat_weighting = cat_weighting*0f;
 					lizard_weighting = lizard_weighting*0f;
 					raccoon_weighting = raccoon_weighting*0f;
-					human_weighting = human_weighting*1.5f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*2f;
+					whore_weighting = whore_weighting*2f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*3f;
+					homeless_weighting = homeless_weighting*2f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*1.5f;
+					dog_weighting = dog_weighting*0f;
+					cat_weighting = cat_weighting*0f;
+				}	
+				
+				break;
+			case 2: // Nut
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1.5f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*0f;
+					spider_weighting = spider_weighting*0f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*0f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*0f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*0f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*0f;
+					dog_weighting = dog_weighting*0f;
+					cat_weighting = cat_weighting*0f;
+					lizard_weighting = lizard_weighting*0f;
+					raccoon_weighting = raccoon_weighting*0f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*1f;
+					whore_weighting = whore_weighting*1.5f;
+					priest_weighting = priest_weighting*1f;
+					drunk_weighting = drunk_weighting*1f;
+					homeless_weighting = homeless_weighting*1f;
+					pharmacist_weighting = pharmacist_weighting*1f;
+					banker_weighting = banker_weighting*1f;
+					binman_weighting = binman_weighting*1f;
+					dog_weighting = dog_weighting*0f;
+					cat_weighting = cat_weighting*0f;
+				}		
+				break;
+
+			case 3: // spider
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*1f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
 				}	
 				if(Application.loadedLevel == 3){
 					goth_weighting = goth_weighting*1f;
@@ -427,10 +742,195 @@ public class MF_TrapScript : MonoBehaviour {
 					binman_weighting = binman_weighting*1f;
 					dog_weighting = dog_weighting*1f;
 					cat_weighting = cat_weighting*1f;
-				}	
-				
+				}		
 				break;
-			case 2: // Nut
+
+			case 4: // squirrell
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*1f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*0f;
+					cat_weighting = cat_weighting*0f;
+				}		
+				break;
+
+			case 6: // beaver
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*1f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*0f;
+					cat_weighting = cat_weighting*0f;
+				}		
+				break;
+
+			case 7: // mouse
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*1f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*0f;
+					cat_weighting = cat_weighting*0f;
+				}		
+				break;
+
+			case 8: // bear
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*1f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*1f;
+					mayor_weighting = mayor_weighting*1f;
+					druggy_weighting = druggy_weighting*1f;
+					whore_weighting = whore_weighting*1f;
+					priest_weighting = priest_weighting*1f;
+					drunk_weighting = drunk_weighting*1f;
+					homeless_weighting = homeless_weighting*1f;
+					pharmacist_weighting = pharmacist_weighting*1f;
+					banker_weighting = banker_weighting*1f;
+					binman_weighting = binman_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 9: // carrots
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*0f;
+					spider_weighting = spider_weighting*0f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*0f;
+					rabbit_weighting = rabbit_weighting*3f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*0f;
+					chicken_weighting = chicken_weighting*0f;
+					owl_weighting = owl_weighting*0f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*0f;
+					dog_weighting = dog_weighting*0f;
+					cat_weighting = cat_weighting*0f;
+					lizard_weighting = lizard_weighting*0f;
+					raccoon_weighting = raccoon_weighting*0f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*0f;
+					cat_weighting = cat_weighting*0f;
+				}		
+				break;
+
+			case 10: // Money
 				if(Application.loadedLevel == 1){
 					squirrel_weighting = squirrel_weighting*0f;
 					beaver_weighting = beaver_weighting*0f;
@@ -450,11 +950,121 @@ public class MF_TrapScript : MonoBehaviour {
 					cat_weighting = cat_weighting*0f;
 					lizard_weighting = lizard_weighting*0f;
 					raccoon_weighting = raccoon_weighting*0f;
-					human_weighting = human_weighting*1.5f;
 				}	
 				if(Application.loadedLevel == 3){
 					goth_weighting = goth_weighting*1f;
-					mayor_weighting = mayor_weighting*1f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*2f;
+					whore_weighting = whore_weighting*2f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*2f;
+					homeless_weighting = homeless_weighting*4f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*3f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*0f;
+					cat_weighting = cat_weighting*0f;
+				}		
+				break;
+
+			case 11: // sex tape
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*0f;
+					beaver_weighting = beaver_weighting*0f;
+					snake_weighting = snake_weighting*0f;
+					spider_weighting = spider_weighting*0f;
+					mouse_weighting = mouse_weighting*0f;
+					bear_weighting = bear_weighting*0f;
+					rabbit_weighting = rabbit_weighting*0f;
+					deer_weighting = deer_weighting*0f;
+					skunk_weighting = skunk_weighting*0f;
+					hedgehog_weighting = hedgehog_weighting*0f;
+					chicken_weighting = chicken_weighting*0f;
+					owl_weighting = owl_weighting*0f;
+					eagle_weighting = eagle_weighting*0f;
+					pigeon_weighting = pigeon_weighting*0f;
+					dog_weighting = dog_weighting*0f;
+					cat_weighting = cat_weighting*0f;
+					lizard_weighting = lizard_weighting*0f;
+					raccoon_weighting = raccoon_weighting*0f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0.2f;
+					druggy_weighting = druggy_weighting*2f;
+					whore_weighting = whore_weighting*1f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*2f;
+					homeless_weighting = homeless_weighting*2f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*1f;
+					dog_weighting = dog_weighting*0f;
+					cat_weighting = cat_weighting*0f;
+				}		
+				break;
+
+			case 12: // Lovecraft book
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*0f;
+					beaver_weighting = beaver_weighting*0f;
+					snake_weighting = snake_weighting*0f;
+					spider_weighting = spider_weighting*0f;
+					mouse_weighting = mouse_weighting*0f;
+					bear_weighting = bear_weighting*0f;
+					rabbit_weighting = rabbit_weighting*0f;
+					deer_weighting = deer_weighting*0f;
+					skunk_weighting = skunk_weighting*0f;
+					hedgehog_weighting = hedgehog_weighting*0f;
+					chicken_weighting = chicken_weighting*0f;
+					owl_weighting = owl_weighting*0f;
+					eagle_weighting = eagle_weighting*0f;
+					pigeon_weighting = pigeon_weighting*0f;
+					dog_weighting = dog_weighting*0f;
+					cat_weighting = cat_weighting*0f;
+					lizard_weighting = lizard_weighting*0f;
+					raccoon_weighting = raccoon_weighting*0f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*3f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*1f;
+					homeless_weighting = homeless_weighting*1f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*0f;
+					cat_weighting = cat_weighting*0f;
+				}		
+				break;
+
+			case 13: // Snake
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*1f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*1f;
+					mayor_weighting = mayor_weighting*0f;
 					druggy_weighting = druggy_weighting*1f;
 					whore_weighting = whore_weighting*1f;
 					priest_weighting = priest_weighting*1f;
@@ -467,10 +1077,824 @@ public class MF_TrapScript : MonoBehaviour {
 					cat_weighting = cat_weighting*1f;
 				}		
 				break;
+
+			case 14: // Rabbit
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*1f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 15: // deer
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*0f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*1f;
+					rabbit_weighting = rabbit_weighting*0f;
+					deer_weighting = deer_weighting*0f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*0f;
+					chicken_weighting = chicken_weighting*0f;
+					owl_weighting = owl_weighting*0f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*0f;
+					raccoon_weighting = raccoon_weighting*0f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 16: // skunk
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*1f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*0f;
+					cat_weighting = cat_weighting*0f;
+				}		
+				break;
+
+			case 17: // Hedgehog
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*1f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 18: // Chicken
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*1f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 19: // owl
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*1f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 20: // eagle
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*1f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 21: // pigeon
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*1f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 22: // dog
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*1f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 23: // cat
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*1f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 24: // lizard
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*1f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 25: // goth
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*3f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 26: // mayor
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*3f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 27: // druggy
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*3f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 28: // whore
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*3f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*1f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 29: // priest
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*3f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 30: // drunk
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*3f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 31: // homeless
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*3f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 32: // pharmacist
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*3f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*1f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 33: // banker
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*3f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*1f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 34: // binman
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*3f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*0f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
+
+			case 35: // raccoon
+				if(Application.loadedLevel == 1){
+					squirrel_weighting = squirrel_weighting*1f;
+					beaver_weighting = beaver_weighting*1f;
+					snake_weighting = snake_weighting*1f;
+					spider_weighting = spider_weighting*1f;
+					mouse_weighting = mouse_weighting*1f;
+					bear_weighting = bear_weighting*3f;
+					rabbit_weighting = rabbit_weighting*1f;
+					deer_weighting = deer_weighting*1f;
+					skunk_weighting = skunk_weighting*1f;
+					hedgehog_weighting = hedgehog_weighting*1f;
+					chicken_weighting = chicken_weighting*1f;
+					owl_weighting = owl_weighting*1f;
+					eagle_weighting = eagle_weighting*1f;
+					pigeon_weighting = pigeon_weighting*1f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+					lizard_weighting = lizard_weighting*1f;
+					raccoon_weighting = raccoon_weighting*1f;
+				}	
+				if(Application.loadedLevel == 3){
+					goth_weighting = goth_weighting*0f;
+					mayor_weighting = mayor_weighting*0f;
+					druggy_weighting = druggy_weighting*0f;
+					whore_weighting = whore_weighting*0f;
+					priest_weighting = priest_weighting*0f;
+					drunk_weighting = drunk_weighting*0f;
+					homeless_weighting = homeless_weighting*2f;
+					pharmacist_weighting = pharmacist_weighting*0f;
+					banker_weighting = banker_weighting*0f;
+					binman_weighting = binman_weighting*0f;
+					dog_weighting = dog_weighting*1f;
+					cat_weighting = cat_weighting*1f;
+				}		
+				break;
 		}
 
 		if(Application.loadedLevel == 1){
-			float [] chanceIndex = new float [19];
+			float [] chanceIndex = new float [18];
 			cumalativeChance = new float [chanceIndex.Length];
 			//Process Distance Modifier = final chances
 			// seperate these per town/woods
@@ -492,7 +1916,7 @@ public class MF_TrapScript : MonoBehaviour {
 			float cat_chance = chanceIndex[15] = cat_weighting/(distanceToHut/totalDist);
 			float lizard_chance = chanceIndex[16] = lizard_weighting/(distanceToLizard/totalDist);
 			float raccoon_chance = chanceIndex[17] = raccoon_weighting/(distanceToRiver/totalDist);
-			float human_chance = chanceIndex[18] = human_weighting/(distanceToRiver/totalDist);
+			
 			
 
 			Debug.Log(percentToHut + " " +percentToRiver + " " +percentToWoodsOne  );
@@ -560,82 +1984,95 @@ public class MF_TrapScript : MonoBehaviour {
 
 			if(rand < cumalativeChance[0]){
 				Debug.Log("Rand:" + rand + " Caught Squirrel");
+				itemObject = baitItem.squirrel_b;
 				return "Squirrel";
 			}
 			else if(rand >= cumalativeChance[0] && rand < cumalativeChance[1]){
 				Debug.Log("Rand:" + rand + " Caught Beaver");
+				itemObject = baitItem.beaver_b;
 				return "Beaver";
 			}
 			else if(rand >= cumalativeChance[1] && rand < cumalativeChance[2]){
 				Debug.Log("Rand:" + rand + " Caught Snake");
+				itemObject = baitItem.snake_b;
 				return "Snake";
 			}
 			else if(rand >= cumalativeChance[2] && rand < cumalativeChance[3]){
 				Debug.Log("Rand:" + rand + " Caught Spider");
+				itemObject = baitItem.spider_b;
 				return "Spider";
 			}
 			else if(rand >= cumalativeChance[3] && rand < cumalativeChance[4]){
 				Debug.Log("Rand:" + rand + " Caught Mouse");
+				itemObject = baitItem.mouse_b;
 				return "Mouse";
 			}
 			else if(rand >= cumalativeChance[4] && rand < cumalativeChance[5]){
 				Debug.Log("Rand:" + rand + " Caught Bear");
+				itemObject = baitItem.bear_b;
 				return "Bear";
 			}
 			else if(rand >= cumalativeChance[5] && rand < cumalativeChance[6]){
 				Debug.Log("Rand:" + rand + " Caught Rabbit");
+				itemObject = baitItem.rabbit_b;
 				return "Rabbit";
 			}
 			else if(rand >= cumalativeChance[6] && rand < cumalativeChance[7]){
 				Debug.Log("Rand:" + rand + " Caught Deer");
+				itemObject = baitItem.deer_b;
 				return "Deer";
 			}
 			else if(rand >= cumalativeChance[7] && rand < cumalativeChance[8]){
 				Debug.Log("Rand:" + rand + " Caught Skunk");
+				itemObject = baitItem.skunk_b;
 				return "Skunk";
 			}
 			else if(rand >= cumalativeChance[8] && rand < cumalativeChance[9]){
 				Debug.Log("Rand:" + rand + " Caught Hedgehog");
+				itemObject = baitItem.hedgehog_b;
 				return "Hedgehog";
 			}
 			else if(rand >= cumalativeChance[9] && rand < cumalativeChance[10]){
 				Debug.Log("Rand:" + rand + " Caught Chicken");
+				itemObject = baitItem.chicken_b;
 				return "Chicken";
 			}
 			else if(rand >= cumalativeChance[10] && rand < cumalativeChance[11]){
 				Debug.Log("Rand:" + rand + " Caught Owl");
+				itemObject = baitItem.owl_b;
 				return "Owl";
 			}
 			else if(rand >= cumalativeChance[11] && rand < cumalativeChance[12]){
 				Debug.Log("Rand:" + rand + " Caught Eagle");
+				itemObject = baitItem.eagle_b;
 				return "Eagle";
 			}
 			else if(rand >= cumalativeChance[12] && rand < cumalativeChance[13]){
 				Debug.Log("Rand:" + rand + " Caught Pigeon");
-
+				itemObject = baitItem.pigeon_b;
 				return "Pigeon";
 			}
 			else if(rand >= cumalativeChance[13] && rand < cumalativeChance[14]){
 				Debug.Log("Rand:" + rand + " Caught Dog");
+				itemObject = baitItem.dog_b;
 				return "Dog";
 			}
 			else if(rand >= cumalativeChance[14] && rand < cumalativeChance[15]){
 				Debug.Log("Rand:" + rand + " Caught Cat");
+				itemObject = baitItem.cat_b;
 				return "Cat";
 			}
 			else if(rand >= cumalativeChance[15] && rand < cumalativeChance[16]){
 				Debug.Log("Rand:" + rand + " Caught Lizard");
+				itemObject = baitItem.lizard_b;
 				return "Lizard";
 			}
 			else if(rand >= cumalativeChance[16] && rand < cumalativeChance[17]){
 				Debug.Log("Rand:" + rand + " Caught Raccoon");
+				itemObject = baitItem.raccoon_b;
 				return "Raccoon";
 			}
-			else if(rand >= cumalativeChance[17] && rand < cumalativeChance[18]){
-				Debug.Log("Rand:" + rand + " Caught Human");
-				itemObject = baitItem.homeless_b;
-				return "Human";
-			}
+		
 			
 			else
 				return "ERROR";
@@ -645,54 +2082,80 @@ public class MF_TrapScript : MonoBehaviour {
 
 			if(rand < cumalativeChance[0]){
 				Debug.Log("Rand:" + rand + " Caught Banker");
+				itemObject = baitItem.banker_b;
+				PlayerPrefs.SetInt("CaughtBanker",1);
 				return "Banker";
 			}
 			else if(rand >= cumalativeChance[0] && rand < cumalativeChance[1]){
 				Debug.Log("Rand:" + rand + " Caught Binman");
+				itemObject = baitItem.binman_b;
+				PlayerPrefs.SetInt("CaughtBinman",1);
 				return "Binman";
 			}
 			else if(rand >= cumalativeChance[1] && rand < cumalativeChance[2]){
 				Debug.Log("Rand:" + rand + " Caught Cat");
+				itemObject = baitItem.cat_b;
+				PlayerPrefs.SetInt("CaughtCat",1);
 				return "Cat";
 			}
 			else if(rand >= cumalativeChance[2] && rand < cumalativeChance[3]){
 				Debug.Log("Rand:" + rand + " Caught Dog");
+				itemObject = baitItem.dog_b;
+				PlayerPrefs.SetInt("CaughtDog",1);
 				return "Dog";
 			}
 			else if(rand >= cumalativeChance[3] && rand < cumalativeChance[4]){
 				Debug.Log("Rand:" + rand + " Caught Druggy");
+				itemObject = baitItem.druggy_b;
+				PlayerPrefs.SetInt("CaughtDruggy",1);
 				return "Druggy";
 			}
 			else if(rand >= cumalativeChance[4] && rand < cumalativeChance[5]){
 				Debug.Log("Rand:" + rand + " Caught Drunk");
+				itemObject = baitItem.drunk_b;
+				PlayerPrefs.SetInt("CaughtDrunk",1);
 				return "Drunk";
 			}
 			else if(rand >= cumalativeChance[5] && rand < cumalativeChance[6]){
 				Debug.Log("Rand:" + rand + " Caught Goth");
+				itemObject = baitItem.goth_b;
+				PlayerPrefs.SetInt("CaughtGoth",1);
 				return "Goth";
 			}
 			else if(rand >= cumalativeChance[6] && rand < cumalativeChance[7]){
 				Debug.Log("Rand:" + rand + " Caught Homeless");
+				itemObject = baitItem.homeless_b;
+				PlayerPrefs.SetInt("CaughtHomeless",1);
 				return "Homeless";
 			}
 			else if(rand >= cumalativeChance[7] && rand < cumalativeChance[8]){
 				Debug.Log("Rand:" + rand + " Caught Mayor");
+				itemObject = baitItem.mayor_b;
+				PlayerPrefs.SetInt("CaughtMayor",1);
 				return "Mayor";
 			}
 			else if(rand >= cumalativeChance[8] && rand < cumalativeChance[9]){
 				Debug.Log("Rand:" + rand + " Caught Pharmacist");
+				itemObject = baitItem.pharmacist_b;
+				PlayerPrefs.SetInt("CaughtPharmacist",1);
 				return "Pharmacist";
 			}
 			else if(rand >= cumalativeChance[9] && rand < cumalativeChance[10]){
 				Debug.Log("Rand:" + rand + " Caught Pigeon");
+				itemObject = baitItem.pigeon_b;
+				PlayerPrefs.SetInt("CaughtPigeon",1);
 				return "Pigeon";
 			}
 			else if(rand >= cumalativeChance[10] && rand < cumalativeChance[11]){
 				Debug.Log("Rand:" + rand + " Caught Priest");
+				itemObject = baitItem.priest_b;
+				PlayerPrefs.SetInt("CaughtPriest",1);
 				return "Priest";
 			}
 			else if(rand >= cumalativeChance[11] && rand < cumalativeChance[12]){
 				Debug.Log("Rand:" + rand + " Caught Whore");
+				itemObject = baitItem.whore_b;
+				PlayerPrefs.SetInt("CaughtWhore",1);
 				return "Whore";
 			}
 			
@@ -783,8 +2246,28 @@ public class MF_TrapScript : MonoBehaviour {
 			GUILayout.Box(lizard);
 		else if(capture == "Raccoon")
 			GUILayout.Box(raccoon);
-		else 
-			GUILayout.Box(human);
+
+		else if(capture == "Banker")
+			GUILayout.Box(banker);
+		else if(capture == "Goth")
+			GUILayout.Box(goth);
+		else if(capture == "Mayor")
+			GUILayout.Box(mayor);
+		else if(capture == "Druggy")
+			GUILayout.Box(druggy);
+		else if(capture == "Whore")
+			GUILayout.Box(whore);
+		else if(capture == "Priest")
+			GUILayout.Box(priest);
+		else if(capture == "Drunk")
+			GUILayout.Box(drunk);
+		else if(capture == "Homeless")
+			GUILayout.Box(homeless);
+		else if(capture == "Pharmacist")
+			GUILayout.Box(pharmacist);
+		else if(capture == "Binman")
+			GUILayout.Box(binman);
+		
 
 		GUILayout.EndHorizontal();
 		GUILayout.Space(8);

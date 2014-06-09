@@ -112,7 +112,8 @@ public class TrapSettings : MonoBehaviour
 	}
 
 	void BaitWindowMethod(int windowID)
-	{
+	{	
+		GUI.skin = trapSkin;
 		GUILayout.BeginArea (new Rect(75, 50, 150, 150));
 		
 		GUILayout.BeginHorizontal();

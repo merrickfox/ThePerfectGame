@@ -369,7 +369,7 @@ MonoBehaviour:
   m_window:
     m_Name: window
     m_Normal:
-      m_Background: {fileID: 2800000, guid: b75c5706d814ce54fabfa63643a8f014, type: 3}
+      m_Background: {fileID: 2800000, guid: d556c7bed19bfc549b594dbbe0b9bc45, type: 3}
       m_TextColor: {r: 1, g: 1, b: 1, a: 1}
     m_Hover:
       m_Background: {fileID: 0}
@@ -381,7 +381,7 @@ MonoBehaviour:
       m_Background: {fileID: 0}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_OnNormal:
-      m_Background: {fileID: 2800000, guid: d556c7bed19bfc549b594dbbe0b9bc45, type: 3}
+      m_Background: {fileID: 0}
       m_TextColor: {r: .392387509, g: .94825685, b: .952941179, a: 1}
     m_OnHover:
       m_Background: {fileID: 0}
