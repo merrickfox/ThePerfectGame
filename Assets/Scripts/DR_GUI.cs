@@ -304,6 +304,7 @@ public class DR_GUI : MonoBehaviour
 		if(PlayerPrefs.GetInt ("CapturedGet") == 1)
 		{
 			PlayerPrefs.SetInt("QuestPart", 9);
+			PlayerPrefs.SetInt("BikeInteract", 1);
 			StartCoroutine(JournalEntry());
 			Destroy(Tut2Walls);
 		}

@@ -112,6 +112,9 @@ public class JP_Interaction : MonoBehaviour {
 		// Update is called once per frame
 	void FixedUpdate () 
 	{	//print(Application.loadedLevel);
+
+		Debug.Log ("QuestPage: " + PlayerPrefs.GetInt("BikeInteract"));
+
 		float distance = 3f;
 		// Looting screen
 		if (Physics.Raycast (transform.position, transform.forward * distance, out hit)) 
@@ -152,18 +155,17 @@ public class JP_Interaction : MonoBehaviour {
 			// *************************************************************************************************************************
 			if((hit.collider.gameObject.tag == "Bike"))
 			{
-				if(PlayerPrefs.GetInt("QuestPart") > 8)
-				{
-					Debug.Log("Bike");
-					otherObject = hit.collider.gameObject;
-					otherInteraction.transform.position = Camera.main.WorldToViewportPoint(otherObject.transform.position);
-					otherInteraction.gameObject.SetActive(true);
-					if(Input.GetKey (KeyCode.E)){
+				Debug.Log("Bike");
+				otherObject = hit.collider.gameObject;
+				otherInteraction.transform.position = Camera.main.WorldToViewportPoint(otherObject.transform.position);
+				otherInteraction.gameObject.SetActive(true);
+				if(Input.GetKey (KeyCode.E)){
+					if(PlayerPrefs.GetInt("BikeInteract") == 1){
 						Application.LoadLevel("Loading");
 					}
 				}
-					
-			}
+			}					
+
 			else{
 				otherInteraction.gameObject.SetActive(false);
 			}

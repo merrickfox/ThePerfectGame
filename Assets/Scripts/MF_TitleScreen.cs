@@ -39,6 +39,7 @@ public class MF_TitleScreen : MonoBehaviour {
 				PlayerPrefs.SetInt ("Quest", 0);
 				PlayerPrefs.SetInt("TutorialOrder", 0);
 				PlayerPrefs.SetInt("TutorialOrder2", 0);
+				PlayerPrefs.SetInt("BikeInteract", 0);
 				
 				PlayerPrefs.SetInt("a", 1);
 				PlayerPrefs.SetInt("b", 0);

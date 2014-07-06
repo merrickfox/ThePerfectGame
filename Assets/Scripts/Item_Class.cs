@@ -60,16 +60,16 @@ public class Item_Class : MonoBehaviour {
 	public static Texture2D catsIcon= (Texture2D)Resources.Load ("Textures/Captures/cat");
 	public static Texture2D lizardIcon= (Texture2D)Resources.Load ("Textures/Captures/lizard");
 	public static Texture2D racoonIcon= (Texture2D)Resources.Load ("Textures/Captures/raccoon");
-	public static Texture2D gothIcon= (Texture2D)Resources.Load ("Textures/Captures/goth");
-	public static Texture2D mayorIcon= (Texture2D)Resources.Load ("Textures/Captures/mayor");
-	public static Texture2D druggyIcon= (Texture2D)Resources.Load ("Textures/Captures/druggy");
-	public static Texture2D whoreIcon= (Texture2D)Resources.Load ("Textures/Captures/whore");
-	public static Texture2D priestIcon= (Texture2D)Resources.Load ("Textures/Captures/priest");
-	public static Texture2D drunkIcon= (Texture2D)Resources.Load ("Textures/Captures/drunk");
-	public static Texture2D homelessIcon= (Texture2D)Resources.Load ("Textures/Captures/homeless");
-	public static Texture2D pharmacistIcon= (Texture2D)Resources.Load ("Textures/Captures/pharmacist");
-	public static Texture2D bankerIcon= (Texture2D)Resources.Load ("Textures/Captures/banker");
-	public static Texture2D binmanIcon= (Texture2D)Resources.Load ("Textures/Captures/binman");
+	public static Texture2D gothIcon= (Texture2D)Resources.Load ("Textures/Captures/humanplaceholder");
+	public static Texture2D mayorIcon= (Texture2D)Resources.Load ("Textures/Captures/humanplaceholder");
+	public static Texture2D druggyIcon= (Texture2D)Resources.Load ("Textures/Captures/humanplaceholder");
+	public static Texture2D whoreIcon= (Texture2D)Resources.Load ("Textures/Captures/humanplaceholder");
+	public static Texture2D priestIcon= (Texture2D)Resources.Load ("Textures/Captures/humanplaceholder");
+	public static Texture2D drunkIcon= (Texture2D)Resources.Load ("Textures/Captures/humanplaceholder");
+	public static Texture2D homelessIcon= (Texture2D)Resources.Load ("Textures/Captures/humanplaceholder");
+	public static Texture2D pharmacistIcon= (Texture2D)Resources.Load ("Textures/Captures/humanplaceholder");
+	public static Texture2D bankerIcon= (Texture2D)Resources.Load ("Textures/Captures/humanplaceholder");
+	public static Texture2D binmanIcon= (Texture2D)Resources.Load ("Textures/Captures/humanplaceholder");
 
 
 	// Items
