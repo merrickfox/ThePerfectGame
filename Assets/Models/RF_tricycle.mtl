@@ -1,0 +1,25 @@
+# MTL written from C:\Users\Keitaro\Desktop\temp\RF_tricycle.obj
+newmtl body_radio_flyer_tricycle
+Kd 1 1 1
+Ns 2896.31
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+map_Kd C:\Users\Keitaro\Desktop\temp\tricycle_diffuse.JPG
+newmtl chrome_radio_flyer_tricycle
+Kd 0 0 0
+Ns 256
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.65 0.65 0.65
+map_Kd C:\Users\Keitaro\Desktop\temp\tricycle_diffuse.JPG
+newmtl plastic_radio_flyer_tricycle_032_040Material_041
+Kd 1 1 1
+Ns 256
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.05 0.05 0.05
+map_Kd C:\Users\Keitaro\Desktop\temp\tricycle_diffuse.JPG

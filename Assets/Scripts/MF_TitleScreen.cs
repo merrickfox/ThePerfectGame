@@ -5,7 +5,7 @@ public class MF_TitleScreen : MonoBehaviour {
 
 	public GUISkin MyGUISkin;
 	float btnWidth, btnHeight;
-	bool start;
+	bool start = false;
 	// Use this for initialization
 	void Awake(){
 		DontDestroyOnLoad(transform.gameObject);
@@ -13,23 +13,27 @@ public class MF_TitleScreen : MonoBehaviour {
 	void Start () {
 		btnWidth = 200.0f;
 		btnHeight = 400.0f;
-
+		start = false;
+		PlayerPrefs.SetInt ("StartOfGame", 0);
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-			
+	void Update () {			
 	}
 
 	void OnGUI(){
 		if(!start){
+			if(PlayerPrefs.GetInt ("StartOfGame") == 0)
+			{
+
 			GUI.skin = MyGUISkin;
 			GUILayout.BeginArea(new Rect((Screen.width/2)-(btnWidth/2), Screen.height - 300, btnWidth, 200 ));
 	        if(GUILayout.Button("New Game")){
+
 	        	PlayerPrefs.DeleteAll();
-	        	Application.LoadLevel("DanForestTut");
-	        	start = true;
+	        	Application.LoadLevel("DanForestTut");	 
+				start = true;
+					PlayerPrefs.SetInt ("StartOfGame", 1);
 				PlayerPrefs.SetInt ("GameStart", 0);
 
 				PlayerPrefs.SetInt ("Quest", 0);
@@ -80,14 +84,16 @@ public class MF_TitleScreen : MonoBehaviour {
 				PlayerPrefs.SetInt("Animal28", 0); // Mayor
 	        }
 	        if(GUILayout.Button("Load Game")){
+
 	        	Application.LoadLevel("DanForestTut");
-	        	Application.LoadLevel("");
-	        	start = true;
+	        	Application.LoadLevel("");	      
+				start = true;
 	        }
 	        if(GUILayout.Button("LeaderBoard")){
 	        	Debug.Log("Leaderboard");
 	        }
 	        GUILayout.EndArea();
     	}
+		}
 	}
 }

@@ -152,12 +152,15 @@ public class JP_Interaction : MonoBehaviour {
 			// *************************************************************************************************************************
 			if((hit.collider.gameObject.tag == "Bike"))
 			{
-				Debug.Log("Bike");
-				otherObject = hit.collider.gameObject;
-				otherInteraction.transform.position = Camera.main.WorldToViewportPoint(otherObject.transform.position);
-				otherInteraction.gameObject.SetActive(true);
-				if(Input.GetKey (KeyCode.E)){
-					Application.LoadLevel("Loading");
+				if(PlayerPrefs.GetInt("QuestPart") > 8)
+				{
+					Debug.Log("Bike");
+					otherObject = hit.collider.gameObject;
+					otherInteraction.transform.position = Camera.main.WorldToViewportPoint(otherObject.transform.position);
+					otherInteraction.gameObject.SetActive(true);
+					if(Input.GetKey (KeyCode.E)){
+						Application.LoadLevel("Loading");
+					}
 				}
 					
 			}

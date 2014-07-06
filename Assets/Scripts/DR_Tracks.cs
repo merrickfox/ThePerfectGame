@@ -163,6 +163,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal1", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 1);
 					}	
 				}
 				else if(this.transform.parent.name == "tracksSpider")
@@ -171,6 +172,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal2", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 1);
 					}
 				}
 				else if(this.transform.parent.name == "tracksSquirrel")
@@ -179,6 +181,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal3", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 1);
 					}
 				}
 				else if(this.transform.parent.name == "tracksSkunk")
@@ -187,6 +190,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal4", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 1);
 					}
 				}
 				else if(this.transform.parent.name == "tracksHedgehog")
@@ -195,6 +199,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal5", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 1);
 					}
 				}
 				else if(this.transform.parent.name == "tracksOwl")
@@ -203,6 +208,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal6", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 1);
 					}
 				}
 				else if(this.transform.parent.name == "tracksFish")
@@ -211,6 +217,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal7", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 1);
 					}
 				}
 				else if(this.transform.parent.name == "tracksBeaver")
@@ -219,6 +226,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal8", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 1);
 					}
 				}
 				else if(this.transform.parent.name == "tracksBear")
@@ -227,6 +235,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal9", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 1);
 					}
 				}
 				else if(this.transform.parent.name == "tracksRabbit")
@@ -235,6 +244,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal10", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 1);
 					}
 				}
 				else if(this.transform.parent.name == "tracksDeer")
@@ -243,6 +253,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal11", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 1);
 					}
 				}
 				else if(this.transform.parent.name == "tracksChicken")
@@ -251,6 +262,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal12", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 1);
 					}
 				}
 				else if(this.transform.parent.name == "tracksSnake")
@@ -259,6 +271,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal13", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 1);
 					}
 				}
 				else if(this.transform.parent.name == "tracksEagle")
@@ -267,6 +280,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal14", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 1);
 					}
 				}
 				else if(this.transform.parent.name == "tracksLizard")
@@ -275,6 +289,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal15", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 1);
 					}
 				}
 		//----------------------------------- town ---------------------------------------
@@ -284,6 +299,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal16", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 1);
 					}
 				}
 				else if(this.transform.parent.name == "tracksCat")
@@ -292,6 +308,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal17", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 1);
 					}
 				}
 				else if(this.transform.parent.name == "tracksPidgeon")
@@ -300,6 +317,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal18", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 1);
 					}
 				}
 				else if(this.transform.parent.name == "tracksDruggy")
@@ -308,6 +326,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal19", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 2);
 					}
 				}
 				else if(this.transform.parent.name == "tracksWhore")
@@ -316,6 +335,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal20", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 2);
 					}
 				}
 				else if(this.transform.parent.name == "tracksDrunk")
@@ -324,6 +344,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal21", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 2);
 					}
 				}
 				else if(this.transform.parent.name == "tracksHomeless")
@@ -332,6 +353,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal22", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 2);
 					}
 				}
 				else if(this.transform.parent.name == "tracksBinman")
@@ -340,6 +362,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal23", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 2);
 					}
 				}
 				else if(this.transform.parent.name == "tracksPharmacist")
@@ -348,6 +371,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal24", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 2);
 					}
 				}
 				else if(this.transform.parent.name == "tracksGoth")
@@ -356,6 +380,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal25", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 2);
 					}
 				}
 				else if(this.transform.parent.name == "tracksPriest")
@@ -364,6 +389,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal26", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 2);
 					}
 				}
 				else if(this.transform.parent.name == "tracksBanker")
@@ -372,6 +398,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal27", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 2);
 					}
 				}
 				else if(this.transform.parent.name == "tracksMayor")
@@ -380,6 +407,7 @@ public class DR_Tracks : MonoBehaviour
 					{
 						PlayerPrefs.SetInt("Track", 1);
 						PlayerPrefs.SetInt("Animal28", 1);
+						PlayerPrefs.SetInt ("TrackerPage", 2);
 					}
 				}
 			}

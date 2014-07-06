@@ -1056,18 +1056,24 @@ public class DR_GUI : MonoBehaviour
 			}
 		}			
 
+		if(PlayerPrefs.GetInt ("TrackerPage") == 1)
+			TrackerPage = 1;
+
+		if(PlayerPrefs.GetInt ("TrackerPage") == 2)
+			TrackerPage = 2;
+
 		if(TrackerOpen == true && TrackerPage > 1)
 		{
 			if(GUI.Button(new Rect(30, 230, 40, 40), ArrowLeft))
 			{
-				TrackerPage--;
+				TrackerPage = 1;
 			}
 		}
 		if(TrackerOpen == true && TrackerPage < 2)
 		{
 			if(GUI.Button(new Rect(900, 230, 40, 40), ArrowRight))
 			{
-				TrackerPage++;
+				TrackerPage = 2;
 			}
 		}
 
@@ -1154,16 +1160,16 @@ public class DR_GUI : MonoBehaviour
 		if (PlayerPrefs.GetInt ("Hunger") == 114)
 			PlayerPrefs.SetInt("HungerText", 0);
 
-		if (PlayerPrefs.GetInt ("Hunger") == 30) 
+		if (PlayerPrefs.GetInt ("Hunger") == 60) 
 		{
 			StartCoroutine (HungerFlashy ());
 			PlayerPrefs.SetInt ("HungerText", 4);
 		}
-		if (PlayerPrefs.GetInt ("Hunger") == 28)
+		if (PlayerPrefs.GetInt ("Hunger") == 58)
 			StartCoroutine (HungerFlashy ());
-		if (PlayerPrefs.GetInt ("Hunger") == 26)
+		if (PlayerPrefs.GetInt ("Hunger") == 56)
 			StartCoroutine (HungerFlashy ());
-		if (PlayerPrefs.GetInt ("Hunger") == 24)
+		if (PlayerPrefs.GetInt ("Hunger") == 54)
 			PlayerPrefs.SetInt("HungerText", 0);
 
 
@@ -1173,7 +1179,7 @@ public class DR_GUI : MonoBehaviour
 		{
 			GUI.Label (new Rect(Screen.width/2+700, Screen.height/2-400, 500, 500), Hunger2);
 		}
-		else if(PlayerPrefs.GetInt ("Hunger") > 30)//30
+		else if(PlayerPrefs.GetInt ("Hunger") > 60)//30
 		{
 			GUI.Label (new Rect(Screen.width/2+700, Screen.height/2-400, 500, 500), Hunger1);
 		}
@@ -1184,7 +1190,10 @@ public class DR_GUI : MonoBehaviour
 		else if(PlayerPrefs.GetInt ("Hunger") < 1)
 		{
 			GUI.Label (new Rect(Screen.width/2+700, Screen.height/2-400, 500, 500), HungerEmpty);
+			PlayerPrefs.SetInt ("Hunger", 0);
 			PlayerPrefs.SetInt("HungerText", 3);
+			disableMove();
+			Application.LoadLevel("Merrick_Titles");
 		}
 
 		if(PlayerPrefs.GetInt("HungerText") == 1)

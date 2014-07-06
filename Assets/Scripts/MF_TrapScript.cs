@@ -2184,6 +2184,8 @@ public class MF_TrapScript : MonoBehaviour {
 			if(PlayerPrefs.GetInt ("CapturedTown") == 0 && PlayerPrefs.GetInt ("LevelSelect") == 2)
 				PlayerPrefs.SetInt("CapturedTown", 1);
 			Destroy (gameObject);
+
+			PlayerPrefs.SetInt ("Hunger", PlayerPrefs.GetInt ("Hunger") +180);
         }
 		if(GUILayout.Button("Store In Inventory")){
 			caught = false;
